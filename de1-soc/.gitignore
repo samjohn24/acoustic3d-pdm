@@ -1,0 +1,18 @@
+# except db folders
+*db/
+
+# except .qdf files
+*.qdf
+
+# except .txt files
+*.txt
+
+# except synthesis folder
+ip/**/synthesis/
+
+# except synthesis folder
+ip/**/simulation/
+
+# except synthesis folder
+ip/**/testbench/
+

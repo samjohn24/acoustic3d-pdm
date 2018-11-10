@@ -1,0 +1,27 @@
+	component bf_time_pcm is
+		port (
+			clk_clk                            : in  std_logic                      := 'X';             -- clk
+			reset_reset_n                      : in  std_logic                      := 'X';             -- reset_n
+			mic_if_pdm_if_data                 : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- data
+			mic_if_pdm_if_clk_ff               : out std_logic;                                         -- clk_ff
+			mic_if_avalon_st_fil_error         : out std_logic_vector(1 downto 0);                      -- error
+			mic_if_avalon_st_fil_data          : out std_logic_vector(522 downto 0);                    -- data
+			mic_if_avalon_st_fil_valid         : out std_logic;                                         -- valid
+			mic_if_avalon_st_fil_startofpacket : out std_logic;                                         -- startofpacket
+			mic_if_avalon_st_fil_endofpacket   : out std_logic;                                         -- endofpacket
+			mic_if_avalon_st_fil_ready         : in  std_logic                      := 'X';             -- ready
+			mic_if_avalon_st_pdm_error         : out std_logic_vector(1 downto 0);                      -- error
+			mic_if_avalon_st_pdm_data          : out std_logic_vector(74 downto 0);                     -- data
+			mic_if_avalon_st_pdm_valid         : out std_logic;                                         -- valid
+			mic_if_avalon_st_pdm_endofpacket   : out std_logic;                                         -- endofpacket
+			mic_if_avalon_st_pdm_startofpacket : out std_logic;                                         -- startofpacket
+			mic_if_avalon_st_pdm_ready         : in  std_logic                      := 'X';             -- ready
+			mic_if_test_pdm_data_inp           : out std_logic_vector(1 downto 0);                      -- pdm_data_inp
+			mic_if_test_mic_enable             : out std_logic;                                         -- mic_enable
+			mic_if_system_clk_dec16            : in  std_logic                      := 'X';             -- clk_dec16
+			mic_if_system_enable_clk_dec       : out std_logic;                                         -- enable_clk_dec
+			mic_if_system_enable_clk_dec16     : out std_logic;                                         -- enable_clk_dec16
+			mic_if_system_clk_dec              : in  std_logic                      := 'X'              -- clk_dec
+		);
+	end component bf_time_pcm;
+

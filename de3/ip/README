@@ -1,0 +1,8 @@
+ To generate a Qsys system for DE3 (Quartus 13.0sp1 SE on Windows):
+
+  1. Export environment variable in CMD:
+
+     $ set QUARTUS_INSTALL_DIR="E:\altera\13.0sp1\quartus"
+
+  2. On ip/ directory, run gen_<IP_NAME>.bat files via Windows Explorer
+     or CMD.

@@ -1,0 +1,1235 @@
+ -- Copyright (C) 1991-2013 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCPGM        : Dedicated power pin for configuration, which MUST be connected to 1.8V, 2.5V, 3.0V or 3.3V depending on the requirements of the configuration device.
+ -- VCCL          : Dedicated power pin, which MUST be connected to VCC  (1.1V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1A:		3.3V
+ --					Bank 1C:		3.3V
+ --					Bank 2C:		3.3V
+ --					Bank 2A:		3.3V
+ --					Bank 3A:		2.5V
+ --					Bank 3B:		3.3V
+ --					Bank 3C:		3.3V
+ --					Bank 4C:		1.8V
+ --					Bank 4B:		1.8V
+ --					Bank 4A:	1.8V
+ --					Bank 5A:	1.8V
+ --					Bank 5C:	3.3V
+ --					Bank 6C:	3.3V
+ --					Bank 6A:	3.3V
+ --					Bank 7A:	3.3V
+ --					Bank 7B:	3.3V
+ --					Bank 7C:	3.3V
+ --					Bank 8C:	3.3V
+ --					Bank 8B:	3.3V
+ --					Bank 8A:	3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --           	    or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+CHIP  "bf_time_pcm_de3"  ASSIGNED TO AN: EP3SL150F1152C2
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+HSTCC_RX_n[22]               : A2        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[21]               : A3        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_n[21]               : A4        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_n[21]               : A5        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_n[18]               : A6        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_n[19]               : A7        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_n[18]               : A8        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[12]               : A9        : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_n[13]               : A10       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_n[12]               : A11       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_TX_n[12]               : A12       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_n[10]               : A13       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_RX_n[9]                : A14       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_TX_n[9]                : A15       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_CLKIN_n[1]             : A16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_CLKIN_2                : A17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+VCCIO8C                      : A18       : power  :                   : 3.3V    : 8C        :                
+HSTCD_CLKIN_2                : A19       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_CLKIN_n[1]             : A20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_n[10]               : A21       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_p[10]               : A22       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_n[11]               : A23       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_p[12]               : A24       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_n[12]               : A25       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_n[12]               : A26       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_p[16]               : A27       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_n[17]               : A28       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_n[17]               : A29       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_p[21]               : A30       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_n[21]               : A31       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_n[22]               : A32       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_n[21]               : A33       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+LEDG[1]                      : AA1       : output : 3.3-V LVTTL       :         : 5C        : Y              
+GND                          : AA2       : gnd    :                   :         :           :                
+LEDR[6]                      : AA3       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDG[6]                      : AA4       : output : 3.3-V LVTTL       :         : 5C        : Y              
+GND                          : AA5       : gnd    :                   :         :           :                
+LEDB[2]                      : AA6       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDB[3]                      : AA7       : output : 3.3-V LVTTL       :         : 5C        : Y              
+GND                          : AA8       : gnd    :                   :         :           :                
+VREFB5CN0                    : AA9       : power  :                   :         : 5C        :                
+DDR2_A[15]                   : AA10      : output : SSTL-18 Class I   :         : 5A        : Y              
+GND                          : AA11      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 5A        :                
+VCCL                         : AA13      : power  :                   : 1.1V    :           :                
+GND                          : AA14      : gnd    :                   :         :           :                
+VCCL                         : AA15      : power  :                   : 1.1V    :           :                
+GND                          : AA16      : gnd    :                   :         :           :                
+VCCL                         : AA17      : power  :                   : 1.1V    :           :                
+GND                          : AA18      : gnd    :                   :         :           :                
+VCCL                         : AA19      : power  :                   : 1.1V    :           :                
+GND                          : AA20      : gnd    :                   :         :           :                
+VCCL                         : AA21      : power  :                   : 1.1V    :           :                
+GND                          : AA22      : gnd    :                   :         :           :                
+VCCPD2A                      : AA23      : power  :                   : 3.3V    : 2A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA24      :        :                   :         : 2A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA25      :        :                   :         : 2A        :                
+VREFB2AN0                    : AA26      : power  :                   :         : 2A        :                
+OTG_D[1]                     : AA27      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[5]                     : AA28      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[31]                    : AA29      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[3]                     : AA30      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[7]                     : AA31      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[11]                    : AA32      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[12]                    : AA33      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[14]                    : AA34      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+LEDG[0]                      : AB1       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDR[3]                      : AB2       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDR[7]                      : AB3       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDR[5]                      : AB4       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDB[0]                      : AB5       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDB[1]                      : AB6       : output : 3.3-V LVTTL       :         : 5C        : Y              
+VCCIO5A                      : AB7       : power  :                   : 1.8V    : 5A        :                
+DDR2_DQ[21]                  : AB8       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DM[2]                   : AB9       : output : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DM[1]                   : AB10      : output : SSTL-18 Class I   :         : 5A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB11      :        :                   :         : 5A        :                
+VCCPD5A                      : AB12      : power  :                   : 2.5V    : 5A        :                
+GND                          : AB13      : gnd    :                   :         :           :                
+VCCL                         : AB14      : power  :                   : 1.1V    :           :                
+GND                          : AB15      : gnd    :                   :         :           :                
+VCC                          : AB16      : power  :                   : 1.1V    :           :                
+GND                          : AB17      : gnd    :                   :         :           :                
+VCC                          : AB18      : power  :                   : 1.1V    :           :                
+GND                          : AB19      : gnd    :                   :         :           :                
+VCC                          : AB20      : power  :                   : 1.1V    :           :                
+GND                          : AB21      : gnd    :                   :         :           :                
+VCCL                         : AB22      : power  :                   : 1.1V    :           :                
+GND                          : AB23      : gnd    :                   :         :           :                
+GPIO1_D[15]                  : AB24      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[14]                  : AB25      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[12]                  : AB26      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[10]                  : AB27      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+VCCIO2A                      : AB28      : power  :                   : 3.3V    : 2A        :                
+OTG_D[4]                     : AB29      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[16]                    : AB30      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[10]                    : AB31      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[20]                    : AB32      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[17]                    : AB33      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[19]                    : AB34      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+LEDR[1]                      : AC1       : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDR[2]                      : AC2       : output : 3.3-V LVTTL       :         : 5C        : Y              
+VCCIO5C                      : AC3       : power  :                   : 3.3V    : 5C        :                
+LEDR[4]                      : AC4       : output : 3.3-V LVTTL       :         : 5C        : Y              
+DDR2_DQ[22]                  : AC5       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[23]                  : AC6       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[20]                  : AC7       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[6]                   : AC8       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[7]                   : AC9       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+NC                           : AC10      :        :                   :         :           :                
+DDR2_CKE[1]                  : AC11      : output : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_A[10]                   : AC12      : output : SSTL-18 Class I   :         : 4A        : Y              
+VCCPD4A                      : AC13      : power  :                   : 2.5V    : 4A        :                
+GND                          : AC14      : gnd    :                   :         :           :                
+VCCPD4B                      : AC15      : power  :                   : 2.5V    : 4B        :                
+GND                          : AC16      : gnd    :                   :         :           :                
+VCCPD4C                      : AC17      : power  :                   : 2.5V    : 4C        :                
+GND                          : AC18      : gnd    :                   :         :           :                
+VCCPD3C                      : AC19      : power  :                   : 3.3V    : 3C        :                
+GND                          : AC20      : gnd    :                   :         :           :                
+VCCPD3B                      : AC21      : power  :                   : 3.3V    : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC22      :        :                   :         : 3A        :                
+VCCPD3A                      : AC23      : power  :                   : 2.5V    : 3A        :                
+GND                          : AC24      : gnd    :                   :         :           :                
+GPIO1_D[1]                   : AC25      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[0]                   : AC26      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GND                          : AC27      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC28      :        :                   :         : 2A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC29      :        :                   :         : 2A        :                
+GND                          : AC30      : gnd    :                   :         :           :                
+JVC_DATAOUT                  : AC31      : output : 3.3-V LVTTL       :         : 2C        : Y              
+JVC_DATAIN                   : AC32      : input  : 3.3-V LVTTL       :         : 2C        : Y              
+GND                          : AC33      : gnd    :                   :         :           :                
+OTG_D[15]                    : AC34      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+LEDR[0]                      : AD1       : output : 3.3-V LVTTL       :         : 5C        : Y              
+GND                          : AD2       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD3       :        :                   :         : 5A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD4       :        :                   :         : 5A        :                
+GND                          : AD5       : gnd    :                   :         :           :                
+DDR2_DQ[14]                  : AD6       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[15]                  : AD7       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+GND                          : AD8       : gnd    :                   :         :           :                
+VCCIO5A                      : AD9       : power  :                   : 1.8V    : 5A        :                
+VCCPGM                       : AD10      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
+GND                          : AD11      : gnd    :                   :         :           :                
+DDR2_A[1]                    : AD12      : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_CAS_n                   : AD13      : output : SSTL-18 Class I   :         : 4A        : Y              
+GND                          : AD14      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD15      :        :                   :         : 4C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD16      :        :                   :         : 4C        :                
+GND                          : AD17      : gnd    :                   :         :           :                
+GPIO1_CLKOUTp1               : AD18      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO0_CLKOUTp0               : AD19      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GND                          : AD20      : gnd    :                   :         :           :                
+GPIO1_D[24]                  : AD21      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD22      :        :                   :         : 3A        :                
+GND                          : AD23      : gnd    :                   :         :           :                
+VCCPGM                       : AD24      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
+VCCIO2A                      : AD25      : power  :                   : 3.3V    : 2A        :                
+GPIO1_D[5]                   : AD26      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[3]                   : AD27      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[8]                   : AD28      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[6]                   : AD29      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[19]                  : AD30      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[17]                  : AD31      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+VCCIO2C                      : AD32      : power  :                   : 3.3V    : 2C        :                
+OTG_D[18]                    : AD33      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[13]                    : AD34      : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE1       :        :                   :         : 5A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE2       :        :                   :         : 5A        :                
+DDR2_CLK_n[0]                : AE3       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_CLK_p[0]                : AE4       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[12]                  : AE5       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[13]                  : AE6       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[4]                   : AE7       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[5]                   : AE8       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+nCSO                         : AE9       :        :                   :         : 1A        :                
+DDR2_A[0]                    : AE10      : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_CLK_p[1]                : AE11      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_BA[1]                   : AE12      : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[39]                  : AE13      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[38]                  : AE14      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_A[14]                   : AE15      : output : SSTL-18 Class I   :         : 4B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :         : 4C        :                
+VCC_CLKIN4C                  : AE17      : power  :                   : 2.5V    :           :                
+GPIO1_CLKOUTn1               : AE18      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO0_CLKOUTn0               : AE19      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO1_D[26]                  : AE20      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+GPIO1_D[31]                  : AE21      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+GPIO1_D[29]                  : AE22      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 3A        :                
+nCONFIG                      : AE25      :        :                   :         : 1A        :                
+nCE                          : AE26      :        :                   :         : 1A        :                
+GPIO1_D[4]                   : AE27      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[2]                   : AE28      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[13]                  : AE29      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[11]                  : AE30      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_CLKINp0                : AE31      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_CLKINn0                : AE32      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+JVC_CS                       : AE33      : output : 3.3-V LVTTL       :         : 2C        : Y              
+JVC_CLK                      : AE34      : output : 3.3-V LVTTL       :         : 2C        : Y              
+DDR2_DQ[18]                  : AF1       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[19]                  : AF2       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[16]                  : AF3       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[17]                  : AF4       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DM[0]                   : AF5       : output : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_CKE[0]                  : AF6       : output : SSTL-18 Class I   :         : 5A        : Y              
+VREFB5AN0                    : AF7       : power  :                   : 0.9V    : 5A        :                
+nIO_PULLUP                   : AF8       :        :                   :         : 1A        :                
+GND                          : AF9       : gnd    :                   :         :           :                
+DDR2_A[2]                    : AF10      : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_CLK_n[1]                : AF11      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+VCCIO4A                      : AF12      : power  :                   : 1.8V    : 4A        :                
+DDR2_DQ[35]                  : AF13      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[34]                  : AF14      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DM[4]                   : AF15      : output : SSTL-18 Class I   :         : 4B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :         : 4C        :                
+VCCD_PLL_B2                  : AF17      : power  :                   : 1.1V    :           :                
+VCCD_PLL_B1                  : AF18      : power  :                   : 1.1V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 3C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 3C        :                
+GPIO0_D[31]                  : AF21      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+VCCIO3B                      : AF22      : power  :                   : 3.3V    : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF23      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF24      :        :                   :         : 3A        :                
+VCCIO3A                      : AF25      : power  :                   : 2.5V    : 3A        :                
+PORSEL                       : AF26      :        :                   :         : 1A        :                
+GND                          : AF27      : gnd    :                   :         :           :                
+GPIO1_D[9]                   : AF28      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO1_D[7]                   : AF29      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GND                          : AF30      : gnd    :                   :         :           :                
+GPIO0_D[15]                  : AF31      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[14]                  : AF32      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GND                          : AF33      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF34      :        :                   :         : 2A        :                
+DDR2_DQS_p[2]                : AG1       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+GND                          : AG2       : gnd    :                   :         :           :                
+DDR2_DQ[8]                   : AG3       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[9]                   : AG4       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+GND                          : AG5       : gnd    :                   :         :           :                
+VCCIO5A                      : AG6       : power  :                   : 1.8V    : 5A        :                
+VCCPT                        : AG7       : power  :                   : 2.5V    :           :                
+GND                          : AG8       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG9       :        :                   :         : 4A        :                
+VREFB4AN0                    : AG10      : power  :                   : 0.9V    : 4A        :                
+GND                          : AG11      : gnd    :                   :         :           :                
+DDR2_DQ[53]                  : AG12      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+VREFB4BN0                    : AG13      : power  :                   : 0.9V    : 4B        :                
+GND                          : AG14      : gnd    :                   :         :           :                
+DDR2_DQ[29]                  : AG15      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+VCCIO4C                      : AG16      : power  :                   : 1.8V    : 4C        :                
+GND                          : AG17      : gnd    :                   :         :           :                
+VCC_CLKIN3C                  : AG18      : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG19      :        :                   :         : 3C        :                
+GND                          : AG20      : gnd    :                   :         :           :                
+GPIO0_D[29]                  : AG21      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+VREFB3BN0                    : AG22      : power  :                   :         : 3B        :                
+GND                          : AG23      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG24      :        :                   :         : 3A        :                
+VREFB3AN0                    : AG25      : power  :                   :         : 3A        :                
+GND                          : AG26      : gnd    :                   :         :           :                
+VCCPT                        : AG27      : power  :                   : 2.5V    :           :                
+VCCIO2A                      : AG28      : power  :                   : 3.3V    : 2A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG29      :        :                   :         : 2A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG30      :        :                   :         : 2A        :                
+GPIO0_D[13]                  : AG31      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[11]                  : AG32      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG33      :        :                   :         : 2A        :                
+GPIO0_D[17]                  : AG34      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+DDR2_DQS_n[2]                : AH1       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[11]                  : AH2       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+VCCIO5A                      : AH3       : power  :                   : 1.8V    : 5A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH4       :        :                   :         : 5A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH5       :        :                   :         : 5A        :                
+ASDO                         : AH6       :        :                   :         : 1A        :                
+NC                           : AH7       :        :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH8       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH9       :        :                   :         : 4A        :                
+VCCIO4A                      : AH10      : power  :                   : 1.8V    : 4A        :                
+DDR2_DQS_p[6]                : AH11      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[49]                  : AH12      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+VCCIO4B                      : AH13      : power  :                   : 1.8V    : 4B        :                
+DDR2_DQS_p[3]                : AH14      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_DQ[25]                  : AH15      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+VREFB4CN0                    : AH16      : power  :                   : 0.9V    : 4C        :                
+VCCA_PLL_B2                  : AH17      : power  :                   : 2.5V    :           :                
+VCCA_PLL_B1                  : AH18      : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH19      :        :                   :         : 3C        :                
+VREFB3CN0                    : AH20      : power  :                   :         : 3C        :                
+VCCIO3C                      : AH21      : power  :                   : 3.3V    : 3C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH26      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH27      :        :                   :         : 3A        :                
+nSTATUS                      : AH28      :        :                   :         : 1A        :                
+CONF_DONE                    : AH29      :        :                   :         : 1A        :                
+GPIO0_D[5]                   : AH30      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[3]                   : AH31      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+VCCIO2A                      : AH32      : power  :                   : 3.3V    : 2A        :                
+GPIO0_D[19]                  : AH33      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[10]                  : AH34      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+DDR2_DQ[10]                  : AJ1       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQS_p[1]                : AJ2       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQS_n[0]                : AJ3       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQS_p[0]                : AJ4       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+nCEO                         : AJ5       :        :                   :         : 1A        :                
+DDR2_A[4]                    : AJ6       : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_A[8]                    : AJ7       : output : SSTL-18 Class I   :         : 4A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ8       :        :                   :         : 4A        :                
+DDR2_DQ[54]                  : AJ9       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_A[11]                   : AJ10      : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQS_n[6]                : AJ11      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[48]                  : AJ12      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[52]                  : AJ13      : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQS_n[3]                : AJ14      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_DQ[24]                  : AJ15      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_ODT[1]                  : AJ16      : output : SSTL-18 Class I   :         : 4C        : Y              
+VCCPT                        : AJ17      : power  :                   : 2.5V    :           :                
+VCCIO3C                      : AJ18      : power  :                   : 3.3V    : 3C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ19      :        :                   :         : 3C        :                
+GPIO1_D[21]                  : AJ20      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO1_D[23]                  : AJ21      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ22      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ23      :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ24      :        :                   :         : 3B        :                
+VCCIO3A                      : AJ25      : power  :                   : 2.5V    : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ26      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ27      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ28      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ29      :        :                   :         : 3A        :                
+GND                          : AJ30      : gnd    :                   :         :           :                
+GPIO0_D[9]                   : AJ31      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[7]                   : AJ32      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GND                          : AJ33      : gnd    :                   :         :           :                
+GPIO0_D[12]                  : AJ34      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+DDR2_DQS_n[1]                : AK1       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+GND                          : AK2       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK3       :        :                   :         : 5A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK4       :        :                   :         : 5A        :                
+GND                          : AK5       : gnd    :                   :         :           :                
+DDR2_A[6]                    : AK6       : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_A[9]                    : AK7       : output : SSTL-18 Class I   :         : 4A        : Y              
+GND                          : AK8       : gnd    :                   :         :           :                
+DDR2_DQ[51]                  : AK9       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[45]                  : AK10      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+GND                          : AK11      : gnd    :                   :         :           :                
+DDR2_DQ[41]                  : AK12      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK13      :        :                   :         : 4C        :                
+GND                          : AK14      : gnd    :                   :         :           :                
+DDR2_DQ[28]                  : AK15      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK16      :        :                   :         : 4C        :                
+GND                          : AK17      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 3C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 3C        :                
+GND                          : AK20      : gnd    :                   :         :           :                
+GPIO0_D[22]                  : AK21      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK22      :        :                   :         : 3B        :                
+GND                          : AK23      : gnd    :                   :         :           :                
+GPIO1_D[28]                  : AK24      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK25      :        :                   :         : 3A        :                
+GND                          : AK26      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK27      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK28      :        :                   :         : 3A        :                
+GND                          : AK29      : gnd    :                   :         :           :                
+NC                           : AK30      :        :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK31      :        :                   :         : 2A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK32      :        :                   :         : 2A        :                
+GPIO0_D[8]                   : AK33      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[6]                   : AK34      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+DDR2_DQ[2]                   : AL1       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[3]                   : AL2       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DCLK                         : AL3       : bidir  :                   :         : 1A        :                
+DDR2_DQ[63]                  : AL4       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[59]                  : AL5       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+VCCIO4A                      : AL6       : power  :                   : 1.8V    : 4A        :                
+DDR2_DQ[55]                  : AL7       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DM[6]                   : AL8       : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[50]                  : AL9       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQS_p[5]                : AL10      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQS_n[5]                : AL11      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[40]                  : AL12      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_RAS_n                   : AL13      : output : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_A[3]                    : AL14      : output : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_A[13]                   : AL15      : output : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_CS_n[1]                 : AL16      : output : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_WE_n                    : AL17      : output : SSTL-18 Class I   :         : 4C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL18      :        :                   :         : 3C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL19      :        :                   :         : 3C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL20      :        :                   :         : 3C        :                
+GPIO0_D[20]                  : AL21      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO1_D[20]                  : AL22      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO0_D[30]                  : AL23      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL24      :        :                   :         : 3B        :                
+GPIO1_D[30]                  : AL25      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL26      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL27      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL28      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL29      :        :                   :         : 3A        :                
+VCCIO3A                      : AL30      : power  :                   : 2.5V    : 3A        :                
+NC                           : AL31      :        :                   :         :           :                
+GPIO0_D[1]                   : AL32      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[0]                   : AL33      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+GPIO0_D[2]                   : AL34      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+DDR2_DQ[0]                   : AM1       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+DDR2_DQ[1]                   : AM2       : bidir  : SSTL-18 Class I   :         : 5A        : Y              
+VCCIO4A                      : AM3       : power  :                   : 1.8V    : 4A        :                
+DDR2_DQ[62]                  : AM4       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[58]                  : AM5       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_A[7]                    : AM6       : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[46]                  : AM7       : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_A[12]                   : AM8       : output : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQS_p[4]                : AM9       : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+VCCIO4B                      : AM10      : power  :                   : 1.8V    : 4B        :                
+DDR2_DQ[44]                  : AM11      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[31]                  : AM12      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+VCCIO4C                      : AM13      : power  :                   : 1.8V    : 4C        :                
+DDR2_A[5]                    : AM14      : output : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_ODT[0]                  : AM15      : output : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_CS_n[0]                 : AM16      : output : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_BA[0]                   : AM17      : output : SSTL-18 Class I   :         : 4C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM18      :        :                   :         : 3C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM19      :        :                   :         : 3C        :                
+VCCIO3C                      : AM20      : power  :                   : 3.3V    : 3C        :                
+GPIO1_D[16]                  : AM21      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO1_D[22]                  : AM22      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO0_D[28]                  : AM23      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM24      :        :                   :         : 3B        :                
+VCCIO3B                      : AM25      : power  :                   : 3.3V    : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM26      :        :                   :         : 3A        :                
+VCCIO3A                      : AM27      : power  :                   : 2.5V    : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM28      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM29      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM30      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM31      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM32      :        :                   :         : 3A        :                
+GND                          : AM33      : gnd    :                   :         :           :                
+GPIO0_D[4]                   : AM34      : bidir  : 3.3-V LVTTL       :         : 2A        : Y              
+VCCIO5A                      : AN1       : power  :                   : 1.8V    : 5A        :                
+GND                          : AN2       : gnd    :                   :         :           :                
+DDR2_DQS_p[7]                : AN3       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[57]                  : AN4       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+GND                          : AN5       : gnd    :                   :         :           :                
+DDR2_DM[7]                   : AN6       : output : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[43]                  : AN7       : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+GND                          : AN8       : gnd    :                   :         :           :                
+DDR2_DQS_n[4]                : AN9       : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[33]                  : AN10      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+GND                          : AN11      : gnd    :                   :         :           :                
+DDR2_DQ[27]                  : AN12      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_DM[3]                   : AN13      : output : SSTL-18 Class I   :         : 4C        : Y              
+GND                          : AN14      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN15      :        :                   :         : 4C        :                
+OSC_BB                       : AN16      : input  : 1.8 V             :         : 4C        : Y              
+GND                          : AN17      : gnd    :                   :         :           :                
+OSC_BA                       : AN18      : input  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO1_CLKINp1                : AN19      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GND                          : AN20      : gnd    :                   :         :           :                
+GPIO0_D[18]                  : AN21      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO0_D[23]                  : AN22      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GND                          : AN23      : gnd    :                   :         :           :                
+GPIO0_D[27]                  : AN24      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+GPIO0_D[26]                  : AN25      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+GND                          : AN26      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN27      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN28      :        :                   :         : 3A        :                
+GND                          : AN29      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN30      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN31      :        :                   :         : 3A        :                
+GND                          : AN32      : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN33      :        :                   :         : 3A        :                
+VCCIO2A                      : AN34      : power  :                   : 3.3V    : 2A        :                
+DDR2_DQ[61]                  : AP2       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQS_n[7]                : AP3       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[56]                  : AP4       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[60]                  : AP5       : bidir  : SSTL-18 Class I   :         : 4A        : Y              
+DDR2_DQ[47]                  : AP6       : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[42]                  : AP7       : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DM[5]                   : AP8       : output : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[37]                  : AP9       : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[32]                  : AP10      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[36]                  : AP11      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
+DDR2_DQ[26]                  : AP12      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_DQ[30]                  : AP13      : bidir  : SSTL-18 Class I   :         : 4C        : Y              
+DDR2_BA[2]                   : AP14      : output : SSTL-18 Class I   :         : 4C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP15      :        :                   :         : 4C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP16      :        :                   :         : 4C        :                
+VCCIO4C                      : AP17      : power  :                   : 1.8V    : 4C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP18      :        :                   :         : 3C        :                
+GPIO1_CLKINn1                : AP19      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO1_D[18]                  : AP20      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO0_D[16]                  : AP21      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO0_D[21]                  : AP22      : bidir  : 3.3-V LVTTL       :         : 3C        : Y              
+GPIO1_D[27]                  : AP23      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+GPIO0_D[25]                  : AP24      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+GPIO0_D[24]                  : AP25      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+GPIO1_D[25]                  : AP26      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP27      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP28      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP29      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP30      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP31      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP32      :        :                   :         : 3A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP33      :        :                   :         : 3A        :                
+VCCIO6A                      : B1        : power  :                   : 3.3V    : 6A        :                
+HSTCC_RX_p[22]               : B2        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+GND                          : B3        : gnd    :                   :         :           :                
+HSTCC_RX_p[21]               : B4        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_n[24]               : B5        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+GND                          : B6        : gnd    :                   :         :           :                
+HSTCC_RX_p[19]               : B7        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_p[18]               : B8        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+GND                          : B9        : gnd    :                   :         :           :                
+HSTCC_RX_p[13]               : B10       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_p[12]               : B11       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+GND                          : B12       : gnd    :                   :         :           :                
+HSTCC_RX_p[10]               : B13       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_RX_p[9]                : B14       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+GND                          : B15       : gnd    :                   :         :           :                
+HSTCC_CLKIN_p[1]             : B16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+OSC_BC                       : B17       : input  : 3.3-V LVTTL       :         : 7C        : Y              
+GND                          : B18       : gnd    :                   :         :           :                
+OSC_BD                       : B19       : input  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_CLKIN_p[1]             : B20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+GND                          : B21       : gnd    :                   :         :           :                
+HSTCD_TX_p[11]               : B22       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_p[11]               : B23       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+GND                          : B24       : gnd    :                   :         :           :                
+HSTCD_RX_p[12]               : B25       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_n[13]               : B26       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+GND                          : B27       : gnd    :                   :         :           :                
+HSTCD_RX_p[17]               : B28       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_n[22]               : B29       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+GND                          : B30       : gnd    :                   :         :           :                
+HSTCD_RX_p[21]               : B31       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_p[22]               : B32       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+GND                          : B33       : gnd    :                   :         :           :                
+VCCIO1A                      : B34       : power  :                   : 3.3V    : 1A        :                
+HSTCC_RX_p[1]                : C1        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+GND                          : C2        : gnd    :                   :         :           :                
+HSTCC_RX_n[25]               : C3        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_p[25]               : C4        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_p[24]               : C5        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_n[24]               : C6        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[18]               : C7        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+VCCIO7A                      : C8        : power  :                   : 3.3V    : 7A        :                
+HSTCC_RX_n[20]               : C9        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+VCCIO7B                      : C10       : power  :                   : 3.3V    : 7B        :                
+HSTCC_RX_n[16]               : C11       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_n[15]               : C12       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+VCCIO7C                      : C13       : power  :                   : 3.3V    : 7C        :                
+HSTCC_TX_p[9]                : C14       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_TX_p[28]               : C15       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_RX_n[26]               : C16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_TX_n[28]               : C17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCD_RX_n[28]               : C18       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C19       :        :                   :         : 8C        :                
+HSTCD_TX_p[29]               : C20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_n[26]               : C21       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+VCCIO8C                      : C22       : power  :                   : 3.3V    : 8C        :                
+HSTCD_TX_n[11]               : C23       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_p[15]               : C24       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+VCCIO8B                      : C25       : power  :                   : 3.3V    : 8B        :                
+HSTCD_RX_p[13]               : C26       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_n[16]               : C27       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_p[17]               : C28       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_p[22]               : C29       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_n[23]               : C30       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_p[23]               : C31       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+VCCIO8A                      : C32       : power  :                   : 3.3V    : 8A        :                
+HSTCD_RX_p[1]                : C33       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[1]                : C34       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCC_RX_n[1]                : D1        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_n[0]                : D2        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_p[0]                : D3        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+TEMPDIODEn                   : D4        :        :                   :         :           :                
+VCCIO7A                      : D5        : power  :                   : 3.3V    : 7A        :                
+HSTCC_TX_p[24]               : D6        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_n[20]               : D7        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[19]               : D8        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_p[20]               : D9        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[15]               : D10       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_p[16]               : D11       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_p[15]               : D12       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_TX_n[15]               : D13       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_TX_n[11]               : D14       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_TX_p[10]               : D15       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_RX_p[26]               : D16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_TX_n[29]               : D17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCD_RX_p[28]               : D18       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 8C        :                
+HSTCD_TX_n[29]               : D20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_p[26]               : D21       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_p[28]               : D22       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_n[16]               : D23       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_n[15]               : D24       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_p[15]               : D25       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_n[20]               : D26       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_n[19]               : D27       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_n[20]               : D28       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+VCCIO8A                      : D29       : power  :                   : 3.3V    : 8A        :                
+HSTCD_RX_p[23]               : D30       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_n[23]               : D31       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+NC                           : D32       :        :                   :         :           :                
+HSTCD_RX_p[3]                : D33       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[3]                : D34       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCC_RX_n[4]                : E1        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_p[4]                : E2        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 6A        :                
+TEMPDIODEp                   : E5        :        :                   :         :           :                
+GND                          : E6        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 7A        :                
+HSTCC_TX_p[20]               : E8        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+GND                          : E9        : gnd    :                   :         :           :                
+HSTCC_TX_n[19]               : E10       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[16]               : E11       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+GND                          : E12       : gnd    :                   :         :           :                
+HSTCC_TX_p[11]               : E13       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_RX_n[11]               : E14       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+GND                          : E15       : gnd    :                   :         :           :                
+HSTCC_RX_n[28]               : E16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_TX_p[29]               : E17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+GND                          : E18       : gnd    :                   :         :           :                
+HSTCD_RX_n[29]               : E19       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_p[9]                : E20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+GND                          : E21       : gnd    :                   :         :           :                
+HSTCD_TX_n[28]               : E22       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_p[16]               : E23       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+GND                          : E24       : gnd    :                   :         :           :                
+HSTCD_TX_n[15]               : E25       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_p[20]               : E26       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+GND                          : E27       : gnd    :                   :         :           :                
+HSTCD_RX_n[24]               : E28       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_n[25]               : E29       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+GND                          : E30       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E31       :        :                   :         : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E32       :        :                   :         : 1A        :                
+GND                          : E33       : gnd    :                   :         :           :                
+HSTCD_RX_n[5]                : E34       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCC_RX_p[6]                : F1        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+GND                          : F2        : gnd    :                   :         :           :                
+HSTCC_RX_n[3]                : F3        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_p[3]                : F4        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+GND                          : F5        : gnd    :                   :         :           :                
+HSTCC_TX_p[26]               : F6        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 7A        :                
+HSTCC_TX_n[26]               : F8        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_n[25]               : F9        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+VCCIO7A                      : F10       : power  :                   : 3.3V    : 7A        :                
+HSTCC_TX_p[17]               : F11       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_n[17]               : F12       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_p[17]               : F13       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_p[11]               : F14       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_TX_n[10]               : F15       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_RX_p[28]               : F16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+VCCIO7C                      : F17       : power  :                   : 3.3V    : 7C        :                
+VCCPT                        : F18       : power  :                   : 2.5V    :           :                
+HSTCD_RX_p[29]               : F19       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_n[9]                : F20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_n[10]               : F21       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_p[18]               : F22       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_n[18]               : F23       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_n[19]               : F24       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_p[19]               : F25       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_p[20]               : F26       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_p[24]               : F27       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_p[24]               : F28       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_p[25]               : F29       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+altera_reserved_tck          : F30       : input  : 3.3-V LVTTL       :         : 1A        : N              
+HSTCD_RX_p[0]                : F31       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[0]                : F32       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_p[5]                : F33       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[6]                : F34       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCC_RX_n[6]                : G1        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_p[8]                : G2        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+VCCIO6A                      : G3        : power  :                   : 3.3V    : 6A        :                
+HSTCC_RX_n[2]                : G4        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_p[2]                : G5        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+VCCBAT                       : G6        : power  :                   : 2.5V    :           :                
+NC                           : G7        :        :                   :         :           :                
+HSTCC_TX_p[25]               : G8        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[23]               : G9        : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[22]               : G10       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_n[23]               : G11       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_n[17]               : G12       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_TX_n[16]               : G13       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+VCCIO7C                      : G14       : power  :                   : 3.3V    : 7C        :                
+VREFB7CN0                    : G15       : power  :                   :         : 7C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 7C        :                
+VCCA_PLL_T2                  : G17       : power  :                   : 2.5V    :           :                
+VCCA_PLL_T1                  : G18       : power  :                   : 2.5V    :           :                
+VREFB8CN0                    : G19       : power  :                   :         : 8C        :                
+HSTCD_RX_p[9]                : G20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_RX_p[10]               : G21       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+VCCIO8B                      : G22       : power  :                   : 3.3V    : 8B        :                
+HSTCD_RX_p[18]               : G23       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_p[19]               : G24       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+VCCIO8A                      : G25       : power  :                   : 3.3V    : 8A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G26       :        :                   :         : 8A        :                
+HSTCD_TX_n[24]               : G27       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+altera_reserved_tdi          : G28       : input  : 3.3-V LVTTL       :         : 1A        : N              
+altera_reserved_tdo          : G29       : output : 3.3-V LVTTL       :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G30       :        :                   :         : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G31       :        :                   :         : 1A        :                
+VCCIO1A                      : G32       : power  :                   : 3.3V    : 1A        :                
+HSTCD_RX_p[6]                : G33       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[8]                : G34       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCC_RX_n[8]                : H1        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H2        :        :                   :         : 6A        :                
+HSTCC_RX_n[5]                : H3        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_p[5]                : H4        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H5        :        :                   :         : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H6        :        :                   :         : 6A        :                
+VCCIO6A                      : H7        : power  :                   : 3.3V    : 6A        :                
+VCCPT                        : H8        : power  :                   : 2.5V    :           :                
+GND                          : H9        : gnd    :                   :         :           :                
+VREFB7AN0                    : H10       : power  :                   :         : 7A        :                
+HSTCC_RX_p[23]               : H11       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+GND                          : H12       : gnd    :                   :         :           :                
+VREFB7BN0                    : H13       : power  :                   :         : 7B        :                
+HSTCC_RX_n[14]               : H14       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+GND                          : H15       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H16       :        :                   :         : 7C        :                
+VCC_CLKIN7C                  : H17       : power  :                   : 2.5V    :           :                
+GND                          : H18       : gnd    :                   :         :           :                
+VCCIO8C                      : H19       : power  :                   : 3.3V    : 8C        :                
+HSTCD_TX_n[9]                : H20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+GND                          : H21       : gnd    :                   :         :           :                
+VREFB8BN0                    : H22       : power  :                   :         : 8B        :                
+HSTCD_TX_n[18]               : H23       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+GND                          : H24       : gnd    :                   :         :           :                
+VREFB8AN0                    : H25       : power  :                   :         : 8A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H26       :        :                   :         : 8A        :                
+GND                          : H27       : gnd    :                   :         :           :                
+altera_reserved_tms          : H28       : input  : 3.3-V LVTTL       :         : 1A        : N              
+VCCIO1A                      : H29       : power  :                   : 3.3V    : 1A        :                
+GND                          : H30       : gnd    :                   :         :           :                
+HSTCD_RX_p[2]                : H31       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[2]                : H32       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+GND                          : H33       : gnd    :                   :         :           :                
+HSTCD_RX_p[8]                : H34       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J1        :        :                   :         : 6A        :                
+GND                          : J2        : gnd    :                   :         :           :                
+HSTCC_RX_n[7]                : J3        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_RX_p[7]                : J4        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+GND                          : J5        : gnd    :                   :         :           :                
+HSTCC_TX_n[3]                : J6        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[3]                : J7        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+GND                          : J8        : gnd    :                   :         :           :                
+MSEL1                        : J9        :        :                   :         : 1A        :                
+VCCIO7A                      : J10       : power  :                   : 3.3V    : 7A        :                
+HSTCC_TX_n[23]               : J11       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_n[22]               : J12       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+VCCIO7B                      : J13       : power  :                   : 3.3V    : 7B        :                
+HSTCC_RX_p[14]               : J14       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_RX_p[29]               : J15       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_RX_n[29]               : J16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+VCCD_PLL_T2                  : J17       : power  :                   : 1.1V    :           :                
+VCCD_PLL_T1                  : J18       : power  :                   : 1.1V    :           :                
+HSTCD_CLKOUT_n[1]            : J19       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_n[13]               : J20       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_n[14]               : J21       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_RX_p[14]               : J22       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+VCCIO8A                      : J23       : power  :                   : 3.3V    : 8A        :                
+HSTCD_TX_p[25]               : J24       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_p[26]               : J25       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+VREFB1AN0                    : J26       : power  :                   :         : 1A        :                
+VCCPT                        : J27       : power  :                   : 2.5V    :           :                
+altera_reserved_ntrst        : J28       : input  : 3.3-V LVTTL       :         : 1A        : N              
+HSTCD_TX_p[0]                : J29       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[0]                : J30       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_p[4]                : J31       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[4]                : J32       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_CLKIN_p[0]             : J33       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_CLKIN_n[0]             : J34       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+Button[0]                    : K1        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+Button[1]                    : K2        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+HSTCC_CLKIN_n[0]             : K3        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_CLKIN_p[0]             : K4        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_n[5]                : K5        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[5]                : K6        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_n[2]                : K7        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[2]                : K8        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+MSEL2                        : K9        :        :                   :         : 1A        :                
+MSEL0                        : K10       :        :                   :         : 1A        :                
+HSTCC_RX_n[27]               : K11       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_RX_p[27]               : K12       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[14]               : K13       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_TX_n[14]               : K14       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_TX_n[13]               : K15       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+HSTCC_CLKOUT_p[0]            : K16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_CLKOUT_n[1]            : K17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+VCC_CLKIN8C                  : K18       : power  :                   : 2.5V    :           :                
+HSTCD_CLKOUT_p[1]            : K19       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_TX_p[13]               : K20       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_p[14]               : K21       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_n[14]               : K22       : bidir  : 3.3-V LVTTL       :         : 8B        : Y              
+HSTCD_TX_n[27]               : K23       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_n[25]               : K24       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_n[26]               : K25       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+NC                           : K26       :        :                   :         :           :                
+HSTCD_TX_p[1]                : K27       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[1]                : K28       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_p[4]                : K29       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[4]                : K30       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_p[7]                : K31       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_RX_n[7]                : K32       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K33       :        :                   :         : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K34       :        :                   :         : 1A        :                
+HEX1[5]                      : L1        : output : 3.3-V LVTTL       :         : 6C        : Y              
+HEX1[6]                      : L2        : output : 3.3-V LVTTL       :         : 6C        : Y              
+VCCIO6C                      : L3        : power  :                   : 3.3V    : 6C        :                
+HSTCC_TX_n[8]                : L4        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[8]                : L5        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_n[7]                : L6        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[7]                : L7        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_n[0]                : L8        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[0]                : L9        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+VCCIO6A                      : L10       : power  :                   : 3.3V    : 6A        :                
+NC                           : L11       :        :                   :         :           :                
+GND                          : L12       : gnd    :                   :         :           :                
+HSTCC_TX_p[27]               : L13       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+HSTCC_TX_p[13]               : L14       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+GND                          : L15       : gnd    :                   :         :           :                
+HSTCC_CLKOUT_n[0]            : L16       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+HSTCC_CLKOUT_p[1]            : L17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
+GND                          : L18       : gnd    :                   :         :           :                
+HSTCD_CLKOUT_p[0]            : L19       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+HSTCD_CLKOUT_n[0]            : L20       : bidir  : 3.3-V LVTTL       :         : 8C        : Y              
+GND                          : L21       : gnd    :                   :         :           :                
+HSTCD_TX_p[27]               : L22       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_RX_n[27]               : L23       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+GND                          : L24       : gnd    :                   :         :           :                
+NC                           : L25       :        :                   :         :           :                
+VCCIO1A                      : L26       : power  :                   : 3.3V    : 1A        :                
+GND                          : L27       : gnd    :                   :         :           :                
+HSTCD_TX_p[5]                : L28       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[5]                : L29       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+GND                          : L30       : gnd    :                   :         :           :                
+HSTCD_TX_p[8]                : L31       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[8]                : L32       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+GND                          : L33       : gnd    :                   :         :           :                
+OTG_A[2]                     : L34       : output : 3.3-V LVTTL       :         : 1C        : Y              
+HEX1[4]                      : M1        : output : 3.3-V LVTTL       :         : 6C        : Y              
+GND                          : M2        : gnd    :                   :         :           :                
+Button[3]                    : M3        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+Button[2]                    : M4        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+GND                          : M5        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 6A        :                
+GND                          : M8        : gnd    :                   :         :           :                
+HSTCC_TX_n[1]                : M9        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[1]                : M10       : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+GND                          : M11       : gnd    :                   :         :           :                
+VCCPD7A                      : M12       : power  :                   : 3.3V    : 7A        :                
+HSTCC_TX_n[27]               : M13       : bidir  : 3.3-V LVTTL       :         : 7A        : Y              
+VCCPD7B                      : M14       : power  :                   : 3.3V    : 7B        :                
+GND                          : M15       : gnd    :                   :         :           :                
+VCCPD7C                      : M16       : power  :                   : 3.3V    : 7C        :                
+GND                          : M17       : gnd    :                   :         :           :                
+VCCPD8C                      : M18       : power  :                   : 3.3V    : 8C        :                
+GND                          : M19       : gnd    :                   :         :           :                
+VCCPD8B                      : M20       : power  :                   : 3.3V    : 8B        :                
+GND                          : M21       : gnd    :                   :         :           :                
+VCCPD8A                      : M22       : power  :                   : 3.3V    : 8A        :                
+HSTCD_RX_p[27]               : M23       : bidir  : 3.3-V LVTTL       :         : 8A        : Y              
+HSTCD_TX_p[2]                : M24       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+NC                           : M25       :        :                   :         :           :                
+HSTCD_TX_p[3]                : M26       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[3]                : M27       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[6]                : M28       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_CLKOUT_2               : M29       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M30       :        :                   :         : 1A        :                
+OTG_A[3]                     : M31       : output : 3.3-V LVTTL       :         : 1C        : Y              
+VCCIO1C                      : M32       : power  :                   : 3.3V    : 1C        :                
+OTG_A[5]                     : M33       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[6]                     : M34       : output : 3.3-V LVTTL       :         : 1C        : Y              
+HEX1[3]                      : N1        : output : 3.3-V LVTTL       :         : 6C        : Y              
+TEMP_INTn                    : N2        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+HEX1[2]                      : N3        : output : 3.3-V LVTTL       :         : 6C        : Y              
+HEX1[1]                      : N4        : output : 3.3-V LVTTL       :         : 6C        : Y              
+SD_WPn                       : N5        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 6C        :                
+VCCIO6A                      : N7        : power  :                   : 3.3V    : 6A        :                
+HSTCC_TX_n[6]                : N8        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[6]                : N9        : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_n[4]                : N10       : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+HSTCC_TX_p[4]                : N11       : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+GND                          : N12       : gnd    :                   :         :           :                
+VCCL                         : N13       : power  :                   : 1.1V    :           :                
+GND                          : N14       : gnd    :                   :         :           :                
+VCC                          : N15       : power  :                   : 1.1V    :           :                
+GND                          : N16       : gnd    :                   :         :           :                
+VCC                          : N17       : power  :                   : 1.1V    :           :                
+GND                          : N18       : gnd    :                   :         :           :                
+VCC                          : N19       : power  :                   : 1.1V    :           :                
+GND                          : N20       : gnd    :                   :         :           :                
+VCCL                         : N21       : power  :                   : 1.1V    :           :                
+GND                          : N22       : gnd    :                   :         :           :                
+VCCPD1A                      : N23       : power  :                   : 3.3V    : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N24       :        :                   :         : 1A        :                
+HSTCD_TX_n[2]                : N25       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_n[7]                : N26       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+HSTCD_TX_p[6]                : N27       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+VCCIO1A                      : N28       : power  :                   : 3.3V    : 1A        :                
+OTG_WE_n                     : N29       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_OE_n                     : N30       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[8]                     : N31       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[1]                     : N32       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[4]                     : N33       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[7]                     : N34       : output : 3.3-V LVTTL       :         : 1C        : Y              
+TEMP_DATA                    : P1        : bidir  : 3.3-V LVTTL       :         : 6C        : Y              
+DIP_SW[4]                    : P2        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+HEX1[0]                      : P3        : output : 3.3-V LVTTL       :         : 6C        : Y              
+TEMP_CLK                     : P4        : output : 3.3-V LVTTL       :         : 6C        : Y              
+DIP_SW[1]                    : P5        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 6C        :                
+SD_DAT                       : P7        : bidir  : 3.3-V LVTTL       :         : 6C        : Y              
+SD_CLK                       : P8        : output : 3.3-V LVTTL       :         : 6C        : Y              
+VREFB6AN0                    : P9        : power  :                   :         : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P10       :        :                   :         : 6A        :                
+HSTCC_CLKOUT_2               : P11       : bidir  : 3.3-V LVTTL       :         : 6A        : Y              
+VCCPD6A                      : P12       : power  :                   : 3.3V    : 6A        :                
+GND                          : P13       : gnd    :                   :         :           :                
+VCCL                         : P14       : power  :                   : 1.1V    :           :                
+GND                          : P15       : gnd    :                   :         :           :                
+VCCL                         : P16       : power  :                   : 1.1V    :           :                
+GND                          : P17       : gnd    :                   :         :           :                
+VCCL                         : P18       : power  :                   : 1.1V    :           :                
+GND                          : P19       : gnd    :                   :         :           :                
+VCCL                         : P20       : power  :                   : 1.1V    :           :                
+GND                          : P21       : gnd    :                   :         :           :                
+VCCL                         : P22       : power  :                   : 1.1V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P23       :        :                   :         : 1A        :                
+GND                          : P24       : gnd    :                   :         :           :                
+HSTCD_TX_p[7]                : P25       : bidir  : 3.3-V LVTTL       :         : 1A        : Y              
+VREFB1CN0                    : P26       : power  :                   :         : 1C        :                
+GND                          : P27       : gnd    :                   :         :           :                
+OTG_CS_n                     : P28       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_HC_IRQ                   : P29       : input  : 3.3-V LVTTL       :         : 1C        : Y              
+GND                          : P30       : gnd    :                   :         :           :                
+OTG_A[10]                    : P31       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[11]                    : P32       : output : 3.3-V LVTTL       :         : 1C        : Y              
+GND                          : P33       : gnd    :                   :         :           :                
+OTG_A[9]                     : P34       : output : 3.3-V LVTTL       :         : 1C        : Y              
+DIP_SW[5]                    : R1        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+GND                          : R2        : gnd    :                   :         :           :                
+DIP_SW[3]                    : R3        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+DIP_SW[2]                    : R4        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+GND                          : R5        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 6C        :                
+GND                          : R8        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 6C        :                
+SD_CMD                       : R10       : bidir  : 3.3-V LVTTL       :         : 6C        : Y              
+GND                          : R11       : gnd    :                   :         :           :                
+DIP_SW[0]                    : R12       : input  : 3.3-V LVTTL       :         : 6C        : Y              
+VCC                          : R13       : power  :                   : 1.1V    :           :                
+GND                          : R14       : gnd    :                   :         :           :                
+VCCL                         : R15       : power  :                   : 1.1V    :           :                
+GND                          : R16       : gnd    :                   :         :           :                
+VCCL                         : R17       : power  :                   : 1.1V    :           :                
+GND                          : R18       : gnd    :                   :         :           :                
+VCCL                         : R19       : power  :                   : 1.1V    :           :                
+GND                          : R20       : gnd    :                   :         :           :                
+VCCL                         : R21       : power  :                   : 1.1V    :           :                
+GND                          : R22       : gnd    :                   :         :           :                
+VCCPD1C                      : R23       : power  :                   : 3.3V    : 1C        :                
+OTG_DC_DACK                  : R24       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_HC_DACK                  : R25       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_DC_DREQ                  : R26       : input  : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_DC_IRQ                   : R27       : input  : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_HC_DREQ                  : R28       : input  : 3.3-V LVTTL       :         : 1C        : Y              
+HSTCD_SCL                    : R29       : output : 3.3-V LVTTL       :         : 1C        : Y              
+HSTCD_SDA                    : R30       : bidir  : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[17]                    : R31       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[14]                    : R32       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[13]                    : R33       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OTG_A[12]                    : R34       : output : 3.3-V LVTTL       :         : 1C        : Y              
+DIP_SW[7]                    : T1        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+DIP_SW[6]                    : T2        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+VCCIO6C                      : T3        : power  :                   : 3.3V    : 6C        :                
+HSTCC_SCL                    : T4        : output : 3.3-V LVTTL       :         : 6C        : Y              
+HSTCC_SDA                    : T5        : bidir  : 3.3-V LVTTL       :         : 6C        : Y              
+VCCIO6C                      : T6        : power  :                   : 3.3V    : 6C        :                
+DDR2_SA[1]                   : T7        : output : 3.3-V LVTTL       :         : 6C        : Y              
+DDR2_SCL                     : T8        : output : 3.3-V LVTTL       :         : 6C        : Y              
+DDR2_SDA                     : T9        : bidir  : 3.3-V LVTTL       :         : 6C        : Y              
+VCCIO6C                      : T10       : power  :                   : 3.3V    : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 6C        :                
+VCCPD6C                      : T12       : power  :                   : 3.3V    : 6C        :                
+GND                          : T13       : gnd    :                   :         :           :                
+VCCL                         : T14       : power  :                   : 1.1V    :           :                
+GND                          : T15       : gnd    :                   :         :           :                
+VCCL                         : T16       : power  :                   : 1.1V    :           :                
+GND                          : T17       : gnd    :                   :         :           :                
+VCCL                         : T18       : power  :                   : 1.1V    :           :                
+GND                          : T19       : gnd    :                   :         :           :                
+VCCL                         : T20       : power  :                   : 1.1V    :           :                
+GND                          : T21       : gnd    :                   :         :           :                
+VCC                          : T22       : power  :                   : 1.1V    :           :                
+OTG_RESET_n                  : T23       : output : 3.3-V LVTTL       :         : 1C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T24       :        :                   :         : 1C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T25       :        :                   :         : 1C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T26       :        :                   :         : 1C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T27       :        :                   :         : 1C        :                
+~ALTERA_DATA0~ / RESERVED_INPUT : T28       : input  : 1.8 V             :         : 1C        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T29       :        :                   :         : 1C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T30       :        :                   :         : 1C        :                
+VCCIO1C                      : T31       : power  :                   : 3.3V    : 1C        :                
+OTG_A[15]                    : T32       : output : 3.3-V LVTTL       :         : 1C        : Y              
+OSC1_50                      : T33       : input  : 3.3-V LVTTL       :         : 1C        : Y              
+GND+                         : T34       :        :                   :         : 1C        :                
+GND+                         : U1        :        :                   :         : 6C        :                
+EXT_CLK                      : U2        : input  : 3.3-V LVTTL       :         : 6C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U3        :        :                   :         : 5C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U4        :        :                   :         : 5C        :                
+VCCIO5C                      : U5        : power  :                   : 3.3V    : 5C        :                
+DDR2_SA[0]                   : U6        : output : 3.3-V LVTTL       :         : 6C        : Y              
+VCCA_PLL_R2                  : U7        : power  :                   : 2.5V    :           :                
+VREFB6CN0                    : U8        : power  :                   :         : 6C        :                
+VCCD_PLL_R2                  : U9        : power  :                   : 1.1V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U11       :        :                   :         : 6C        :                
+GND                          : U12       : gnd    :                   :         :           :                
+VCC                          : U13       : power  :                   : 1.1V    :           :                
+GND                          : U14       : gnd    :                   :         :           :                
+VCCL                         : U15       : power  :                   : 1.1V    :           :                
+GND                          : U16       : gnd    :                   :         :           :                
+VCCL                         : U17       : power  :                   : 1.1V    :           :                
+DNU                          : U18       :        :                   :         :           :                
+VCCL                         : U19       : power  :                   : 1.1V    :           :                
+GND                          : U20       : gnd    :                   :         :           :                
+VCCL                         : U21       : power  :                   : 1.1V    :           :                
+GND                          : U22       : gnd    :                   :         :           :                
+GND                          : U23       : gnd    :                   :         :           :                
+GND                          : U24       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U25       :        :                   :         : 1C        :                
+VCCD_PLL_L2                  : U26       : power  :                   : 1.1V    :           :                
+GND                          : U27       : gnd    :                   :         :           :                
+VCCA_PLL_L2                  : U28       : power  :                   : 2.5V    :           :                
+VCCPT                        : U29       : power  :                   : 2.5V    :           :                
+GND                          : U30       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U31       :        :                   :         : 1C        :                
+OTG_A[16]                    : U32       : output : 3.3-V LVTTL       :         : 1C        : Y              
+GND                          : U33       : gnd    :                   :         :           :                
+VCCIO1C                      : U34       : power  :                   : 3.3V    : 1C        :                
+VCCIO5C                      : V1        : power  :                   : 3.3V    : 5C        :                
+GND                          : V2        : gnd    :                   :         :           :                
+HEX0_DP                      : V3        : output : 3.3-V LVTTL       :         : 5C        : Y              
+HEX1_DP                      : V4        : output : 3.3-V LVTTL       :         : 5C        : Y              
+GND                          : V5        : gnd    :                   :         :           :                
+VCCPT                        : V6        : power  :                   : 2.5V    :           :                
+VCCA_PLL_R3                  : V7        : power  :                   : 2.5V    :           :                
+GND                          : V8        : gnd    :                   :         :           :                
+VCCD_PLL_R3                  : V9        : power  :                   : 1.1V    :           :                
+CLK_OUT                      : V10       : output : 3.3-V LVTTL       :         : 5C        : Y              
+GND                          : V11       : gnd    :                   :         :           :                
+GND                          : V12       : gnd    :                   :         :           :                
+GND                          : V13       : gnd    :                   :         :           :                
+VCCL                         : V14       : power  :                   : 1.1V    :           :                
+GND                          : V15       : gnd    :                   :         :           :                
+VCCL                         : V16       : power  :                   : 1.1V    :           :                
+GND                          : V17       : gnd    :                   :         :           :                
+VCCL                         : V18       : power  :                   : 1.1V    :           :                
+GND                          : V19       : gnd    :                   :         :           :                
+VCCL                         : V20       : power  :                   : 1.1V    :           :                
+GND                          : V21       : gnd    :                   :         :           :                
+VCC                          : V22       : power  :                   : 1.1V    :           :                
+GND                          : V23       : gnd    :                   :         :           :                
+OTG_D[21]                    : V24       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[23]                    : V25       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+VCCD_PLL_L3                  : V26       : power  :                   : 1.1V    :           :                
+VREFB2CN0                    : V27       : power  :                   :         : 2C        :                
+VCCA_PLL_L3                  : V28       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V29       :        :                   :         : 2C        :                
+VCCIO1C                      : V30       : power  :                   : 3.3V    : 1C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V31       :        :                   :         : 1C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V32       :        :                   :         : 1C        :                
+GND+                         : V33       :        :                   :         : 2C        :                
+GND+                         : V34       :        :                   :         : 2C        :                
+GND+                         : W1        :        :                   :         : 5C        :                
+OSC2_50                      : W2        : input  : 3.3-V LVTTL       :         : 5C        : Y              
+LEDG[5]                      : W3        : output : 3.3-V LVTTL       :         : 5C        : Y              
+VCCIO5C                      : W4        : power  :                   : 3.3V    : 5C        :                
+SW[0]                        : W5        : input  : 3.3-V LVTTL       :         : 5C        : Y              
+SW[1]                        : W6        : input  : 3.3-V LVTTL       :         : 5C        : Y              
+HEX0[4]                      : W7        : output : 3.3-V LVTTL       :         : 5C        : Y              
+HEX0[3]                      : W8        : output : 3.3-V LVTTL       :         : 5C        : Y              
+SW[2]                        : W9        : input  : 3.3-V LVTTL       :         : 5C        : Y              
+HEX0[2]                      : W10       : output : 3.3-V LVTTL       :         : 5C        : Y              
+SW[3]                        : W11       : input  : 3.3-V LVTTL       :         : 5C        : Y              
+HEX0[0]                      : W12       : output : 3.3-V LVTTL       :         : 5C        : Y              
+VCC                          : W13       : power  :                   : 1.1V    :           :                
+GND                          : W14       : gnd    :                   :         :           :                
+VCCL                         : W15       : power  :                   : 1.1V    :           :                
+GND                          : W16       : gnd    :                   :         :           :                
+VCCL                         : W17       : power  :                   : 1.1V    :           :                
+GND                          : W18       : gnd    :                   :         :           :                
+VCCL                         : W19       : power  :                   : 1.1V    :           :                
+GND                          : W20       : gnd    :                   :         :           :                
+VCCL                         : W21       : power  :                   : 1.1V    :           :                
+GND                          : W22       : gnd    :                   :         :           :                
+VCCPD2C                      : W23       : power  :                   : 3.3V    : 2C        :                
+OTG_D[27]                    : W24       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+VCCIO2C                      : W25       : power  :                   : 3.3V    : 2C        :                
+OTG_D[22]                    : W26       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[25]                    : W27       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W28       :        :                   :         : 2C        :                
+VCCIO2C                      : W29       : power  :                   : 3.3V    : 2C        :                
+OTG_D[24]                    : W30       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[26]                    : W31       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+VCCIO2C                      : W32       : power  :                   : 3.3V    : 2C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W33       :        :                   :         : 2C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W34       :        :                   :         : 2C        :                
+LEDG[2]                      : Y1        : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDG[3]                      : Y2        : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDG[4]                      : Y3        : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDG[7]                      : Y4        : output : 3.3-V LVTTL       :         : 5C        : Y              
+HEX0[5]                      : Y5        : output : 3.3-V LVTTL       :         : 5C        : Y              
+HEX0[6]                      : Y6        : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDB[4]                      : Y7        : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDB[5]                      : Y8        : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDB[6]                      : Y9        : output : 3.3-V LVTTL       :         : 5C        : Y              
+LEDB[7]                      : Y10       : output : 3.3-V LVTTL       :         : 5C        : Y              
+HEX0[1]                      : Y11       : output : 3.3-V LVTTL       :         : 5C        : Y              
+VCCPD5C                      : Y12       : power  :                   : 3.3V    : 5C        :                
+GND                          : Y13       : gnd    :                   :         :           :                
+VCCL                         : Y14       : power  :                   : 1.1V    :           :                
+GND                          : Y15       : gnd    :                   :         :           :                
+VCCL                         : Y16       : power  :                   : 1.1V    :           :                
+GND                          : Y17       : gnd    :                   :         :           :                
+VCCL                         : Y18       : power  :                   : 1.1V    :           :                
+GND                          : Y19       : gnd    :                   :         :           :                
+VCCL                         : Y20       : power  :                   : 1.1V    :           :                
+GND                          : Y21       : gnd    :                   :         :           :                
+VCC                          : Y22       : power  :                   : 1.1V    :           :                
+OTG_D[28]                    : Y23       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+GND                          : Y24       : gnd    :                   :         :           :                
+OTG_D[0]                     : Y25       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[2]                     : Y26       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+GND                          : Y27       : gnd    :                   :         :           :                
+OTG_D[30]                    : Y28       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[29]                    : Y29       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+GND                          : Y30       : gnd    :                   :         :           :                
+OTG_D[6]                     : Y31       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+OTG_D[8]                     : Y32       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              
+GND                          : Y33       : gnd    :                   :         :           :                
+OTG_D[9]                     : Y34       : bidir  : 3.3-V LVTTL       :         : 2C        : Y              

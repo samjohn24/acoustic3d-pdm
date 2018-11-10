@@ -1,0 +1,7 @@
+ To generate a Qsys system for DE1-SOC (Quartus 16.0 or higher on Linux):
+
+  1. Export environment variable:
+
+     $ export QUARTUS_INSTALL_DIR=/opt/altera_lite/16.0/quartus
+
+  2. On ip/ directory, run gen_<IP_NAME>.sh files.

@@ -1,0 +1,130 @@
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/ --output-directory=Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de3/ip/bf_time_pcm/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.sopcinfo --report-file=html:Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.html --report-file=qip:Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de3/ip/bf_time_pcm/synthesis/bf_time_pcm.qip --report-file=cmp:Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.cmp --report-file=svd --system-info=DEVICE_FAMILY="Stratix III" --system-info=DEVICE=EP3SL150F1152C2 --system-info=DEVICE_SPEEDGRADE=2 --component-file=Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --language=VERILOG
+Progress: Loading qsys/bf_time_pcm.qsys
+Progress: Reading input file
+Progress: Adding clk [clock_source 13.0]
+Progress: Parameterizing module clk
+Progress: Adding cpu [altera_nios2_qsys 13.0]
+Progress: Parameterizing module cpu
+Progress: Adding timer [altera_avalon_timer 13.0.1.99.2]
+Progress: Parameterizing module timer
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module jtag_uart
+Progress: Adding sysid [altera_avalon_sysid_qsys 13.0]
+Progress: Parameterizing module sysid
+Progress: Adding onchip_memory [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory
+Progress: Adding mic_if [mic_if 1.0]
+Progress: Parameterizing module mic_if
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: bf_time_pcm.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: bf_time_pcm.sysid: Time stamp will be automatically updated when this component is generated.
+Info: bf_time_pcm: Generating bf_time_pcm "bf_time_pcm" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 7 modules, 23 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_translator_transform: After transform: 15 modules, 50 connections
+Info: merlin_domain_transform: After transform: 30 modules, 135 connections
+Info: merlin_router_transform: After transform: 38 modules, 162 connections
+Info: merlin_traffic_limiter_transform: After transform: 40 modules, 172 connections
+Info: reset_adaptation_transform: After transform: 42 modules, 161 connections
+Info: merlin_network_to_switch_transform: After transform: 57 modules, 193 connections
+Info: limiter_update_transform: After transform: 57 modules, 195 connections
+Info: merlin_mm_transform: After transform: 57 modules, 195 connections
+Info: merlin_interrupt_mapper_transform: After transform: 58 modules, 198 connections
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Warning: bf_time_pcm: "No matching role found for rst_controller_001:reset_out:reset_req (reset_req)"
+Info: cpu: Starting RTL generation for module 'bf_time_pcm_cpu'
+Info: cpu:   Generation command is [exec E:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I E:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I E:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I E:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I E:/altera/13.0sp1/quartus/sopc_builder/bin -I E:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I E:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I E:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -I E:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -- E:/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=bf_time_pcm_cpu --dir=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0001_cpu_gen/ --quartus_dir=E:/altera/13.0sp1/quartus --verilog --config=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0001_cpu_gen//bf_time_pcm_cpu_processor_configuration.pl  --do_build_sim=0    --bogus  ]
+Info: cpu: # 2018.11.10 02:32:43 (*) Starting Nios II generation
+Info: cpu: # 2018.11.10 02:32:43 (*)   Checking for plaintext license.
+Info: cpu: # 2018.11.10 02:32:44 (*)   Plaintext license not found.
+Info: cpu: # 2018.11.10 02:32:44 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2018.11.10 02:32:45 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2018.11.10 02:32:45 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.11.10 02:32:45 (*)   Creating all objects for CPU
+Info: cpu: # 2018.11.10 02:32:45 (*)     Testbench
+Info: cpu: # 2018.11.10 02:32:46 (*)     Instruction decoding
+Info: cpu: # 2018.11.10 02:32:46 (*)       Instruction fields
+Info: cpu: # 2018.11.10 02:32:46 (*)       Instruction decodes
+Info: cpu: # 2018.11.10 02:32:47 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2018.11.10 02:32:47 (*)       Instruction controls
+Info: cpu: # 2018.11.10 02:32:47 (*)     Pipeline frontend
+Info: cpu: # 2018.11.10 02:32:47 (*)     Pipeline backend
+Info: cpu: # 2018.11.10 02:32:53 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.11.10 02:32:58 (*)   Creating encrypted RTL
+Info: cpu: # 2018.11.10 02:33:01 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'bf_time_pcm_cpu'
+Info: cpu: "bf_time_pcm" instantiated altera_nios2_qsys "cpu"
+Info: timer: Starting RTL generation for module 'bf_time_pcm_timer'
+Info: timer:   Generation command is [exec E:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I E:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I E:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I E:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I E:/altera/13.0sp1/quartus/sopc_builder/bin -I E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=bf_time_pcm_timer --dir=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0002_timer_gen/ --quartus_dir=E:/altera/13.0sp1/quartus --verilog --config=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0002_timer_gen//bf_time_pcm_timer_component_configuration.pl  --do_build_sim=0  ]
+Info: timer: Done RTL generation for module 'bf_time_pcm_timer'
+Info: timer: "bf_time_pcm" instantiated altera_avalon_timer "timer"
+Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_jtag_uart'
+Info: jtag_uart:   Generation command is [exec E:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I E:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I E:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I E:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I E:/altera/13.0sp1/quartus/sopc_builder/bin -I E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_jtag_uart --dir=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0003_jtag_uart_gen/ --quartus_dir=E:/altera/13.0sp1/quartus --verilog --config=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0003_jtag_uart_gen//bf_time_pcm_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_jtag_uart'
+Info: jtag_uart: "bf_time_pcm" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: sysid: "bf_time_pcm" instantiated altera_avalon_sysid_qsys "sysid"
+Info: onchip_memory: Starting RTL generation for module 'bf_time_pcm_onchip_memory'
+Info: onchip_memory:   Generation command is [exec E:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I E:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I E:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I E:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I E:/altera/13.0sp1/quartus/sopc_builder/bin -I E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- E:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=bf_time_pcm_onchip_memory --dir=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0005_onchip_memory_gen/ --quartus_dir=E:/altera/13.0sp1/quartus --verilog --config=C:/Users/Sammy/AppData/Local/Temp/alt7845_6591395846324390964.dir/0005_onchip_memory_gen//bf_time_pcm_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory: Done RTL generation for module 'bf_time_pcm_onchip_memory'
+Info: onchip_memory: "bf_time_pcm" instantiated altera_avalon_onchip_memory2 "onchip_memory"
+Info: mic_if: "bf_time_pcm" instantiated mic_if "mic_if"
+Info: cpu_instruction_master_translator: "bf_time_pcm" instantiated altera_merlin_master_translator "cpu_instruction_master_translator"
+Info: cpu_jtag_debug_module_translator: "bf_time_pcm" instantiated altera_merlin_slave_translator "cpu_jtag_debug_module_translator"
+Info: cpu_instruction_master_translator_avalon_universal_master_0_agent: "bf_time_pcm" instantiated altera_merlin_master_agent "cpu_instruction_master_translator_avalon_universal_master_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent: "bf_time_pcm" instantiated altera_merlin_slave_agent "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "bf_time_pcm" instantiated altera_avalon_sc_fifo "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "bf_time_pcm" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "bf_time_pcm" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "bf_time_pcm" instantiated altera_merlin_router "id_router"
+Info: id_router_002: "bf_time_pcm" instantiated altera_merlin_router "id_router_002"
+Info: limiter: "bf_time_pcm" instantiated altera_merlin_traffic_limiter "limiter"
+Info: rst_controller: "bf_time_pcm" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "bf_time_pcm" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "bf_time_pcm" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "bf_time_pcm" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "bf_time_pcm" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_002: "bf_time_pcm" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_002"
+Info: rsp_xbar_mux: "bf_time_pcm" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de3/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "bf_time_pcm" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file Z:/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de3/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: irq_mapper: "bf_time_pcm" instantiated altera_irq_mapper "irq_mapper"
+Info: bf_time_pcm: Done bf_time_pcm" with 26 modules, 90 files, 2542731 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

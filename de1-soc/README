@@ -1,0 +1,5 @@
+ To compile the whole project for DE1-SOC (Quartus 16.0 or higher in Linux):
+
+  1. Setup the correct quartus installation directory
+     on the file compile.sh
+  2. In de1-soc directory, run compile.sh.

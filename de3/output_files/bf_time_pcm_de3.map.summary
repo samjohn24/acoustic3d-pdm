@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Nov 10 02:38:23 2018
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : bf_time_pcm_de3
+Top-level Entity Name : bf_time_pcm_de3
+Family : Stratix III
+Logic utilization : N/A
+    Combinational ALUTs : 21,115
+    Memory ALUTs : 0
+    Dedicated logic registers : 15,024
+Total registers : 15024
+Total pins : 594
+Total virtual pins : 0
+Total block memory bits : 1,343,936
+DSP block 18-bit elements : 4
+Total PLLs : 0
+Total DLLs : 0

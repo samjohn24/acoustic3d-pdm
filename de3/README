@@ -1,0 +1,5 @@
+ To compile the whole project for DE3 (Quartus 13.0sp1 SE on Windows):
+
+  1. Setup the correct quartus installation directory
+     on the file compile.bat
+  2. In de3/ directory, run compile.bat file via Windows Explorer or CMD.

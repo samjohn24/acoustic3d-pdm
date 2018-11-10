@@ -1,0 +1,18 @@
+Fitter Status : Successful - Sat Nov 10 02:45:59 2018
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : bf_time_pcm_de3
+Top-level Entity Name : bf_time_pcm_de3
+Family : Stratix III
+Device : EP3SL150F1152C2
+Timing Models : Final
+Logic utilization : 24 %
+    Combinational ALUTs : 21,181 / 113,600 ( 19 % )
+    Memory ALUTs : 0 / 56,800 ( 0 % )
+    Dedicated logic registers : 14,921 / 113,600 ( 13 % )
+Total registers : 14921
+Total pins : 594 / 744 ( 80 % )
+Total virtual pins : 0
+Total block memory bits : 1,343,936 / 5,630,976 ( 24 % )
+DSP block 18-bit elements : 4 / 384 ( 1 % )
+Total PLLs : 0 / 8 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

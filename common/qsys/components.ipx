@@ -1,0 +1,6 @@
+<library>
+  <message>Loading now from components.ipx</message>
+  <path path="../../../ips/*/qsys_comp/*_hw.tcl" />
+</library>
+
+
