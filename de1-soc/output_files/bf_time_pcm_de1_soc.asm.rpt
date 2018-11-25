@@ -1,5 +1,5 @@
 Assembler report for bf_time_pcm_de1_soc
-Sat Nov 10 02:36:15 2018
+Wed Nov 21 23:57:52 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Nov 10 02:36:15 2018 ;
+; Assembler Status      ; Successful - Wed Nov 21 23:57:52 2018 ;
 ; Revision Name         ; bf_time_pcm_de1_soc                   ;
 ; Top-level Entity Name ; bf_time_pcm_de1_soc                   ;
 ; Family                ; Cyclone V                             ;
@@ -59,6 +59,7 @@ agreement for further details.
 +--------+-------------------------------+---------------+
 ; Vendor ; IP Core Name                  ; License Type  ;
 +--------+-------------------------------+---------------+
+; Altera ; NCO Compiler (6AF7 0014)      ; OpenCore Plus ;
 ; Altera ; Nios II Processor (6AF7 00A2) ; OpenCore Plus ;
 ; Altera ; Signal Tap (6AF7 BCE1)        ; Licensed      ;
 ; Altera ; Signal Tap (6AF7 BCEC)        ; Licensed      ;
@@ -80,8 +81,8 @@ agreement for further details.
 ; Option         ; Setting                                       ;
 +----------------+-----------------------------------------------+
 ; Device         ; 5CSEMA5F31C6                                  ;
-; JTAG usercode  ; 0x078F36CA                                    ;
-; Checksum       ; 0x078F36CA                                    ;
+; JTAG usercode  ; 0x098641C6                                    ;
+; Checksum       ; 0x098641C6                                    ;
 +----------------+-----------------------------------------------+
 
 
@@ -91,16 +92,16 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sat Nov 10 02:35:00 2018
+    Info: Processing started: Wed Nov 21 23:57:06 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off bf_time_pcm_de1_soc -c bf_time_pcm_de1_soc
 Info (115030): Assembler is generating device programming files
 Info (115017): Design contains a time-limited core -- only a single, time-limited programming file can be generated
 Warning (12914): The file, /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.sopcinfo, is not embedded into sof file as expected.  Some tools, such as System Console, may not function fully.
 Warning (210042): Can't convert time-limited SOF into POF, HEX File, TTF, or RBF
 Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1732 megabytes
-    Info: Processing ended: Sat Nov 10 02:36:16 2018
-    Info: Elapsed time: 00:01:16
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 1781 megabytes
+    Info: Processing ended: Wed Nov 21 23:57:53 2018
+    Info: Elapsed time: 00:00:47
+    Info: Total CPU time (on all processors): 00:00:40
 
 

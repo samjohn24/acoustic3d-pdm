@@ -11,6 +11,7 @@ export PROJ_NAME=bf_time_pcm_de1_soc
 cd ip
 source gen_bf_time_pcm.sh
 source gen_ALTCLKCTRL.sh
+source gen_ALT_NCO.sh
 cd ..
 
 # Create project

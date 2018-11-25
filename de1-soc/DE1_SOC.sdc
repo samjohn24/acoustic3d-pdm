@@ -15,7 +15,12 @@ create_clock -period "27 MHz"  -name tv_27m [get_ports TD_CLK27]
 create_clock -period "100 MHz" -name clk_dram [get_ports DRAM_CLK]
 # AUDIO : 48kHz 384fs 32-bit data
 create_clock -period "18.432 MHz" -name clk_audxck [get_ports AUD_XCK]
-create_clock -period "1.536 MH" -name clk_audbck [get_ports AUD_BCLK]
+
+#create_clock -period "1.536 MHz" -name clk_audbck [get_ports AUD_BCLK]
+
+# I2S mode
+create_generated_clock -name clk_audbck -source [get_ports AUD_XCK] [get_ports AUD_BCLK]
+
 # VGA : 640x480@60Hz
 #create_clock -period "25.18 MHz" -name clk_vga [get_ports VGA_CLK]
 # VGA : 800x600@60Hz
