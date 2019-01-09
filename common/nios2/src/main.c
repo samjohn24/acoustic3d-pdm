@@ -1,79 +1,48 @@
-// --------------------------------------------------------------------
-// Copyright (c) 2010 by Terasic Technologies Inc. 
-// --------------------------------------------------------------------
-//
-// Permission:
-//
-//   Terasic grants permission to use and modify this code for use
-//   in synthesis for all Terasic Development Boards and Altera Development 
-//   Kits made by Terasic.  Other use of this code, including the selling 
-//   ,duplication, or modification of any portion is strictly prohibited.
-//
-// Disclaimer:
-//
-//   This VHDL/Verilog or C/C++ source code is intended as a design reference
-//   which illustrates how these types of functions can be implemented.
-//   It is the user's responsibility to verify their design for
-//   consistency and functionality through the use of formal
-//   verification methods.  Terasic provides no warranty regarding the use 
-//   or functionality of this code.
-//
-// --------------------------------------------------------------------
-//           
-//                     Terasic Technologies Inc
-//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
-//                     HsinChu County, Taiwan
-//                     302
-//
-//                     web: http://www.terasic.com/
-//                     email: support@terasic.com
-//
-// --------------------------------------------------------------------
+// =============================================================================
+// FILE: main.c
+// AUTHOR: Sammy Carbajal
+// =============================================================================
+// PURPOSE: 
+//   Time-domain beamformer system
+// =============================================================================
+// HUMAN MACHINE INTERFACE:
+//   KEY[0]: Hardware reset.
+//   SW[9]:  Enable Microphone Interface.
+//   SW[8]:  Enable Audio CODEC.
+//   SW[7]:  Enable PWM Controller. Operation keys:
+//   SW[2]:  PWM Controller Debug Mode.
+// 	       KEY[1]: Select channel (0 or 1).
+// 	       KEY[2]: Right.
+// 	       KEY[3]: Left.
+//   SW[1]:  AUDIO CODEC Debug Mode.
+//             KEY[1]: Select channel right or left.
+//             KEY[2]: Channel number down.
+//             KEY[3]: Channel number up.
+//   SW[0]:  Microphone Array Test Sequence.
+// =============================================================================
+// CONFIGURATION:
+//     SDRAM: used to store record audio signal
+//     on-chip memory: used to store Nios II program
+//     MIC_IF: used to interface with MEMS microphones.
+//     PWM_CTRL: used to control servomotors.
+// =============================================================================
+// COMPATIBILiTY:
+//     Quartus 16.0    - DE1_SoC Board
+//     Quartus 13.0sp1 - DE3 Board (AUDIO CODEC not supported)
+// =============================================================================
 
-/*
- * Function:
- *      Audio record and Play
- * 
- * Human Machine Interface:
- *      KEY3: Record Start/Stop (Auto Stop when buffer is full)
- *      KEY2: Play Start/Stop (Audo Stop when no data to play)
- *      SEG7: Display the duration of recording/playing
- *      LED:  Display the singal strength.
- *      SW0:  Audio Source Selection: DOWN-->MIC, UP-->LINE-IN
- *      SW1:  MIC Boost Control when audio source is MIC. DOWN-->BOOST OFF UP-->BOSST ON
- *      SW2:  Zero-Cross detect for Playing: DOWN-->OFF, UP-->ON
- *      SW5/SW4/SW3: Sample Rate Control: 
- *                    DOWN/DOWN/DOWN-->96K 
- *                    DOWN/DOWN/UP->48K,
- *                    DOWN/UP/DOWN->44.1K, 
- *                    DOWN/UP/UP->32K,
- *                    UP/DOWN/DOWN->8K
- * 
- * CONFIGURATION:
- *      SDRAM: used to store record audio signal
- *      on-chip memory: used to store Nios II program
- * 
- * Revision:
- *      V1.0, 11/21/2007, init by Richard.
- *      V1.01 21/5 /2010  
- * 
- * Compatibility:
- *      Quartus 13.0
- *      DE1_SoC Board
- */
-
-//#include "my_includes.h"
 #include <stdio.h>
 #include <io.h>
 #include "system.h"
 #include "alt_types.h"
+#include "altera_avalon_pio_regs.h" //IOWR_ALTERA_AVALON_PIO_DATA
 #include "AUDIO_SUBSYS_HAL.h"
+#include "AUDIO_HAL.h"
 #include "LED.h"
 #include "SEG7_HAL.h"
 #include "MIC_IF_HAL.h"
-//#include "AUDIO_HAL.h"
+#include "PWM_CTRL_HAL.h"
 #include <math.h>
-
 
 #ifdef DEBUG_APP
     #define APP_DEBUG(x)    DEBUG(x)
@@ -81,21 +50,42 @@
     #define APP_DEBUG(x)
 #endif
 
+#define IORD_SW IORD_ALTERA_AVALON_PIO_DATA(SW_BASE)
 
-///////////////////////////////////////////////////////////////////////////////
-//////////// Internal function prototype & data structure /////////////////////
-///////////////////////////////////////////////////////////////////////////////
-//================= internal function prototype & data structure definit =====
-#define RECORD_BUTTON   0x08
-#define PLAY_BUTTON     0x04
+#define LEFT_BUTTON     0x08
+#define RIGHT_BUTTON    0x04
+#define SELECT_BUTTON    0x02
+
+#define TEST_MIC_ARRAY_SW      0x01
+#define TEST_AUDIO_SUBSYS_SW   0x01<<1
+#define TEST_PWM_CTRL_SW       0x01<<2
+
+#define INIT_MIC_IF_SW         0x01<<9
+#define INIT_AUDIO_SUBSYS_SW   0x01<<8
+#define INIT_PWM_CTRL_SW       0x01<<7
+
+#define MIC_IF_INIT_ENABLED          INIT_MIC_IF_SW & IORD_SW
+#define AUDIO_SUBSYS_INIT_ENABLED    INIT_AUDIO_SUBSYS_SW & IORD_SW
+#define PWM_CTRL_INIT_ENABLED        INIT_PWM_CTRL_SW & IORD_SW
+
 #define PLAYRING_BUTTON 0x02
 #define RECORD_BLOCK_SIZE   250    // ADC FIFO: 512 byte
 #define PLAY_BLOCK_SIZE     250    // DAC FIFO: 512 byte
 #define MAX_TRY_CNT         1024
 #define USE_SDRAM_FOR_DATA
 #define NUM_CH 		32
+#define PWM_PERIOD 1000000             // 20ms @ 50MHz
+#define PWM_STEP   0.002*PWM_PERIOD    // 20ms*0.005  = 0.1ms
+#define PWM_MAX    0.125*PWM_PERIOD    // 20ms*0.125  = 2.5ms
+#define PWM_MIN    0.025*PWM_PERIOD    // 20ms*0.025  = 0.5ms
 
-#define FFTPTS_1D  7 // 2^7 = 128
+#define MAX_S16 0x8000   // 2^15
+#define NUM_PWR_SAMP 32  // 2^5
+#define MAX_POWER MAX_S16*NUM_PWR_SAMP //2^20
+#define MAX_POWER_SHIFT 20 //clog2(MAX_POWER) 
+#define NUM_POWER_LEDS 10
+
+#define MIC_TEST_TIME 2 // in seconds
 
 #ifndef USE_SDRAM_FOR_DATA
     #define BUF_SAMPLE_NUM     (96000*5)  // 5 second @ 96K
@@ -103,118 +93,97 @@
     #define BUF_SAMPLE_NUM     (2)  // 0.5 second @ 96K
 #endif 
 
-# define MAX_S16 0x8000   // 2^15
-# define NUM_PWR_SAMP 32  // 2^5
-# define MAX_POWER MAX_S16*NUM_PWR_SAMP //2^20
-# define MAX_POWER_SHIFT 20 //clog2(MAX_POWER) 
-# define NUM_POWER_LEDS 10
+// ============================================
+//              Function Prototypes 
+// ============================================
 
-//void button_monitor_isr(void* context, alt_u32 id);
-//bool button_monitor_start(volatile alt_u32 *pPressedMask);
-//bool init_audio(AUDIO_FUNC audio_func);
-//void display_time_elapsed(alt_u32 sample_num);
+void button_monitor_isr(void* context, alt_u32 id);
+bool button_monitor_start(volatile alt_u32 *pPressedMask);
 
-// global variable
-//int record_sample_rate;
+bool MIC_IF_enabled = FALSE;
+bool AUDIO_SUBSYS_enabled = FALSE;
+bool PWM_CTRL_enabled = FALSE;
 
-/*
-// ui config
-bool ui_is_mic_boost(void);
-bool ui_is_mic_record(void);
-bool ui_is_dac_zero_cross(void);
-int  ui_get_sample_rate(void);
+// ============================================
+//       Internal Function Implementation 
+// ============================================
 
-
-///////////////////////////////////////////////////////////////////////////////
-//////////// Internal function implement(body) ////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-bool ui_is_mic_record(void){
-    bool bMicRecord;
-    bMicRecord = (IORD(SW_BASE, 0) & 0x01)?FALSE:TRUE;
-    return bMicRecord;    
+bool ui_is_test_pwm_ctrl_sw_enabled(void){
+    bool bEnabled;
+    bEnabled = (IORD(SW_BASE, 0) & TEST_PWM_CTRL_SW)?TRUE:FALSE;
+    return bEnabled;      
 }
 
-bool ui_is_mic_boost(void){
-    bool bMicBoost;
-    bMicBoost = (IORD(SW_BASE, 0) & (0x01 << 1))?TRUE:FALSE;
-    return bMicBoost;    
+void button_monitor_isr(void* context, alt_u32 id){
+    volatile alt_u32* pPressedMask = (volatile alt_u32*)context;
+    *pPressedMask |= IORD_ALTERA_AVALON_PIO_EDGE_CAP(KEY_BASE) & 0x0F;  // 4-button 
+    
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(KEY_BASE,0); 
 }
 
-bool ui_is_dac_zero_cross(void){
-    bool bZeroCross;
-    bZeroCross = (IORD(SW_BASE, 0) & (0x01 << 2))?TRUE:FALSE;
-    return bZeroCross;      
+bool button_monitor_start(volatile alt_u32 *pPressedMask){
+    bool bSuccess = TRUE;
+    // enable interrupt
+    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(KEY_BASE, 0x0F); // 4-button
+    
+    // Reset the edge catpure register
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(KEY_BASE,0); 
+    
+    // register IRQ
+    if (bSuccess && (alt_irq_register(KEY_IRQ, (void *)pPressedMask, button_monitor_isr) != 0)){
+        printf("[SW-MONITOR]register button IRQ fail\r\n");
+        bSuccess = FALSE;
+    }
+    
+    return bSuccess;        
 }
 
-int ui_get_sample_rate(void){
-    int sample_rate = 96000;
-    alt_u32 mask;
-    mask = IORD(SW_BASE, 0);
-    mask = (mask >> 3) & 0x07;
-    if (mask == 1)
-        sample_rate = 48000;
-    else if (mask == 2)
-        sample_rate = 44100;
-    else if (mask == 3)
-        sample_rate = 32000;
-    else if (mask == 4)
-        sample_rate = 8000;
-    return sample_rate;      
-} 
-*/
+void switch_monitor_isr(void* context, alt_u32 id){
+    volatile alt_u32* pPressedMask = (volatile alt_u32*)context;
+    *pPressedMask |= IORD_ALTERA_AVALON_PIO_EDGE_CAP(SW_BASE) & 0x03FF;  // 4-switch 
+    
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(SW_BASE,0); 
+}
 
-//void button_monitor_isr(void* context, alt_u32 id){
-//    volatile alt_u32* pPressedMask = (volatile alt_u32*)context;
-//    *pPressedMask |= IORD_ALTERA_AVALON_PIO_EDGE_CAP(KEY_BASE) & 0x0F;  // 4-button 
-//    
-//    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(KEY_BASE,0); 
-//}
-
-//bool button_monitor_start(volatile alt_u32 *pPressedMask){
-//    bool bSuccess = TRUE;
-//    // enable interrupt
-//    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(KEY_BASE, 0x0F); // 4-button
-//    
-//    // Reset the edge catpure register
-//    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(KEY_BASE,0); 
-//    
-//    // register IRQ
-//    if (bSuccess && (alt_irq_register(KEY_IRQ, (void *)pPressedMask, button_monitor_isr) != 0)){
-//        printf("[SW-MONITOR]register button IRQ fail\r\n");
-//        bSuccess = FALSE;
-//    }
-//    
-//    return bSuccess;        
-//}
+bool switch_monitor_start(volatile alt_u32 *pPressedMask){
+    bool bSuccess = TRUE;
+    // enable interrupt
+    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(SW_BASE, 0x03FF); // 4-switch
+    
+    // Reset the edge catpure register
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(SW_BASE,0); 
+    
+    // register IRQ
+    if (bSuccess && (alt_irq_register(SW_IRQ, (void *)pPressedMask, switch_monitor_isr) != 0)){
+        printf("[SW-MONITOR]register switch IRQ fail\r\n");
+        bSuccess = FALSE;
+    }
+    
+    return bSuccess;        
+}
 
 void MIC_IF_Init() {
     int i;
     for(i=0;i<NUM_CH;i++)
         MIC_IF_ChannelEnable(i);
     MIC_IF_Saturation(TRUE);
-    //MIC_IF_Saturation(FALSE);
     MIC_IF_RoundOff(TRUE);
-    //MIC_IF_CICOSR(13);
-    //MIC_IF_ShiftRightOut(0);
     MIC_IF_CICOSR(51);      // pdm_clk/f_out -1 (pdm_clk=2.5MHz, fout=48KHz)
-    //MIC_IF_ShiftRightOut(10);
     MIC_IF_ShiftRightOut(11);
-    //MIC_IF_ClockDivider(7);
-    //MIC_IF_ClockDivider(39); // 2*(osc_clk/pdm_clk)-1 (osc_clk = 50MHz, pdm_clk=2.5MHz) 
     MIC_IF_ClockDivider(9); // pdm_clk = osc_clk/(2*(clk_div+1))(osc_clk = 50MHz, pdm_clk=2.5MHz) 
     MIC_IF_DisableAvalonST(TRUE);
     MIC_IF_Enable();
-    //MIC_IF_ClearDataReady();
+    printf("PDM Microphone Initialized\r\n");
+
+    printf("[MIC_IF] CTRL_1: %#010x \n", MIC_IF_GET(MIC_IF_CTRL_1_REG_ADDR));
+    printf("[MIC_IF] CTRL_2: %#010x \n", MIC_IF_GET(MIC_IF_CTRL_2_REG_ADDR));
+    printf("[MIC_IF] CTRL_3: %#010x \n", MIC_IF_GET(MIC_IF_CTRL_3_REG_ADDR));
+    printf("[MIC_IF] CTRL_4: %#010x \n", MIC_IF_GET(MIC_IF_CTRL_4_REG_ADDR));
+    printf("[MIC_IF] STATUS: %#010x \n", MIC_IF_GET(MIC_IF_STATUS_REG_ADDR));
+
+    for (i = 0; i< NUM_CH ; i++)
+      printf("[MIC_IF] DATA_%d:  %#010x \n", i, MIC_IF_GetData(i));
 }
-
-
-
-//void display_time_elapsed(alt_u32 sample_num){
-//    // assume sample rate is 48K
-//    alt_u32 time;
-//    time = sample_num * 100 / record_sample_rate;
-//    SEG7_Decimal(time, 0x04);
-//}
 
 void show_power(alt_16 sample){
     static alt_u32 sum = 0;
@@ -230,57 +199,65 @@ void show_power(alt_16 sample){
     }
 }
 
+bool PWM_CTRL_Init(void){
+  bool bSuccess =  TRUE;
+
+  PWM_CTRL_SetCounter(PWM_PERIOD-1); // @50MHz, 20ms period
+  PWM_CTRL_SetChDuty(0, PWM_MIN); // @50MHz, 20ms period
+  PWM_CTRL_SetChDuty(1, PWM_MIN); // @50MHz, 20ms period
+  
+  PWM_CTRL_SetChEnable(0x03); // Enable 2 channels
+
+  return bSuccess;
+}
+
 
 bool init(void){
     bool bSuccess = TRUE;
     
     SEG7_Clear();
 
-
-    // prepare    
-    if (!AUDIO_InitFunc(EXTERNAL_PLAY, RATE_ADC48K_DAC48K)){
-    //if (!AUDIO_InitFunc(LINEOUT_PLAY, RATE_ADC48K_DAC48K)){
-        printf("Audio Init Error\r\n");
-        bSuccess = FALSE;
+    if (AUDIO_SUBSYS_INIT_ENABLED) {
+      if (!AUDIO_InitFunc(LINEOUT_PLAY, RATE_ADC48K_DAC48K)){
+      //if (!AUDIO_InitFunc(EXTERNAL_PLAY, RATE_ADC48K_DAC48K)){
+          printf("Audio Init Error\r\n");
+          bSuccess = FALSE;
+      }
+      AUDIO_SUBSYS_enabled = TRUE;
+      printf("Audio CODEC Init: Succesfull.\n\n");
     }
 
-    MIC_IF_Init();
-    printf("PDM Microphone Initialized\r\n");
+    if (PWM_CTRL_INIT_ENABLED) {
+      while(!PWM_CTRL_Init());
+      PWM_CTRL_enabled = TRUE;
+      printf("PWM Controller Init: Succesfull.\n\n");
+    }
+
+    if (MIC_IF_INIT_ENABLED) {
+      MIC_IF_Init();
+      MIC_IF_enabled = TRUE;
+      printf("Microphone Interface Init: Succesfull.\n\n");
+    }
         
     return bSuccess;
 }
 
-//void dump_record_data(alt_u32 *pData, alt_u32 len){
-//    short sample_l, sample_r, sample_max = 0;
-//    alt_u32 data;
-//    int i;
-//    //return ;
-//    for(i=0;i<len;i++){
-//        data = *pData++;
-//        sample_l = (short)((data >> 16) & 0xFFFF); 
-//        sample_r = (short)(data & 0xFFFF);
-//        //printf("[%d]%d/%d\n", i, sample_l, sample_r);
-//        if (sample_l > 0 && sample_max <  sample_l)
-//            sample_max = sample_l;
-//        if (sample_l < 0 && sample_max <  -sample_l)
-//            sample_max = -sample_l;
-//        if (sample_r > 0 && sample_max <  sample_r)
-//            sample_max = sample_r;
-//        if (sample_r < 0 && sample_max <  -sample_r)
-//            sample_max = -sample_r;
-//    }
-//    printf("max=%d\n", sample_max);
-//}
-
-
-const char szMenu[][128] = {
-    "================ MIC_IF TEST ===============\n",
+const char szMenu[][512] = {
+    "=========== TIME-DOMAIN BEAMFORMER SYSTEM =============\n",
     "Operation guide:\n",
-    "  KEY0: Reset.\n",
-    "  Status Information:\n",    
-    "  LED[7:0]:  Display audio singal strength.\n",
-    "  LED[8]:  Display audio signal strength.\n",
-    "  LED[9]:  Display if MIC_IF is running.\n",
+    "  KEY[0]: Hardware reset\n"
+    "  SW[9]:  Enable Microphone Interface\n"
+    "  SW[8]:  Enable Audio CODEC\n"
+    "  SW[7]:  Enable PWM Controller\n" 
+    "  SW[2]:  PWM Controller Debug Mode\n"
+    "            KEY[1]: Select channel (0 or 1)\n"
+    "            KEY[2]: Right\n"
+    "            KEY[3]: Left\n"
+    "  SW[1]:  AUDIO CODEC Debug Mode\n"
+    "            KEY[1]: Select channel right or left\n"
+    "            KEY[2]: Channel number down\n"
+    "            KEY[3]: Channel number up\n"
+    "  SW[0]:  Microphone Array Test Sequence\n"
     "\n\n"
 };
 
@@ -301,7 +278,8 @@ alt_u32 listen_100ms (alt_u8 ch_tested) {
        
        ch_data = (alt_16) MIC_IF_GetData(ch_tested);	
 
-       power += (ch_data >= 0) ? ch_data : -ch_data;
+       //power += (ch_data >= 0) ? ch_data : -ch_data;
+       power += ch_data * ch_data;
        
        show_power(ch_data);
        
@@ -312,10 +290,9 @@ alt_u32 listen_100ms (alt_u8 ch_tested) {
        cnt++;
     }
 
-    return power >> 17;
+    //return power >> 17;
+    return power >> 30;
 }
-
-
 
 void microphone_test(void){
   alt_u64 pwrh;
@@ -327,6 +304,8 @@ void microphone_test(void){
   bool ch_status[NUM_CH];
   alt_u8 ch_ok = 0;
 
+  // Enable external MUX with NCO @ 1KHz
+  AUDIO_ENABLE_EXT_MUX();
 
   for (ch_tested = 0; ch_tested < NUM_CH; ch_tested++) {
        
@@ -338,7 +317,7 @@ void microphone_test(void){
     pwrh = 0;
     cnt = 0;
 
-    while (cnt < 20){ // 2s (20*100ms)
+    while (cnt < MIC_TEST_TIME*10){ // 2s (20*100ms)
 
        pwrh_tmp = listen_100ms(ch_tested);
        pwrh += pwrh_tmp;
@@ -356,7 +335,7 @@ void microphone_test(void){
     pwrl = 0;
     cnt = 0;
 
-    while (cnt < 20){ // 2s (20*100ms)
+    while (cnt < MIC_TEST_TIME*10){ // 2s (20*100ms)
 
        pwrl_tmp = listen_100ms(ch_tested);
        pwrl += pwrl_tmp;
@@ -366,7 +345,6 @@ void microphone_test(void){
        cnt++;
     }
 
-    //AUDIO_DacEnableSoftMute(TRUE);
     printf("\t Mic %d, power low : %d\n", ch_tested, pwrl);
 
     // Result
@@ -392,29 +370,33 @@ void microphone_test(void){
 
 }
 
+// ============================================
+//               Main Function
+// ============================================
+
 int main()
 {
-    //typedef enum{
-    //    ST_STANDY,
-    //    ST_RECODING,
-    //    ST_PLAYING
-    //}STATE;
-    //STATE state = ST_STANDY;
-    //volatile alt_u32 button_mask=0;
-    //bool bRecordPressed, bPlayPressed, bError = FALSE;
+    volatile alt_u32 button_mask=0;
+    volatile alt_u32 switch_mask=0;
+    bool bLeftPressed, bRightPressed, bSelectPressed;
+    bool bChannelSelected = 0;
+
+    bool bMicArrayTstEnabled = 0;
+    bool bPwmCtrlTstEnabled = 0;
+    bool bAudioSubsysTstEnabled = 0;
     bool bError = FALSE;
+
     alt_u32 *pBuf, data, try_cnt, buf_sample_size;
-    //alt_u32 *pBuf, *pPlaying, *pRecording, RecordLen, PlayLen, data, try_cnt, buf_sample_size;
-    alt_16 ch_right, ch_left;
-    //alt_u16 ch_right, ch_left;
-    //alt_u32 energy_l, energy_h;
-    //alt_u16 angle_factor;
+
+    alt_16 ch_right, ch_left, ch_mean;
+    alt_16 ch_right_num = 0, ch_left_num = 0;
+
+    alt_u32 duty_val = 0;
     
     show_menu();    
 
     if (!init())
         return 0;
-        
     
     #ifdef USE_SDRAM_FOR_DATA
         pBuf = (alt_u32 *)SDRAM_BASE;
@@ -430,71 +412,176 @@ int main()
         }
     #endif    
 
-    //button_monitor_start(&button_mask);  // button IRQ
-    printf("ready\n");
-    
-    
-    // test
-    //record_sample_rate = ui_get_sample_rate(); 
-    //RecordLen = buf_sample_size;
-    //
-    //AUDIO_FifoClear();
+    button_monitor_start(&button_mask);  // button IRQ
+    switch_monitor_start(&switch_mask);  // switch IRQ
 
-    //pPlaying = pBuf;
-    //PlayLen = 0;
-    //angle_factor = 0;
-
-    //AUDIO_DacEnableSoftMute(TRUE);
-
-
-
-    printf("[MIC_IF] CTRL_1: %#010x \n", MIC_IF_GET(MIC_IF_CTRL_1_REG_ADDR));
-    printf("[MIC_IF] CTRL_2: %#010x \n", MIC_IF_GET(MIC_IF_CTRL_2_REG_ADDR));
-    printf("[MIC_IF] CTRL_3: %#010x \n", MIC_IF_GET(MIC_IF_CTRL_3_REG_ADDR));
-    printf("[MIC_IF] STATUS: %#010x \n", MIC_IF_GET(MIC_IF_STATUS_REG_ADDR));
-
-
-    int i;
-    for (i = 0; i< NUM_CH ; i++)
-      printf("[MIC_IF] DATA_%d:  %#010x \n", i, MIC_IF_GetData(i));
-	
     // infinite loop
     printf("Finished initialization.\n");
 
-
-    microphone_test();
-
-    //AUDIO_DacEnableSoftMute(FALSE);
-
-
     while(1){
+        bPwmCtrlTstEnabled = (TEST_PWM_CTRL_SW & IORD_SW)?TRUE:FALSE;
+        bMicArrayTstEnabled = (switch_mask & TEST_MIC_ARRAY_SW & IORD_SW)?TRUE:FALSE;
+        bAudioSubsysTstEnabled = (TEST_AUDIO_SUBSYS_SW & IORD_SW)?TRUE:FALSE;
+
+	if(bMicArrayTstEnabled & MIC_IF_enabled){
+          printf("\n============================================\n");
+          printf("== Microphone Array Test Sequence (SW[0]) ==\n");
+          printf("============================================\n");
+    	  microphone_test();
+	  switch_mask = 0;
+	}
+	else if (bAudioSubsysTstEnabled & AUDIO_SUBSYS_enabled & MIC_IF_enabled){
+	  if (switch_mask & TEST_AUDIO_SUBSYS_SW){
+             printf("\n============================================\n");
+             printf("====== Audio CODEC Debug Mode (SW[1]) ======\n");
+             printf("============================================\n");
+             printf("Operation guide:\n");
+             printf("  KEY[0]: Reset.\n");
+             printf("  KEY[1]: Select channel right or left.\n");
+             printf("  KEY[2]: Channel number down.\n");
+             printf("  KEY[3]: Channel number up.\n");
+             printf("============================================\n");
+             printf("\n\n");
+ 	     // Disable external MUX 
+  	     AUDIO_DISABLE_EXT_MUX();
+
+	     switch_mask = 0;
+	  }
+
+          bLeftPressed = (button_mask & LEFT_BUTTON)?TRUE:FALSE;
+          bRightPressed = (button_mask & RIGHT_BUTTON)?TRUE:FALSE;
+          bSelectPressed = (button_mask & SELECT_BUTTON)?TRUE:FALSE;
+
+	  if(bSelectPressed){
+	    bChannelSelected = !bChannelSelected;
+	    if (bChannelSelected)
+	       printf("Channel Selected: Right / num: %d\n", ch_right_num);
+	    else
+	       printf("Channel Selected: Left / num: %d\n", ch_left_num);
+		
+	    button_mask = 0;
+	  }
+
+	  if(bLeftPressed){
+	    if (bChannelSelected)
+	      ch_right_num += 1;
+	    else
+	      ch_left_num += 1;
+
+	    if (ch_right_num >= NUM_CH)
+	       ch_right_num = 0;
+
+	    if (ch_left_num >= NUM_CH)
+	       ch_left_num = 0;
+
+	    if (bChannelSelected)
+	       printf("Right Channel: %d\n", ch_right_num);
+	    else
+	       printf("Left Channel: %d\n", ch_left_num);
+	    button_mask = 0;
+	  }
+
+	  if(bRightPressed){
+	    if (bChannelSelected)
+	      ch_right_num -= 1;
+	    else
+	      ch_left_num -= 1;
+
+	    if (ch_right_num < 0)
+	       ch_right_num = NUM_CH-1;
+
+	    if (ch_left_num < 0)
+	       ch_left_num = NUM_CH-1;
+
+	    if (bChannelSelected)
+	       printf("Right Channel: %d\n", ch_right_num);
+	    else
+	       printf("Left Channel: %d\n", ch_left_num);
+	    button_mask = 0;
+	  }
+
+	  try_cnt = 0;                
+	  while (!AUDIO_DacFifoNotFull() && try_cnt < MAX_TRY_CNT){  // wait while full
+	      try_cnt++;
+	  }    
+
+	  if (try_cnt >= MAX_TRY_CNT){
+	      bError = TRUE;
+	      printf("Error!.");
+	      break;
+	  }    
+
+	  while(!MIC_IF_DataReady());
+	  
+	  ch_left  = MIC_IF_GetData(ch_left_num);	
+	  ch_right = MIC_IF_GetData(ch_right_num);	
+
+    	  //AUDIO_DacFifoSetData(ch_left, ch_right);  
+    	  AUDIO_DacFifoSetData(ch_left, ch_left);  
+	  ch_mean = (ch_left + ch_right)/2;
+
+    	  show_power(ch_left);
+    	  //show_power(ch_mean);
+
+    	  SEG7_SignedInteger(ch_left);
+    	  //SEG7_SignedInteger(ch_mean);
 	
-	//try_cnt = 0;                
-	//while (!AUDIO_DacFifoNotFull() && try_cnt < MAX_TRY_CNT){  // wait while full
-	//    try_cnt++;
-	//}    
-	//if (try_cnt >= MAX_TRY_CNT){
-	//    bError = TRUE;
-	//    printf("Play error!.");
-	//    break;
-	//}    
+	  MIC_IF_ClearDataReady();
+        }
+	else if (bPwmCtrlTstEnabled & PWM_CTRL_enabled){
+	  if (switch_mask & TEST_PWM_CTRL_SW){
+             printf("\n============================================\n");
+             printf("===== PWM Controller Debug Mode (SW[2]) ====\n");
+             printf("============================================\n");
+             printf("Operation guide:\n");
+             printf("  KEY[0]: Reset.\n");
+             printf("  KEY[1]: Select channel (0 or 1).\n");
+             printf("  KEY[2]: Right.\n");
+             printf("  KEY[3]: Left.\n");
+             printf("============================================\n");
+             printf("\n\n");
+	     switch_mask = 0;
+	  }
 
-	while(!MIC_IF_DataReady());
-	
-	ch_left  = MIC_IF_GetData(5);	
+          bLeftPressed = (button_mask & LEFT_BUTTON)?TRUE:FALSE;
+          bRightPressed = (button_mask & RIGHT_BUTTON)?TRUE:FALSE;
+          bSelectPressed = (button_mask & SELECT_BUTTON)?TRUE:FALSE;
 
-    	//AUDIO_DacFifoSetData(ch_left, ch_left);  
+	  if(bSelectPressed){
+	    bChannelSelected = !bChannelSelected;
+	    printf("Channel Selected: %d\n", bChannelSelected);
+	    button_mask = 0;
+	  }
 
-    	show_power(ch_left);
+	  if(bLeftPressed){
+	    duty_val = PWM_CTRL_GetChDuty(bChannelSelected);
+	    duty_val += PWM_STEP;
 
-	//printf("%d, %d \n", ch_left, ch_right);
-    	//SEG7_SignedInteger(ch_left);
-	
-	//MIC_IF_ClearDataReady();
+	    if (duty_val >= PWM_MAX)
+	       duty_val = PWM_MAX;
+	    else if (duty_val <= PWM_MIN)
+	       duty_val = PWM_MIN;
+
+	    PWM_CTRL_SetChDuty(bChannelSelected, duty_val);
+	    button_mask = 0;
+	    printf("Left pressed\nduty_val:\t%d\n", duty_val);
+	  }
+
+	  if(bRightPressed){
+	    duty_val = PWM_CTRL_GetChDuty(bChannelSelected);
+	    duty_val -= PWM_STEP;
+
+	    if (duty_val >= PWM_MAX)
+	       duty_val = PWM_MAX;
+	    else if (duty_val <= PWM_MIN)
+	       duty_val = PWM_MIN;
+
+	    PWM_CTRL_SetChDuty(bChannelSelected, duty_val);
+	    button_mask = 0;
+	    printf("Right pressed\nduty_val:\t%d\n", duty_val);
+	  }
+	}
 
     }
     
 }
-
-
-    

@@ -264,9 +264,11 @@ wire pdm_clock;
 wire ipt_mic_enable;  
 wire [1:0] ipt_pdm_data_inp;
 wire [31:0] led_export;
+wire [9:0]  sw_export;
 wire audio_ext_valid;
 wire audio_ext_clock_en;
 wire [15:0] audio_ext_data;
+wire [1:0] pwm_out_export;
 
 //=======================================================
 //  LOCAL PARAMETERS
@@ -279,7 +281,8 @@ localparam NCO_PHI_INC = 32'd89478485; // phi_inc = fo*2^32/fclk; fo=1KHz
 // ==============================
 
 assign clk_main = CLOCK_50;
-assign reset_n = KEY[0];
+//assign reset_n = KEY[0];
+assign reset_n = 1'b1;
 
 // ==============================
 //       BEAMFORMING BOARD 
@@ -434,7 +437,11 @@ assign pdm_data_B[29]  = GPIO_1[MIC_B[29]];
 assign pdm_data_B[30]  = GPIO_1[MIC_B[30]]; 
 assign pdm_data_B[31]  = GPIO_1[MIC_B[31]]; 
 
+`ifdef PDM_DATA_B
 assign pdm_data = SW[0] ? pdm_data_B:  pdm_data_A;
+`else
+assign pdm_data = pdm_data_A;
+`endif
 
 // =============
 //   SYSTEM 
@@ -442,7 +449,8 @@ assign pdm_data = SW[0] ? pdm_data_B:  pdm_data_A;
 bf_time_pcm bf_time_pcm (
   .clk_50_clk                         (clk_main),
   .clk_100_clk                        (clk_fast),
-  .reset_reset_n                      (reset_n),
+  .reset_50_reset_n                   (reset_n),
+  .reset_100_reset_n                  (reset_n),
   .mic_if_pdm_if_data                 (pdm_data),
   .mic_if_pdm_if_clk_ff               (pdm_clock),
   .mic_if_avalon_st_fil_error         (),
@@ -473,6 +481,7 @@ bf_time_pcm bf_time_pcm (
   .audio_ext_data                     (audio_ext_data),
   .led_export                         (led_export),
   .key_export                         (KEY),
+  .sw_export                          (SW),
   .seg7_export                        ({HEX5P, HEX5, HEX4P, HEX4, 
                                         HEX3P, HEX3, HEX2P, HEX2,
                                         HEX1P, HEX1, HEX0P, HEX0}),
@@ -486,7 +495,8 @@ bf_time_pcm bf_time_pcm (
   .sdram_wire_dq                      (DRAM_DQ),
   .sdram_wire_dqm                     ({DRAM_UDQM,DRAM_LDQM}),
   .sdram_wire_ras_n                   (DRAM_RAS_N),
-  .sdram_wire_we_n                    (DRAM_WE_N)
+  .sdram_wire_we_n                    (DRAM_WE_N),
+  .pwm_out_export                     (pwm_out_export)
 );
 
 // ================
@@ -544,26 +554,15 @@ ALT_NCO alt_nco (
 );
 
 // ================
+//       PWM 
+// ================
+
+assign GPIO_1[25:24] = pwm_out_export[1:0];
+
+// ================
 //       LED 
 // ================
 
-assign LEDR[9]   = SW[0];
-assign LEDR[8:0] = led_export[8:0];
-
-//assign LEDR[9] = ipt_mic_enable;
-//assign LEDR[8] = ipt_pdm_data_inp;
-//assign LEDR[7:0] = led_export[7:0];
-
-//assign LEDR[9] = clk_nco;
-//assign LEDR[8] = AUD_BCLK;
-//assign LEDR[7] = AUD_DACDAT;
-//assign LEDR[6] = audio_ext_valid;
-//assign LEDR[5] = audio_ext_clock_en;
-//assign LEDR[4] = pdm_clock;
-//assign LEDR[3] = pdm_data[3];
-//assign LEDR[2] = pdm_data[2];
-//assign LEDR[1] = pdm_data[1];
-//assign LEDR[0] = pdm_data[0];
-//assign LEDR[4:0] = audio_ext_data[4:0];
+assign LEDR[9:0] = led_export[9:0];
 
 endmodule

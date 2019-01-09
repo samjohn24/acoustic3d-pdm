@@ -31,6 +31,11 @@ if [ -n $SEG7_DIR ]; then
   export SEG7_DIR=../../ip_terasic/TERASIC_SEG7/nios2/hal
 fi
 
+# PWM_CTRL directory
+if [ -n $PWM_CTRL_DIR ]; then
+  export PWM_CTRL_DIR=../../ip/pwm_ctrl/nios2/hal
+fi
+
 # Output directory
 export NIOS2_OUTPUT_DIR=./software/
 
@@ -54,6 +59,7 @@ $NIOS2EDS_INSTALL_DIR/nios2_command_shell.sh nios2-app-generate-makefile --bsp-d
  --inc-rdir $MIC_IF_DIR/inc --src-rdir $MIC_IF_DIR/src \
  --inc-rdir $AUDIO_SUBSYS_DIR/inc --src-rdir $AUDIO_SUBSYS_DIR/src \
  --inc-rdir $SEG7_DIR/inc --src-rdir $SEG7_DIR/src \
+ --inc-rdir $PWM_CTRL_DIR/inc --src-rdir $PWM_CTRL_DIR/src \
  --elf-name $NIOS2_ELF 
 
 cd $NIOS2_OUTPUT_DIR/app

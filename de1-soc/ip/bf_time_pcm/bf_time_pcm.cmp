@@ -29,7 +29,7 @@
 			mic_if_system_clk_dec              : in    std_logic                      := 'X';             -- clk_dec
 			mic_if_test_pdm_data_inp           : out   std_logic_vector(1 downto 0);                      -- pdm_data_inp
 			mic_if_test_mic_enable             : out   std_logic;                                         -- mic_enable
-			reset_reset_n                      : in    std_logic                      := 'X';             -- reset_n
+			reset_50_reset_n                   : in    std_logic                      := 'X';             -- reset_n
 			key_export                         : in    std_logic_vector(3 downto 0)   := (others => 'X'); -- export
 			clk_100_clk                        : in    std_logic                      := 'X';             -- clk
 			sdram_wire_addr                    : out   std_logic_vector(12 downto 0);                     -- addr
@@ -44,7 +44,10 @@
 			seg7_export                        : out   std_logic_vector(47 downto 0);                     -- export
 			audio_ext_valid                    : in    std_logic                      := 'X';             -- valid
 			audio_ext_clock_en                 : out   std_logic;                                         -- clock_en
-			audio_ext_data                     : in    std_logic_vector(15 downto 0)  := (others => 'X')  -- data
+			audio_ext_data                     : in    std_logic_vector(15 downto 0)  := (others => 'X'); -- data
+			pwm_out_export                     : out   std_logic_vector(1 downto 0);                      -- export
+			reset_100_reset_n                  : in    std_logic                      := 'X';             -- reset_n
+			sw_export                          : in    std_logic_vector(9 downto 0)   := (others => 'X')  -- export
 		);
 	end component bf_time_pcm;
 

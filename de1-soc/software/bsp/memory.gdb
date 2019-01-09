@@ -3,7 +3,7 @@
 # Machine generated for CPU 'cpu' in SOPC Builder design 'bf_time_pcm'
 # SOPC Builder design path: ../../ip/bf_time_pcm/bf_time_pcm.sopcinfo
 #
-# Generated: Sat Nov 17 00:27:19 BRST 2018
+# Generated: Sun Jan 06 02:40:22 BRST 2019
 
 # DO NOT MODIFY THIS FILE
 #

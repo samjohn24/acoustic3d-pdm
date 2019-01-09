@@ -196,6 +196,7 @@ BSP_ROOT_DIR := ../bsp
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS += ../../../../ip/mic_if/nios2/hal/inc
+APP_INCLUDE_DIRS += ../../../../ip/pwm_ctrl/nios2/hal/inc
 APP_INCLUDE_DIRS += ../../../../ip_terasic/TERASIC_AUDIO_SUBSYS/nios2/hal/inc
 APP_INCLUDE_DIRS += ../../../../ip_terasic/TERASIC_SEG7/nios2/hal/inc
 APP_INCLUDE_DIRS += ../../../common/nios2/inc

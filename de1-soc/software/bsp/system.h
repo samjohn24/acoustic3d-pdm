@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'bf_time_pcm'
  * SOPC Builder design path: ../../ip/bf_time_pcm/bf_time_pcm.sopcinfo
  *
- * Generated: Thu Nov 22 00:04:49 BRST 2018
+ * Generated: Tue Jan 08 21:55:56 BRST 2019
  */
 
 /*
@@ -136,6 +136,7 @@
 #define __ALTERA_NIOS2_QSYS
 #define __AUDIO_SUBSYS
 #define __MIC_IF
+#define __PWM_CTRL
 #define __SEG7_IF
 
 
@@ -155,19 +156,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart"
-#define ALT_STDERR_BASE 0x4082288
+#define ALT_STDERR_BASE 0x40823a8
 #define ALT_STDERR_DEV jtag_uart
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart"
-#define ALT_STDIN_BASE 0x4082288
+#define ALT_STDIN_BASE 0x40823a8
 #define ALT_STDIN_DEV jtag_uart
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart"
-#define ALT_STDOUT_BASE 0x4082288
+#define ALT_STDOUT_BASE 0x40823a8
 #define ALT_STDOUT_DEV jtag_uart
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -205,7 +206,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
-#define JTAG_UART_BASE 0x4082288
+#define JTAG_UART_BASE 0x40823a8
 #define JTAG_UART_IRQ 1
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"
@@ -223,7 +224,7 @@
  */
 
 #define ALT_MODULE_CLASS_key altera_avalon_pio
-#define KEY_BASE 0x4082220
+#define KEY_BASE 0x4082340
 #define KEY_BIT_CLEARING_EDGE_REGISTER 0
 #define KEY_BIT_MODIFYING_OUTPUT_REGISTER 1
 #define KEY_CAPTURE 1
@@ -250,7 +251,7 @@
  */
 
 #define ALT_MODULE_CLASS_led altera_avalon_pio
-#define LED_BASE 0x4082240
+#define LED_BASE 0x4082360
 #define LED_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_BIT_MODIFYING_OUTPUT_REGISTER 1
 #define LED_CAPTURE 0
@@ -315,6 +316,20 @@
 
 
 /*
+ * pwm_ctrl configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pwm_ctrl pwm_ctrl
+#define PWM_CTRL_BASE 0x4082200
+#define PWM_CTRL_IRQ -1
+#define PWM_CTRL_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PWM_CTRL_NAME "/dev/pwm_ctrl"
+#define PWM_CTRL_SPAN 256
+#define PWM_CTRL_TYPE "pwm_ctrl"
+
+
+/*
  * sdram configuration
  *
  */
@@ -359,7 +374,7 @@
  */
 
 #define ALT_MODULE_CLASS_seg7 SEG7_IF
-#define SEG7_BASE 0x4082200
+#define SEG7_BASE 0x4082320
 #define SEG7_IRQ -1
 #define SEG7_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SEG7_NAME "/dev/seg7"
@@ -368,18 +383,45 @@
 
 
 /*
+ * sw configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_sw altera_avalon_pio
+#define SW_BASE 0x4082300
+#define SW_BIT_CLEARING_EDGE_REGISTER 0
+#define SW_BIT_MODIFYING_OUTPUT_REGISTER 1
+#define SW_CAPTURE 1
+#define SW_DATA_WIDTH 10
+#define SW_DO_TEST_BENCH_WIRING 1
+#define SW_DRIVEN_SIM_VALUE 0
+#define SW_EDGE_TYPE "ANY"
+#define SW_FREQ 50000000
+#define SW_HAS_IN 1
+#define SW_HAS_OUT 0
+#define SW_HAS_TRI 0
+#define SW_IRQ 3
+#define SW_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define SW_IRQ_TYPE "EDGE"
+#define SW_NAME "/dev/sw"
+#define SW_RESET_VALUE 0
+#define SW_SPAN 32
+#define SW_TYPE "altera_avalon_pio"
+
+
+/*
  * sysid configuration
  *
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x4082280
+#define SYSID_BASE 0x40823a0
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1542848838
+#define SYSID_TIMESTAMP 1546820524
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -390,7 +432,7 @@
 
 #define ALT_MODULE_CLASS_timer altera_avalon_timer
 #define TIMER_ALWAYS_RUN 0
-#define TIMER_BASE 0x4082260
+#define TIMER_BASE 0x4082380
 #define TIMER_COUNTER_SIZE 32
 #define TIMER_FIXED_PERIOD 0
 #define TIMER_FREQ 100000000
