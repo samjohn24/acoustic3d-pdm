@@ -1,0 +1,8 @@
+-  To execute on command line:
+
+   system_console --cli --script=<script_name.tcl>
+
+-  To execute on GUI:
+
+   1. Execute: system_console &
+   2. On console: source <script_name.tcl>
