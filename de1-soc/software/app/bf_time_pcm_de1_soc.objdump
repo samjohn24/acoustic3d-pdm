@@ -73,7 +73,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  28 .sopc_system_name 0000000b  00000000  00000000  000852cb  2**0
                   CONTENTS, READONLY
- 29 .sopcinfo     0006d973  00000000  00000000  000852d6  2**0
+ 29 .sopcinfo     0006d9f1  00000000  00000000  000852d6  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 04040000 l    d  .entry	00000000 .entry
@@ -3087,7 +3087,7 @@ Disassembly of section .text:
  4042550:	10800044 	addi	r2,r2,1
  4042554:	e0bfff15 	stw	r2,-4(fp)
  4042558:	e0bfff17 	ldw	r2,-4(fp)
- 404255c:	10800810 	cmplti	r2,r2,32
+ 404255c:	108008d0 	cmplti	r2,r2,35
  4042560:	103fe11e 	bne	r2,zero,40424e8 <MIC_IF_Init+0x18>
  4042564:	00810234 	movhi	r2,1032
  4042568:	10800037 	ldwio	r2,0(r2)
@@ -3111,7 +3111,7 @@ Disassembly of section .text:
  40425b0:	10c00035 	stwio	r3,0(r2)
  40425b4:	00810234 	movhi	r2,1032
  40425b8:	10800037 	ldwio	r2,0(r2)
- 40425bc:	10c00254 	ori	r3,r2,9
+ 40425bc:	10c00294 	ori	r3,r2,10
  40425c0:	00810234 	movhi	r2,1032
  40425c4:	10c00035 	stwio	r3,0(r2)
  40425c8:	00c007c4 	movi	r3,31
@@ -3179,7 +3179,7 @@ Disassembly of section .text:
  40426c0:	10800044 	addi	r2,r2,1
  40426c4:	e0bfff15 	stw	r2,-4(fp)
  40426c8:	e0bfff17 	ldw	r2,-4(fp)
- 40426cc:	10800810 	cmplti	r2,r2,32
+ 40426cc:	108008d0 	cmplti	r2,r2,35
  40426d0:	103fed1e 	bne	r2,zero,4042688 <MIC_IF_Init+0x1b8>
  40426d4:	0001883a 	nop
  40426d8:	e037883a 	mov	sp,fp
@@ -3421,13 +3421,13 @@ Disassembly of section .text:
  4042a60:	f800283a 	ret
 
 04042a64 <microphone_test>:
- 4042a64:	deffd304 	addi	sp,sp,-180
- 4042a68:	dfc02c15 	stw	ra,176(sp)
- 4042a6c:	df002b15 	stw	fp,172(sp)
- 4042a70:	dc402a15 	stw	r17,168(sp)
- 4042a74:	dc002915 	stw	r16,164(sp)
- 4042a78:	df002b04 	addi	fp,sp,172
- 4042a7c:	e03fd985 	stb	zero,-154(fp)
+ 4042a64:	deffd004 	addi	sp,sp,-192
+ 4042a68:	dfc02f15 	stw	ra,188(sp)
+ 4042a6c:	df002e15 	stw	fp,184(sp)
+ 4042a70:	dc402d15 	stw	r17,180(sp)
+ 4042a74:	dc002c15 	stw	r16,176(sp)
+ 4042a78:	df002e04 	addi	fp,sp,184
+ 4042a7c:	e03fd685 	stb	zero,-166(fp)
  4042a80:	00810234 	movhi	r2,1032
  4042a84:	10880404 	addi	r2,r2,8208
  4042a88:	10800037 	ldwio	r2,0(r2)
@@ -3435,85 +3435,85 @@ Disassembly of section .text:
  4042a90:	00810234 	movhi	r2,1032
  4042a94:	10880404 	addi	r2,r2,8208
  4042a98:	10c00035 	stwio	r3,0(r2)
- 4042a9c:	e03fd945 	stb	zero,-155(fp)
+ 4042a9c:	e03fd645 	stb	zero,-167(fp)
  4042aa0:	00007e06 	br	4042c9c <microphone_test+0x238>
- 4042aa4:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042aa4:	e0bfd643 	ldbu	r2,-167(fp)
  4042aa8:	1009883a 	mov	r4,r2
  4042aac:	4041f4c0 	call	4041f4c <SEG7_Integer>
  4042ab0:	0009883a 	mov	r4,zero
  4042ab4:	40408240 	call	4040824 <AUDIO_DacEnableSoftMute>
- 4042ab8:	e03fd515 	stw	zero,-172(fp)
- 4042abc:	e03fd615 	stw	zero,-168(fp)
- 4042ac0:	e03fd905 	stb	zero,-156(fp)
+ 4042ab8:	e03fd215 	stw	zero,-184(fp)
+ 4042abc:	e03fd315 	stw	zero,-180(fp)
+ 4042ac0:	e03fd605 	stb	zero,-168(fp)
  4042ac4:	00001306 	br	4042b14 <microphone_test+0xb0>
- 4042ac8:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042ac8:	e0bfd643 	ldbu	r2,-167(fp)
  4042acc:	1009883a 	mov	r4,r2
  4042ad0:	40429340 	call	4042934 <listen_100ms>
- 4042ad4:	e0bfda15 	stw	r2,-152(fp)
- 4042ad8:	e03fdb15 	stw	zero,-148(fp)
- 4042adc:	e13fd517 	ldw	r4,-172(fp)
- 4042ae0:	e17fd617 	ldw	r5,-168(fp)
- 4042ae4:	e1bfda17 	ldw	r6,-152(fp)
- 4042ae8:	e1ffdb17 	ldw	r7,-148(fp)
+ 4042ad4:	e0bfd715 	stw	r2,-164(fp)
+ 4042ad8:	e03fd815 	stw	zero,-160(fp)
+ 4042adc:	e13fd217 	ldw	r4,-184(fp)
+ 4042ae0:	e17fd317 	ldw	r5,-180(fp)
+ 4042ae4:	e1bfd717 	ldw	r6,-164(fp)
+ 4042ae8:	e1ffd817 	ldw	r7,-160(fp)
  4042aec:	2185883a 	add	r2,r4,r6
  4042af0:	1111803a 	cmpltu	r8,r2,r4
  4042af4:	29c7883a 	add	r3,r5,r7
  4042af8:	40c9883a 	add	r4,r8,r3
  4042afc:	2007883a 	mov	r3,r4
- 4042b00:	e0bfd515 	stw	r2,-172(fp)
- 4042b04:	e0ffd615 	stw	r3,-168(fp)
- 4042b08:	e0bfd903 	ldbu	r2,-156(fp)
+ 4042b00:	e0bfd215 	stw	r2,-184(fp)
+ 4042b04:	e0ffd315 	stw	r3,-180(fp)
+ 4042b08:	e0bfd603 	ldbu	r2,-168(fp)
  4042b0c:	10800044 	addi	r2,r2,1
- 4042b10:	e0bfd905 	stb	r2,-156(fp)
- 4042b14:	e0bfd903 	ldbu	r2,-156(fp)
+ 4042b10:	e0bfd605 	stb	r2,-168(fp)
+ 4042b14:	e0bfd603 	ldbu	r2,-168(fp)
  4042b18:	10800530 	cmpltui	r2,r2,20
  4042b1c:	103fea1e 	bne	r2,zero,4042ac8 <microphone_test+0x64>
- 4042b20:	e0bfd943 	ldbu	r2,-155(fp)
- 4042b24:	e1bfd517 	ldw	r6,-172(fp)
- 4042b28:	e1ffd617 	ldw	r7,-168(fp)
+ 4042b20:	e0bfd643 	ldbu	r2,-167(fp)
+ 4042b24:	e1bfd217 	ldw	r6,-184(fp)
+ 4042b28:	e1ffd317 	ldw	r7,-180(fp)
  4042b2c:	100b883a 	mov	r5,r2
  4042b30:	01000034 	movhi	r4,0
  4042b34:	2101e904 	addi	r4,r4,1956
  4042b38:	4044ce80 	call	4044ce8 <printf>
  4042b3c:	01000044 	movi	r4,1
  4042b40:	40408240 	call	4040824 <AUDIO_DacEnableSoftMute>
- 4042b44:	e03fd715 	stw	zero,-164(fp)
- 4042b48:	e03fd815 	stw	zero,-160(fp)
- 4042b4c:	e03fd905 	stb	zero,-156(fp)
+ 4042b44:	e03fd415 	stw	zero,-176(fp)
+ 4042b48:	e03fd515 	stw	zero,-172(fp)
+ 4042b4c:	e03fd605 	stb	zero,-168(fp)
  4042b50:	00001306 	br	4042ba0 <microphone_test+0x13c>
- 4042b54:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042b54:	e0bfd643 	ldbu	r2,-167(fp)
  4042b58:	1009883a 	mov	r4,r2
  4042b5c:	40429340 	call	4042934 <listen_100ms>
- 4042b60:	e0bfdc15 	stw	r2,-144(fp)
- 4042b64:	e03fdd15 	stw	zero,-140(fp)
- 4042b68:	e13fd717 	ldw	r4,-164(fp)
- 4042b6c:	e17fd817 	ldw	r5,-160(fp)
- 4042b70:	e1bfdc17 	ldw	r6,-144(fp)
- 4042b74:	e1ffdd17 	ldw	r7,-140(fp)
+ 4042b60:	e0bfd915 	stw	r2,-156(fp)
+ 4042b64:	e03fda15 	stw	zero,-152(fp)
+ 4042b68:	e13fd417 	ldw	r4,-176(fp)
+ 4042b6c:	e17fd517 	ldw	r5,-172(fp)
+ 4042b70:	e1bfd917 	ldw	r6,-156(fp)
+ 4042b74:	e1ffda17 	ldw	r7,-152(fp)
  4042b78:	2185883a 	add	r2,r4,r6
  4042b7c:	1111803a 	cmpltu	r8,r2,r4
  4042b80:	29c7883a 	add	r3,r5,r7
  4042b84:	40c9883a 	add	r4,r8,r3
  4042b88:	2007883a 	mov	r3,r4
- 4042b8c:	e0bfd715 	stw	r2,-164(fp)
- 4042b90:	e0ffd815 	stw	r3,-160(fp)
- 4042b94:	e0bfd903 	ldbu	r2,-156(fp)
+ 4042b8c:	e0bfd415 	stw	r2,-176(fp)
+ 4042b90:	e0ffd515 	stw	r3,-172(fp)
+ 4042b94:	e0bfd603 	ldbu	r2,-168(fp)
  4042b98:	10800044 	addi	r2,r2,1
- 4042b9c:	e0bfd905 	stb	r2,-156(fp)
- 4042ba0:	e0bfd903 	ldbu	r2,-156(fp)
+ 4042b9c:	e0bfd605 	stb	r2,-168(fp)
+ 4042ba0:	e0bfd603 	ldbu	r2,-168(fp)
  4042ba4:	10800530 	cmpltui	r2,r2,20
  4042ba8:	103fea1e 	bne	r2,zero,4042b54 <microphone_test+0xf0>
- 4042bac:	e0bfd943 	ldbu	r2,-155(fp)
- 4042bb0:	e1bfd717 	ldw	r6,-164(fp)
- 4042bb4:	e1ffd817 	ldw	r7,-160(fp)
+ 4042bac:	e0bfd643 	ldbu	r2,-167(fp)
+ 4042bb0:	e1bfd417 	ldw	r6,-176(fp)
+ 4042bb4:	e1ffd517 	ldw	r7,-172(fp)
  4042bb8:	100b883a 	mov	r5,r2
  4042bbc:	01000034 	movhi	r4,0
  4042bc0:	2101f004 	addi	r4,r4,1984
  4042bc4:	4044ce80 	call	4044ce8 <printf>
  4042bc8:	01801904 	movi	r6,100
  4042bcc:	000f883a 	mov	r7,zero
- 4042bd0:	e13fd517 	ldw	r4,-172(fp)
- 4042bd4:	e17fd617 	ldw	r5,-168(fp)
+ 4042bd0:	e13fd217 	ldw	r4,-184(fp)
+ 4042bd4:	e17fd317 	ldw	r5,-180(fp)
  4042bd8:	404352c0 	call	404352c <__muldi3>
  4042bdc:	1009883a 	mov	r4,r2
  4042be0:	180b883a 	mov	r5,r3
@@ -3521,8 +3521,8 @@ Disassembly of section .text:
  4042be8:	2823883a 	mov	r17,r5
  4042bec:	01801a44 	movi	r6,105
  4042bf0:	000f883a 	mov	r7,zero
- 4042bf4:	e13fd717 	ldw	r4,-164(fp)
- 4042bf8:	e17fd817 	ldw	r5,-160(fp)
+ 4042bf4:	e13fd417 	ldw	r4,-176(fp)
+ 4042bf8:	e17fd517 	ldw	r5,-172(fp)
  4042bfc:	404352c0 	call	404352c <__muldi3>
  4042c00:	1009883a 	mov	r4,r2
  4042c04:	180b883a 	mov	r5,r3
@@ -3531,44 +3531,44 @@ Disassembly of section .text:
  4042c10:	88c01336 	bltu	r17,r3,4042c60 <microphone_test+0x1fc>
  4042c14:	1c40011e 	bne	r3,r17,4042c1c <microphone_test+0x1b8>
  4042c18:	80801136 	bltu	r16,r2,4042c60 <microphone_test+0x1fc>
- 4042c1c:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042c1c:	e0bfd643 	ldbu	r2,-167(fp)
  4042c20:	100b883a 	mov	r5,r2
  4042c24:	01000034 	movhi	r4,0
  4042c28:	2101f704 	addi	r4,r4,2012
  4042c2c:	4044ce80 	call	4044ce8 <printf>
- 4042c30:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042c30:	e0bfd643 	ldbu	r2,-167(fp)
  4042c34:	1085883a 	add	r2,r2,r2
  4042c38:	1085883a 	add	r2,r2,r2
- 4042c3c:	e0ffd504 	addi	r3,fp,-172
+ 4042c3c:	e0ffd204 	addi	r3,fp,-184
  4042c40:	1885883a 	add	r2,r3,r2
  4042c44:	10800904 	addi	r2,r2,36
  4042c48:	00c00044 	movi	r3,1
  4042c4c:	10c00015 	stw	r3,0(r2)
- 4042c50:	e0bfd983 	ldbu	r2,-154(fp)
+ 4042c50:	e0bfd683 	ldbu	r2,-166(fp)
  4042c54:	10800044 	addi	r2,r2,1
- 4042c58:	e0bfd985 	stb	r2,-154(fp)
+ 4042c58:	e0bfd685 	stb	r2,-166(fp)
  4042c5c:	00000c06 	br	4042c90 <microphone_test+0x22c>
- 4042c60:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042c60:	e0bfd643 	ldbu	r2,-167(fp)
  4042c64:	100b883a 	mov	r5,r2
  4042c68:	01000034 	movhi	r4,0
  4042c6c:	2101fb04 	addi	r4,r4,2028
  4042c70:	4044ce80 	call	4044ce8 <printf>
- 4042c74:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042c74:	e0bfd643 	ldbu	r2,-167(fp)
  4042c78:	1085883a 	add	r2,r2,r2
  4042c7c:	1085883a 	add	r2,r2,r2
- 4042c80:	e0ffd504 	addi	r3,fp,-172
+ 4042c80:	e0ffd204 	addi	r3,fp,-184
  4042c84:	1885883a 	add	r2,r3,r2
  4042c88:	10800904 	addi	r2,r2,36
  4042c8c:	10000015 	stw	zero,0(r2)
- 4042c90:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042c90:	e0bfd643 	ldbu	r2,-167(fp)
  4042c94:	10800044 	addi	r2,r2,1
- 4042c98:	e0bfd945 	stb	r2,-155(fp)
- 4042c9c:	e0bfd943 	ldbu	r2,-155(fp)
- 4042ca0:	10800830 	cmpltui	r2,r2,32
+ 4042c98:	e0bfd645 	stb	r2,-167(fp)
+ 4042c9c:	e0bfd643 	ldbu	r2,-167(fp)
+ 4042ca0:	108008f0 	cmpltui	r2,r2,35
  4042ca4:	103f7f1e 	bne	r2,zero,4042aa4 <microphone_test+0x40>
  4042ca8:	01000044 	movi	r4,1
  4042cac:	40408240 	call	4040824 <AUDIO_DacEnableSoftMute>
- 4042cb0:	e0bfd983 	ldbu	r2,-154(fp)
+ 4042cb0:	e0bfd683 	ldbu	r2,-166(fp)
  4042cb4:	100b883a 	mov	r5,r2
  4042cb8:	01000034 	movhi	r4,0
  4042cbc:	2101ff04 	addi	r4,r4,2044
@@ -3576,26 +3576,26 @@ Disassembly of section .text:
  4042cc4:	01000034 	movhi	r4,0
  4042cc8:	21020404 	addi	r4,r4,2064
  4042ccc:	4044ce80 	call	4044ce8 <printf>
- 4042cd0:	e03fd945 	stb	zero,-155(fp)
+ 4042cd0:	e03fd645 	stb	zero,-167(fp)
  4042cd4:	00001006 	br	4042d18 <microphone_test+0x2b4>
- 4042cd8:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042cd8:	e0bfd643 	ldbu	r2,-167(fp)
  4042cdc:	1085883a 	add	r2,r2,r2
  4042ce0:	1085883a 	add	r2,r2,r2
- 4042ce4:	e0ffd504 	addi	r3,fp,-172
+ 4042ce4:	e0ffd204 	addi	r3,fp,-184
  4042ce8:	1885883a 	add	r2,r3,r2
  4042cec:	10800904 	addi	r2,r2,36
  4042cf0:	10800017 	ldw	r2,0(r2)
  4042cf4:	10000526 	beq	r2,zero,4042d0c <microphone_test+0x2a8>
- 4042cf8:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042cf8:	e0bfd643 	ldbu	r2,-167(fp)
  4042cfc:	100b883a 	mov	r5,r2
  4042d00:	01000034 	movhi	r4,0
  4042d04:	21020804 	addi	r4,r4,2080
  4042d08:	4044ce80 	call	4044ce8 <printf>
- 4042d0c:	e0bfd943 	ldbu	r2,-155(fp)
+ 4042d0c:	e0bfd643 	ldbu	r2,-167(fp)
  4042d10:	10800044 	addi	r2,r2,1
- 4042d14:	e0bfd945 	stb	r2,-155(fp)
- 4042d18:	e0bfd943 	ldbu	r2,-155(fp)
- 4042d1c:	10800830 	cmpltui	r2,r2,32
+ 4042d14:	e0bfd645 	stb	r2,-167(fp)
+ 4042d18:	e0bfd643 	ldbu	r2,-167(fp)
+ 4042d1c:	108008f0 	cmpltui	r2,r2,35
  4042d20:	103fed1e 	bne	r2,zero,4042cd8 <microphone_test+0x274>
  4042d24:	0001883a 	nop
  4042d28:	e6fffe04 	addi	sp,fp,-8
@@ -3773,11 +3773,11 @@ Disassembly of section .text:
  4042fd0:	10800044 	addi	r2,r2,1
  4042fd4:	e0bff18d 	sth	r2,-58(fp)
  4042fd8:	e0bff10f 	ldh	r2,-60(fp)
- 4042fdc:	10800810 	cmplti	r2,r2,32
+ 4042fdc:	108008d0 	cmplti	r2,r2,35
  4042fe0:	1000011e 	bne	r2,zero,4042fe8 <main+0x2a4>
  4042fe4:	e03ff10d 	sth	zero,-60(fp)
  4042fe8:	e0bff18f 	ldh	r2,-58(fp)
- 4042fec:	10800810 	cmplti	r2,r2,32
+ 4042fec:	108008d0 	cmplti	r2,r2,35
  4042ff0:	1000011e 	bne	r2,zero,4042ff8 <main+0x2b4>
  4042ff4:	e03ff18d 	sth	zero,-58(fp)
  4042ff8:	e0bfef17 	ldw	r2,-68(fp)
@@ -3807,11 +3807,11 @@ Disassembly of section .text:
  4043058:	e0bff18d 	sth	r2,-58(fp)
  404305c:	e0bff10f 	ldh	r2,-60(fp)
  4043060:	1000020e 	bge	r2,zero,404306c <main+0x328>
- 4043064:	008007c4 	movi	r2,31
+ 4043064:	00800884 	movi	r2,34
  4043068:	e0bff10d 	sth	r2,-60(fp)
  404306c:	e0bff18f 	ldh	r2,-58(fp)
  4043070:	1000020e 	bge	r2,zero,404307c <main+0x338>
- 4043074:	008007c4 	movi	r2,31
+ 4043074:	00800884 	movi	r2,34
  4043078:	e0bff18d 	sth	r2,-58(fp)
  404307c:	e0bfef17 	ldw	r2,-68(fp)
  4043080:	10000626 	beq	r2,zero,404309c <main+0x358>

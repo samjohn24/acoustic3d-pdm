@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-# Date created = 22:24:14  January 06, 2019
+# Date created = 07:37:22  January 30, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -299,6 +299,7 @@ set_global_assignment -name QIP_FILE ip/ALT_PLL_AUDIO/ALT_PLL_AUDIO.qip
 set_global_assignment -name QIP_FILE ip/ALT_NCO/synthesis/ALT_NCO.qip
 set_global_assignment -name SDC_FILE DE1_SOC.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE bf_time_pcm_de1_soc.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../common/rtl_v/bbb_array_adapter.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

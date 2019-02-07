@@ -1,5 +1,5 @@
 
-# (C) 2001-2018 Altera Corporation. All rights reserved.
+# (C) 2001-2019 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions and 
 # other software and tools, and its AMPP partner logic functions, and 
 # any output files any of the foregoing (including device programming 
@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.0 211 linux 2018.11.16.23:45:29
+# ACDS 16.0 211 linux 2019.01.24.22:43:38
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -101,7 +101,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 16.0 211 linux 2018.11.16.23:45:29
+# ACDS 16.0 211 linux 2019.01.24.22:43:38
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ALT_PLL"

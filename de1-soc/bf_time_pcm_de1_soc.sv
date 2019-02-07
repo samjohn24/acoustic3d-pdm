@@ -51,6 +51,8 @@
 `define ENABLE_TD
 `define ENABLE_VGA
 
+`define BBB_BOARD
+
 module bf_time_pcm_de1_soc(
 
       /* Enables ADC - 3.3V */
@@ -252,6 +254,7 @@ module bf_time_pcm_de1_soc(
 wire reset_n;
 wire clk_main;
 wire clk_fast;
+wire clk_200;
 wire clk_dec;
 wire clk_dec16;
 wire clk_nco;
@@ -259,8 +262,9 @@ wire enable_clk_dec;
 wire enable_clk_dec16;
 wire [31:0] pdm_data_A;
 wire [31:0] pdm_data_B;
-wire [31:0] pdm_data;
+wire [39:0] pdm_data;
 wire pdm_clock;
+wire pulse_lr;
 wire ipt_mic_enable;  
 wire [1:0] ipt_pdm_data_inp;
 wire [31:0] led_export;
@@ -287,6 +291,31 @@ assign reset_n = 1'b1;
 // ==============================
 //       BEAMFORMING BOARD 
 // ==============================
+
+// Clock
+assign GPIO_0[16] = pdm_clock;    
+
+`ifdef BBB_BOARD
+
+// Black Beaglebone Board Adapter
+bbb_array_adapter #(
+ .NUM_ROWS (5),
+ .NUM_COLS (8)
+) bbb_array_adapter (
+  .clk                    (clk_200),
+  .reset_n                (reset_n),
+
+  .lr_sel                 (1'b1),
+  
+  .pulse_lr               (pulse_lr),
+  .pdm_clk                (pdm_clock),
+  .pdm_inp                (GPIO_0[4:0]),
+  
+  .adapter_sel_ff         (GPIO_0[7:5]),
+  .adapter_out_ff         (pdm_data)
+);
+
+`else
 
 // MIC_CLK <- JP1 (PIN: 19 , GPIO_0: 16) 
 // MIC 1   -> JP1 (PIN: 5  , GPIO_0: 4) 
@@ -367,9 +396,6 @@ reg [5:0] MIC_B [0:31] = '{  4,  6,  8, 10, 12, 14, 20, 22,
                              5,  7,  9, 11, 13, 15, 17, 19,  
                             21, 23, 25, 27, 29, 31, 33, 35  };  
 
-// Clock
-assign GPIO_0[16] = pdm_clock;    
-
 // Data
 assign pdm_data_A[0]   = GPIO_0[MIC_A[0]]; 
 assign pdm_data_A[1]   = GPIO_0[MIC_A[1]]; 
@@ -437,10 +463,8 @@ assign pdm_data_B[29]  = GPIO_1[MIC_B[29]];
 assign pdm_data_B[30]  = GPIO_1[MIC_B[30]]; 
 assign pdm_data_B[31]  = GPIO_1[MIC_B[31]]; 
 
-`ifdef PDM_DATA_B
 assign pdm_data = SW[0] ? pdm_data_B:  pdm_data_A;
-`else
-assign pdm_data = pdm_data_A;
+
 `endif
 
 // =============
@@ -451,8 +475,9 @@ bf_time_pcm bf_time_pcm (
   .clk_100_clk                        (clk_fast),
   .reset_50_reset_n                   (reset_n),
   .reset_100_reset_n                  (reset_n),
-  .mic_if_pdm_if_data                 (pdm_data),
-  .mic_if_pdm_if_clk_ff               (pdm_clock),
+  .mic_if_pdm_if_pdm_data             (pdm_data),
+  .mic_if_pdm_if_pdm_clk_ff           (pdm_clock),
+  .mic_if_pdm_if_pulse_lr             (pulse_lr),
   .mic_if_avalon_st_fil_error         (),
   .mic_if_avalon_st_fil_data          (),
   .mic_if_avalon_st_fil_valid         (),
@@ -527,7 +552,8 @@ ALT_PLL alt_pll (
   .refclk   (CLOCK_50),   //  refclk.clk
   .rst      (!reset_n),   //  reset.reset
   .outclk_0 (clk_fast),   //  outclk0.clk
-  .outclk_1 (DRAM_CLK),   //  outclk1.clk
+  .outclk_1 (clk_200),    //  outclk1.clk
+  .outclk_2 (DRAM_CLK),   //  outclk1.clk
   .locked   ()            //  locked.export
 );
 

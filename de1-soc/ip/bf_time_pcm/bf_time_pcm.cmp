@@ -10,19 +10,20 @@
 			i2c_sda_export                     : inout std_logic                      := 'X';             -- export
 			led_export                         : out   std_logic_vector(31 downto 0);                     -- export
 			mic_if_avalon_st_fil_error         : out   std_logic_vector(1 downto 0);                      -- error
-			mic_if_avalon_st_fil_data          : out   std_logic_vector(522 downto 0);                    -- data
+			mic_if_avalon_st_fil_data          : out   std_logic_vector(586 downto 0);                    -- data
 			mic_if_avalon_st_fil_valid         : out   std_logic;                                         -- valid
 			mic_if_avalon_st_fil_startofpacket : out   std_logic;                                         -- startofpacket
 			mic_if_avalon_st_fil_endofpacket   : out   std_logic;                                         -- endofpacket
 			mic_if_avalon_st_fil_ready         : in    std_logic                      := 'X';             -- ready
 			mic_if_avalon_st_pdm_error         : out   std_logic_vector(1 downto 0);                      -- error
-			mic_if_avalon_st_pdm_data          : out   std_logic_vector(74 downto 0);                     -- data
+			mic_if_avalon_st_pdm_data          : out   std_logic_vector(82 downto 0);                     -- data
 			mic_if_avalon_st_pdm_valid         : out   std_logic;                                         -- valid
 			mic_if_avalon_st_pdm_endofpacket   : out   std_logic;                                         -- endofpacket
 			mic_if_avalon_st_pdm_startofpacket : out   std_logic;                                         -- startofpacket
 			mic_if_avalon_st_pdm_ready         : in    std_logic                      := 'X';             -- ready
-			mic_if_pdm_if_data                 : in    std_logic_vector(31 downto 0)  := (others => 'X'); -- data
-			mic_if_pdm_if_clk_ff               : out   std_logic;                                         -- clk_ff
+			mic_if_pdm_if_pdm_data             : in    std_logic_vector(35 downto 0)  := (others => 'X'); -- pdm_data
+			mic_if_pdm_if_pdm_clk_ff           : out   std_logic;                                         -- pdm_clk_ff
+			mic_if_pdm_if_pulse_lr             : out   std_logic;                                         -- pulse_lr
 			mic_if_system_clk_dec16            : in    std_logic                      := 'X';             -- clk_dec16
 			mic_if_system_enable_clk_dec       : out   std_logic;                                         -- enable_clk_dec
 			mic_if_system_enable_clk_dec16     : out   std_logic;                                         -- enable_clk_dec16

@@ -493,7 +493,7 @@
   <parameter name="avalonSpec" value="2.0" />
  </module>
  <module kind="mic_if" version="1.0" enabled="1" name="mic_if">
-  <parameter name="NUM_CH" value="32" />
+  <parameter name="NUM_CH" value="36" />
   <parameter name="NUM_TAPS" value="60" />
   <parameter name="MAX_CICOSR" value="63" />
   <parameter name="DATA_OUT_WIDTH" value="16" />

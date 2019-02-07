@@ -73,7 +73,7 @@
 #define PLAY_BLOCK_SIZE     250    // DAC FIFO: 512 byte
 #define MAX_TRY_CNT         1024
 #define USE_SDRAM_FOR_DATA
-#define NUM_CH 		32
+#define NUM_CH 		35
 #define PWM_PERIOD 1000000             // 20ms @ 50MHz
 #define PWM_STEP   0.002*PWM_PERIOD    // 20ms*0.005  = 0.1ms
 #define PWM_MAX    0.125*PWM_PERIOD    // 20ms*0.125  = 2.5ms
@@ -170,7 +170,7 @@ void MIC_IF_Init() {
     MIC_IF_RoundOff(TRUE);
     MIC_IF_CICOSR(51);      // pdm_clk/f_out -1 (pdm_clk=2.5MHz, fout=48KHz)
     MIC_IF_ShiftRightOut(11);
-    MIC_IF_ClockDivider(9); // pdm_clk = osc_clk/(2*(clk_div+1))(osc_clk = 50MHz, pdm_clk=2.5MHz) 
+    MIC_IF_ClockDivider(10); // pdm_clk = osc_clk/(2*(clk_div))(osc_clk = 50MHz, pdm_clk=2.5MHz) 
     MIC_IF_DisableAvalonST(TRUE);
     MIC_IF_Enable();
     printf("PDM Microphone Initialized\r\n");

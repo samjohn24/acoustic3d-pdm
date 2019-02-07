@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="bf_time_pcm" kind="bf_time_pcm" version="1.0" fabric="QSYS">
  <!-- Format version 16.0 211 (Future versions may contain additional information.) -->
- <!-- 2019.01.06.22:22:05 -->
+ <!-- 2019.01.30.07:36:21 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1546820524</value>
+  <value>1548840980</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -5607,7 +5607,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="NUM_CH">
    <type>int</type>
-   <value>32</value>
+   <value>36</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6140,11 +6140,17 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>pdm_data</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>36</width>
     <role>export</role>
    </port>
    <port>
     <name>pdm_clk_ff</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>export</role>
+   </port>
+   <port>
+    <name>pulse_lr</name>
     <direction>Output</direction>
     <width>1</width>
     <role>export</role>
@@ -6197,7 +6203,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>source_fil_data</name>
     <direction>Output</direction>
-    <width>523</width>
+    <width>587</width>
     <role>data</role>
    </port>
    <port>
@@ -6272,7 +6278,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>source_pdm_data</name>
     <direction>Output</direction>
-    <width>75</width>
+    <width>83</width>
     <role>data</role>
    </port>
    <port>
@@ -7317,7 +7323,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1546820524</value>
+   <value>1548840980</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -7337,7 +7343,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1546820524</value>
+   <value>1548840980</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -7353,7 +7359,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1546820524</value>
+   <value>1548840980</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
