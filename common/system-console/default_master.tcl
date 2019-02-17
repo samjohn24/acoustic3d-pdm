@@ -28,6 +28,20 @@ proc get_default_master {} {
 proc open_default_master {} {
   set p0 [ get_default_master ]
   open_service master $p0
+  puts $p0
+}
+
+# Close the first master in the system.
+proc close_default_master {} {
+  set p0 [ get_default_master ]
+  close_service master $p0
+  puts $p0
+}
+
+# Check the first master in the system is connected.
+proc is_default_master_open {} {
+  set p0 [ get_default_master ]
+  return [is_service_open master $p0]
 }
 
 # Write the list of byte values starting at address using the default
