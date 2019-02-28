@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'bf_time_pcm'
  * SOPC Builder design path: ../../ip/bf_time_pcm/bf_time_pcm.sopcinfo
  *
- * Generated: Mon Jan 28 21:55:51 BRST 2019
+ * Generated: Sun Feb 17 21:21:15 BRT 2019
  */
 
 /*
@@ -421,7 +421,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1548453171
+#define SYSID_TIMESTAMP 1550448328
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

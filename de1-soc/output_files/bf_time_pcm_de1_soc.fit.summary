@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Jan 30 19:19:01 2019
+Fitter Status : Successful - Thu Feb 21 00:45:57 2019
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : bf_time_pcm_de1_soc
 Top-level Entity Name : bf_time_pcm_de1_soc
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 27,316 / 32,070 ( 85 % )
-Total registers : 57637
+Logic utilization (in ALMs) : 6,388 / 32,070 ( 20 % )
+Total registers : 11948
 Total pins : 241 / 457 ( 53 % )
 Total virtual pins : 0
-Total block memory bits : 2,414,656 / 4,065,280 ( 59 % )
-Total RAM Blocks : 310 / 397 ( 78 % )
+Total block memory bits : 2,422,848 / 4,065,280 ( 60 % )
+Total RAM Blocks : 311 / 397 ( 78 % )
 Total DSP Blocks : 2 / 87 ( 2 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

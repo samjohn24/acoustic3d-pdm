@@ -37,9 +37,10 @@ set MIC_IF_MASK_CLKDIV 	0x000000ff
 
 set MIC_IF_OFF_CHEN 	0
 
-set MIC_IF_OFF_DIS_ST 	31
-set MIC_IF_OFF_BF_ST_EN 	30
-set MIC_IF_OFF_FFTPTS 	0
+set MIC_IF_OFF_AUD_ST_DIS  31
+set MIC_IF_OFF_FIL_ST_DIS  30
+set MIC_IF_OFF_BF_ST_EN    29
+set MIC_IF_OFF_FFTPTS  	   0
 
 set MIC_IF_OFF_DREADY 	0
 set MIC_IF_MASK_DREADY 	0x1
@@ -58,24 +59,24 @@ proc mic_if_write {index seg_mask} {
 }
 
 # Read register
-proc mic_if_read {index} {
+proc mic_if_read {index num} {
   global MIC_IF_BASE
-  return [read_32 [expr $MIC_IF_BASE+$index*4] 1]
+  return [read_32 [expr $MIC_IF_BASE+$index*4] $num]
 }
 
 # Set bit
 proc mic_if_setbit {index offset} {
-  mic_if_write $index [expr [mic_if_read $index]|0x01<<$offset]
+  mic_if_write $index [expr [mic_if_read $index 1]|0x01<<$offset]
 }
 
 # Clear bit
 proc mic_if_clrbit {index offset} {
-  mic_if_write $index [expr [mic_if_read $index]&~0x01<<$offset]
+  mic_if_write $index [expr [mic_if_read $index 1]&~(0x01<<$offset)]
 }
 
 # Set mask
 proc mic_if_setmask {index value offset mask} {
-  mic_if_write $index [expr [mic_if_read $index]|($value<<$offset & $mask)]
+  mic_if_write $index [expr ([mic_if_read $index 1] & ~$mask)|($value<<$offset)]
 }
 
 # =============================
@@ -181,23 +182,29 @@ proc mic_if_channel_en {num value} {
 }
 
 # Get data
-proc mic_if_get_data {num} {
+proc mic_if_get_data {index} {
   global MIC_IF_DATA_REG_ADDR
-  return [mic_if_read $MIC_IF_DATA_REG_ADDR+$num] 
+  return [mic_if_read [expr $MIC_IF_DATA_REG_ADDR+$index] 1] 
+}
+
+# Dump data ('num' first channels)
+proc mic_if_dump_data {num} {
+  global MIC_IF_DATA_REG_ADDR
+  return [mic_if_read $MIC_IF_DATA_REG_ADDR $num] 
 }
 
 # Get sum data
 #
 proc mic_if_get_sum_data {} {
   global MIC_IF_SUM_DATA_REG_ADDR
-  return [mic_if_read $MIC_IF_SUM_DATA_REG_ADDR] 
+  return [mic_if_read $MIC_IF_SUM_DATA_REG_ADDR 1] 
 }
 
 # Data ready
 proc mic_if_ready {} {
   global MIC_IF_STATUS_REG_ADDR
   global MIC_IF_MASK_DREADY
-  return [expr [mic_if_read $MIC_IF_STATUS_REG_ADDR] & $MIC_IF_MASK_DREADY]
+  return [expr [mic_if_read $MIC_IF_STATUS_REG_ADDR 1] & $MIC_IF_MASK_DREADY]
 }
 
 # Clear data ready
@@ -210,7 +217,7 @@ proc mic_if_clr_ready {} {
 # Get delay
 proc mic_if_get_delay {num} {
   global MIC_IF_DELAY_REG_ADDR
-  return [mic_if_read $MIC_IF_DELAY_REG_ADDR+$num] 
+  return [mic_if_read $MIC_IF_DELAY_REG_ADDR+$num 1] 
 }
 
 # Set delay
@@ -233,28 +240,41 @@ proc mic_if_set_right {value} {
 }
 
 # Avalon-ST interface
-proc mic_if_avalon_st {value} {
+proc mic_if_avalon_st_aud {value} {
   global MIC_IF_CTRL_4_REG_ADDR
-  global MIC_IF_OFF_DIS_ST
+  global MIC_IF_OFF_AUD_ST_DIS
   if {$value} {
-    mic_if_clrbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_DIS_ST
-    puts "MIC_IF: Avalon-ST interface enabled."
+    mic_if_clrbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_AUD_ST_DIS
+    puts "MIC_IF: Avalon-ST Audio interface enabled."
   } else {
-    mic_if_setbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_DIS_ST
-    puts "MIC_IF: Avalon-ST interface disabled."
+    mic_if_setbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_AUD_ST_DIS
+    puts "MIC_IF: Avalon-ST Audio interface disabled."
+  }
+}
+
+# Avalon-ST interface
+proc mic_if_avalon_st_fil {value} {
+  global MIC_IF_CTRL_4_REG_ADDR
+  global MIC_IF_OFF_FIL_ST_DIS
+  if {$value} {
+    mic_if_clrbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_FIL_ST_DIS
+    puts "MIC_IF: Avalon-ST Filter interface enabled."
+  } else {
+    mic_if_setbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_FIL_ST_DIS
+    puts "MIC_IF: Avalon-ST Filter interface disabled."
   }
 }
 
 # Avalon-ST Beamformer interface
-proc mic_if_beam_avalon_st {value} {
+proc mic_if_avalon_st_beam {value} {
   global MIC_IF_CTRL_4_REG_ADDR
   global MIC_IF_OFF_BF_ST_EN
   if {$value} {
     mic_if_setbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_BF_ST_EN
-    puts "MIC_IF: Beamformer Avalon-ST interface enabled."
+    puts "MIC_IF: Avalon-ST Beamformer interface enabled."
   } else {
     mic_if_clrbit $MIC_IF_CTRL_4_REG_ADDR $MIC_IF_OFF_BF_ST_EN
-    puts "MIC_IF: Beamformer Avalon-ST interface disabled."
+    puts "MIC_IF: Avalon-ST Beamformer interface disabled."
   }
 }
 
@@ -266,17 +286,19 @@ proc mic_if_show_config {} {
   global MIC_IF_CTRL_4_REG_ADDR
   global MIC_IF_STATUS_REG_ADDR
 
-  puts [format "MIC_IF: CTRL_1: %#010x" [mic_if_read $MIC_IF_CTRL_1_REG_ADDR ]]
-  puts [format "MIC_IF: CTRL_2: %#010x" [mic_if_read $MIC_IF_CTRL_2_REG_ADDR ]]
-  puts [format "MIC_IF: CTRL_3: %#010x" [mic_if_read $MIC_IF_CTRL_3_REG_ADDR ]]
-  puts [format "MIC_IF: CTRL_4: %#010x" [mic_if_read $MIC_IF_CTRL_4_REG_ADDR ]]
-  puts [format "MIC_IF: STATUS: %#010x" [mic_if_read $MIC_IF_STATUS_REG_ADDR ]]
+  puts [format "MIC_IF: CTRL_1: %#010x" [mic_if_read $MIC_IF_CTRL_1_REG_ADDR 1]]
+  puts [format "MIC_IF: CTRL_2: %#010x" [mic_if_read $MIC_IF_CTRL_2_REG_ADDR 1]]
+  puts [format "MIC_IF: CTRL_3: %#010x" [mic_if_read $MIC_IF_CTRL_3_REG_ADDR 1]]
+  puts [format "MIC_IF: CTRL_4: %#010x" [mic_if_read $MIC_IF_CTRL_4_REG_ADDR 1]]
+  puts [format "MIC_IF: STATUS: %#010x" [mic_if_read $MIC_IF_STATUS_REG_ADDR 1]]
 }
 
 # Read configuration
-proc mic_if_show_data {} {
-  for {set i 0} {$i<32} {incr i} {
-    puts [format "MIC_IF: DATA_%d:  %#010x" $i [mic_if_get_data $i ]]
+proc mic_if_show_data {NUM_CH} {
+  set dump_data [mic_if_dump_data $NUM_CH]
+  for {set i 0} {$i<$NUM_CH} {incr i} {
+    #puts [format "MIC_IF: DATA_%d:  %#010x" $i [mic_if_get_data $i ]]
+    puts [format "MIC_IF: DATA_%d:  %#010x" $i [lindex $dump_data $i]]
   }
 }
 
@@ -289,5 +311,175 @@ proc mic_if_read_samples {N} {
     mic_if_clr_ready
     incr i
   }
+}
+
+# Open bytestream audio
+proc mic_if_open_aud_bytestream {} {
+  global p_bytestream
+  set p_bytestream [get_default_bytestream]
+  open_service bytestream $p_bytestream 
+  puts "JTAG UART opened: $p_bytestream" 
+}
+
+# Open bytestream audio
+proc mic_if_open_jtag_bytestream {index} {
+  global p_bytestream
+  set p_bytestream [get_default_bytestream]
+  open_service bytestream $p_bytestream 
+  puts "JTAG UART opened: $p_bytestream" 
+}
+
+# Get audio packet
+proc mic_if_get_packet {num_bytes} {
+  set parsed {}
+  foreach byte [mic_if_get_aud_data $num_bytes] {
+    append parsed [format %02x $byte]
+  }
+  return $parsed
+}
+
+
+# Read data bytestream
+proc mic_if_get_aud_data {num_bytes} {
+  global p_bytestream
+  return [bytestream_receive $p_bytestream $num_bytes]
+}
+
+# Initialization
+proc mic_if_init {} {
+  global NUM_CH
+  mic_if_enable 0 
+  for {set i 0} {$i<$NUM_CH} {incr i} {
+    mic_if_channel_en $i 1
+  }
+  mic_if_saturation 1
+  mic_if_round 1  
+  mic_if_cic_osr 51
+  mic_if_shift_right 17
+  mic_if_clk_div 10
+  mic_if_avalon_st_fil 0
+  mic_if_avalon_st_aud 1
+  mic_if_enable 1 
+  mic_if_open_aud_bytestream
+  
+  mic_if_show_config
+  mic_if_show_data $NUM_CH
+}
+
+
+# ======================
+#     TCP/IP Server
+# ======================
+ 
+#Code Derived from Tcl Developer Exchange - http://www.tcl.tk/about/netserver.html
+ 
+### Start server
+# port: socket port
+# mode: 0 - command, 1 - data
+proc Start_Server {port mode} {
+    if {$mode == 0} {
+      set s [socket -server CmdConnAccept $port]
+      puts "Started Command Socket Server on port - $port"
+    } else {
+      set s [socket -server DataConnAccept $port]
+      puts "Started Data Socket Server on port - $port"
+    }
+    vwait forever
+}
+ 
+proc DataConnAccept {sock addr port} {
+    global conn
+    global p_data
+
+    # Open JTAG bytestream
+    set p_data [open_bytestream 0]
+ 
+    # Record the client's information
+ 
+    puts "Accept $sock from $addr port $port"
+    set conn(addr,$sock) [list $addr $port]
+ 
+    # Ensure that each "puts" by the server
+    # results in a network transmission
+ 
+    fconfigure $sock -buffering line
+ 
+    # Set up a callback for when the client sends data
+    
+    fileevent $sock readable [list IncomingData $sock]
+}
+ 
+proc IncomingData {sock} {
+    global conn
+ 
+    # Check end of file or abnormal connection drop,
+    # then write the data to the vJTAG
+ 
+    if {[eof $sock] || [catch {gets $sock line}]} {
+    close $sock
+    puts "Close $conn(addr,$sock)"
+    unset conn(addr,$sock)
+    } else {
+    set send_data [bytestream_receive $p_data [expr 2*$line]]
+    puts $sock $send_data
+    #puts $send_data
+    # TODO: Add recovery checking
+    }
+}
+
+proc CmdConnAccept {sock addr port} {
+    global conn
+    global p_cmd
+
+    # Open JTAG master
+    set p_cmd [open_default_master]
+ 
+    # Record the client's information
+ 
+    puts "Accept $sock from $addr port $port"
+    set conn(addr,$sock) [list $addr $port]
+ 
+    # Ensure that each "puts" by the server
+    # results in a network transmission
+ 
+    fconfigure $sock -buffering line
+ 
+    # Set up a callback for when the client sends data
+    
+    fileevent $sock readable [list IncomingCmd $sock]
+}
+
+proc IncomingCmd {sock} {
+    global conn
+ 
+    # Check end of file or abnormal connection drop,
+    # then write the data to the vJTAG
+ 
+    if {[eof $sock] || [catch {gets $sock line}]} {
+      close $sock
+      puts "Close $conn(addr,$sock)"
+      unset conn(addr,$sock)
+    } else {
+      #set send_data [mic_if_get_packet [expr 2*$line]]
+      #puts $sock $send_data
+      set cmd [lindex $line 0]
+      set arg0 [lindex $line 1]
+      set arg1 [lindex $line 2]
+
+      if {$cmd == 0} {
+         write_32 $arg0 $arg1
+         puts "Write $arg1 to $arg0 address"
+      } elseif {$cmd == 1} {
+         set readvalue [format "%#010x" [read_32 $arg0 1]]
+         puts "Read $readvalue from $arg0 address"
+         puts $sock $readvalue
+      } elseif {$cmd == 2} {
+         puts "Close JTAG Master"
+         close_default_master
+      } else {
+         puts "Unknown command num: $cmd. Ignoring."
+      }
+    }
+
 }
 

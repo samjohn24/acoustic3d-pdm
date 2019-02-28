@@ -14,9 +14,41 @@ proc create_system_file {header} {
    }
 }
 
-# Sleeps N seconds
+# Sleep N seconds
 proc sleep N {
     after [expr {int($N * 1000)}]
+}
+
+
+# Returns the first bytestream service in the system.
+proc get_default_bytestream {} {
+	return [ lindex [ get_service_paths bytestream ] 0 ]
+}
+
+# Returns the a bytestream service in the system.
+proc get_bytestream {num} {
+	return [ lindex [ get_service_paths bytestream ] $num ]
+}
+
+
+# Open the first bytestream service in the system.
+proc open_default_bytestream {} {
+  set p0 [ get_default_bytestream ]
+  open_service bytestream $p0
+  puts $p0
+}
+
+# Open a bytestream service in the system.
+proc open_bytestream {num} {
+  set p0 [ get_bytestream $num ]
+  open_service bytestream $p0
+  puts "JTAG Bytestream opened: $p0" 
+  return $p0
+}
+
+# Receive data
+proc get_bytestream_data {index num_bytes} {
+  return [bytestream_receive [get_bytestream $index] $num_bytes]
 }
 
 # Returns the first master in the system.
@@ -24,11 +56,13 @@ proc get_default_master {} {
 	return [ lindex [ get_service_paths master ] 0 ]
 }
 
+
 # Open the first master in the system.
 proc open_default_master {} {
   set p0 [ get_default_master ]
   open_service master $p0
-  puts $p0
+  puts "JTAG Master opened: $p0"
+  return $p0
 }
 
 # Close the first master in the system.
