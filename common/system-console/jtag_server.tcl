@@ -13,6 +13,7 @@
 source default_master.tcl
 
 set p_address 0
+set conn_timeout 20000
  
 ### Start server
 # port: socket port
@@ -67,7 +68,8 @@ proc IncomingData {sock} {
     puts "\[DAT\]: Close $conn(addr,$sock)"
     unset conn_data(addr,$sock)
     } else {
-    set recv_data [get_packet $p_path [expr 2*$line]]
+    #set recv_data [get_packet $p_path [expr 2*$line]]
+    set recv_data [get_packet_improved $p_path [expr 2*$line]]
     puts $sock $recv_data
     #puts $recv_data
     # TODO: Add recovery checking
@@ -151,15 +153,9 @@ proc IncomingCmd {sock} {
 
 # Get packet
 proc get_packet {p_path num_bytes} {
-  #set parsed {}
   set t0 [clock clicks -millisec]
   set recv_bytes [bytestream_receive $p_path [expr $num_bytes]]
-  #set recv_bytes [lrepeat $num_bytes 0x32]
-  #puts "[llength $recv_bytes] bytes to send: $recv_bytes"
   puts "time recv: [expr {[clock clicks -millisec]-$t0}] ms" 
-  #foreach byte $recv_bytes {
-    #append parsed [format %02x $byte]
-  #}
   set parsed [binary format c* $recv_bytes]
   puts "time recv total: [expr {[clock clicks -millisec]-$t0}] ms" 
   set packet "[format %06d [string length $parsed]]$parsed"
@@ -170,6 +166,139 @@ proc get_packet {p_path num_bytes} {
   #}
   #puts $packet_show
   return $packet
+}
+
+# Get packet large (excluding the latest 2 bytes)
+proc get_packet_large {p_path num_bytes} {
+  #open_service bytestream [get_bytestream 0]
+  #puts "requested $num_bytes bytes"
+  set parsed {}
+  set t0 [clock clicks -millisec]
+
+  set recv_bytes {}
+  #while { [llength recv_bytes] == 0} {
+  #  set recv_bytes [bytestream_receive $p_path $num_bytes]
+  #}
+
+  set counter 0
+
+  #open_default_bytestream
+  while { [llength $recv_bytes] < [expr $num_bytes]} {
+    #puts "num recv bytes:[llength $recv_bytes]"
+    set req_bytes [expr $num_bytes-[llength $recv_bytes]]
+    set recv_data [bytestream_receive $p_path $req_bytes]
+    #puts "recv data ([llength $recv_data] bytes of $req_bytes): $recv_data"
+
+    #if { [llength $recv_data] > 2 } {
+    #  lappend recv_bytes {*}[lrange $recv_data 0 end-2]
+    #  set counter 0
+    #} elseif { [llength $recv_data] > 1 } {
+    #  lappend recv_bytes {*}$recv_data
+    #  set counter 0
+    #} else {
+    #  incr counter
+    #  after 1
+    #}
+    if { [llength $recv_data] > 0 } {
+      lappend recv_bytes {*}$recv_data
+      set counter 0
+    } else {
+      incr counter
+      after 1
+    }
+    
+    #puts "recv bytes: $recv_bytes"
+    if { $counter > 200000} {
+      refresh_connections
+      close_default_bytestream
+      open_default_bytestream
+      set counter 0
+      break
+    }
+  }
+  #close_default_bytestream
+
+  #puts $recv_bytes
+  #puts "\ttime recv: [expr {[clock clicks -millisec]-$t0}] ms" 
+  foreach byte $recv_bytes {
+    append parsed [format %02x $byte]
+  }
+  #binary scan $recv_bytes H* parsed
+  set parsed_len [string length $parsed]
+  set packet "[format %06d $parsed_len]$parsed"
+  if { $parsed_len > 0 } {
+    #puts "\t$parsed_len bytes sent"
+  }
+  #puts "\ttime recv total: [expr {[clock clicks -millisec]-$t0}] ms" 
+  #puts $packet
+  #set packet_show {}
+  #foreach char [split $packet ""] {
+  #  lappend packet_show [scan $char %c]
+  #}
+  #puts $packet_show
+  #close_service bytestream [get_bytestream 0]
+  return $packet
+}
+
+# Get packet large
+proc get_packet_improved {p_path num_bytes} {
+  global conn_timeout
+
+  set t0 [clock clicks -millisec]
+
+  set counter 0
+
+  set recv_bytes {}
+  while { [llength $recv_bytes] < [expr $num_bytes]} {
+    set req_bytes [expr $num_bytes-[llength $recv_bytes]]
+    set recv_data [bytestream_receive $p_path $req_bytes]
+    #puts "recv data ([llength $recv_data] bytes of $req_bytes): $recv_data"
+
+    if { [llength $recv_data] > 0 } {
+      lappend recv_bytes {*}$recv_data
+      set counter 0
+    } else {
+      incr counter
+      after 1
+    }
+    
+    if { $counter > $conn_timeout} {
+      refresh_connections
+      close_default_bytestream
+      open_default_bytestream
+      set counter 0
+      break
+    }
+  }
+
+  #puts "recv bytes ([llength $recv_bytes] bytes): $recv_bytes"
+  #puts "\ttime recv: [expr {[clock clicks -millisec]-$t0}] ms" 
+  
+  set parsed {}
+  foreach byte $recv_bytes {
+    append parsed [format %02x $byte]
+  }
+
+  set parsed_len [string length $parsed]
+  set packet "[format %06d $parsed_len]$parsed"
+
+  if { $parsed_len > 0 } {
+    #puts "\t$parsed_len bytes sent"
+  }
+
+  #show_packet $packet
+
+  #puts "\ttime recv total: [expr {[clock clicks -millisec]-$t0}] ms" 
+  return $packet
+}
+
+proc show_packet {packet} {
+  puts $packet
+  set packet_show {}
+  foreach char [split $packet ""] {
+    lappend packet_show [scan $char %c]
+  }
+  puts $packet_show
 }
 
 open_default_master

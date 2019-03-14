@@ -35,7 +35,14 @@ proc get_bytestream {num} {
 proc open_default_bytestream {} {
   set p0 [ get_default_bytestream ]
   open_service bytestream $p0
-  puts $p0
+  #puts "Opened:$p0"
+}
+
+# Close the first bytestream service in the system.
+proc close_default_bytestream {} {
+  set p0 [ get_default_bytestream ]
+  close_service bytestream $p0
+  #puts "Closed:$p0"
 }
 
 # Open a bytestream service in the system.

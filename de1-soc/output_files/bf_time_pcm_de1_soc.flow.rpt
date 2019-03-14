@@ -1,5 +1,5 @@
 Flow report for bf_time_pcm_de1_soc
-Thu Feb 21 00:49:02 2019
+Wed Mar 13 22:12:14 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Feb 21 00:46:45 2019       ;
+; Flow Status                     ; Successful - Wed Mar 13 22:10:24 2019       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; bf_time_pcm_de1_soc                         ;
 ; Top-level Entity Name           ; bf_time_pcm_de1_soc                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 6,388 / 32,070 ( 20 % )                     ;
-; Total registers                 ; 11948                                       ;
+; Logic utilization (in ALMs)     ; 6,396 / 32,070 ( 20 % )                     ;
+; Total registers                 ; 12289                                       ;
 ; Total pins                      ; 241 / 457 ( 53 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,422,848 / 4,065,280 ( 60 % )              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/21/2019 00:31:18 ;
+; Start date & time ; 03/13/2019 21:47:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bf_time_pcm_de1_soc ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+-----------------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+-----------------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 0.155071987806615                                                     ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 0.155252445616653                                                     ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                     ; --            ; --          ; --         ;
 ; MISC_FILE                           ; ip/bf_time_pcm/synthesis/../bf_time_pcm.cmp                           ; --            ; --          ; --         ;
@@ -100,9 +100,9 @@ agreement for further details.
 ; SLD_FILE                            ; ip/bf_time_pcm/synthesis/bf_time_pcm.debuginfo                        ; --            ; --          ; --         ;
 ; SLD_FILE                            ; ip/ALTCLKCTRL/synthesis/ALTCLKCTRL.debuginfo                          ; --            ; --          ; --         ;
 ; SLD_FILE                            ; ip/ALT_NCO/synthesis/ALT_NCO.debuginfo                                ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1550719859          ; --            ; ALTCLKCTRL  ; --         ;
-; SLD_INFO                            ; QSYS_NAME ALT_NCO HAS_SOPCINFO 1 GENERATION_ID 1550719870             ; --            ; ALT_NCO     ; --         ;
-; SLD_INFO                            ; QSYS_NAME bf_time_pcm HAS_SOPCINFO 1 GENERATION_ID 1550719810         ; --            ; bf_time_pcm ; --         ;
+; SLD_INFO                            ; QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1552524394          ; --            ; ALTCLKCTRL  ; --         ;
+; SLD_INFO                            ; QSYS_NAME ALT_NCO HAS_SOPCINFO 1 GENERATION_ID 1552524429             ; --            ; ALT_NCO     ; --         ;
+; SLD_INFO                            ; QSYS_NAME bf_time_pcm HAS_SOPCINFO 1 GENERATION_ID 1552524245         ; --            ; bf_time_pcm ; --         ;
 ; SOPCINFO_FILE                       ; ip/bf_time_pcm/synthesis/../../../../common/qsys/bf_time_pcm.sopcinfo ; --            ; --          ; --         ;
 ; SOPCINFO_FILE                       ; ip/ALTCLKCTRL/synthesis/../../../../common/qsys/ALTCLKCTRL.sopcinfo   ; --            ; --          ; --         ;
 ; SOPCINFO_FILE                       ; ip/ALT_NCO/synthesis/../../../../common/qsys/ALT_NCO.sopcinfo         ; --            ; --          ; --         ;
@@ -119,11 +119,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:57     ; 1.0                     ; 1743 MB             ; 00:02:44                           ;
-; Fitter                    ; 00:12:31     ; 1.0                     ; 3001 MB             ; 00:15:35                           ;
-; Assembler                 ; 00:00:33     ; 1.0                     ; 1453 MB             ; 00:00:27                           ;
-; TimeQuest Timing Analyzer ; 00:02:15     ; 1.0                     ; 1955 MB             ; 00:02:10                           ;
-; Total                     ; 00:17:16     ; --                      ; --                  ; 00:20:56                           ;
+; Analysis & Synthesis      ; 00:04:40     ; 1.0                     ; 1745 MB             ; 00:03:58                           ;
+; Fitter                    ; 00:16:34     ; 1.0                     ; 2982 MB             ; 00:20:10                           ;
+; Assembler                 ; 00:00:27     ; 1.0                     ; 1459 MB             ; 00:00:21                           ;
+; TimeQuest Timing Analyzer ; 00:01:48     ; 1.0                     ; 1961 MB             ; 00:01:43                           ;
+; Total                     ; 00:23:29     ; --                      ; --                  ; 00:26:12                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

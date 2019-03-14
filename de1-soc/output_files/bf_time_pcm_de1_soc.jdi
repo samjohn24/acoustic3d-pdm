@@ -192,31 +192,31 @@
     </sld_info>
     <sld_info hpath="ALTCLKCTRL:clk_gate_dec" name="clk_gate_dec">
       <assignment_values>
-        <assignment_value text="QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1550719859"/>
+        <assignment_value text="QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1552524394"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="ALTCLKCTRL:clk_gate_dec16" name="clk_gate_dec16">
       <assignment_values>
-        <assignment_value text="QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1550719859"/>
+        <assignment_value text="QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1552524394"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="ALTCLKCTRL:clk_gate_nco" name="clk_gate_nco">
       <assignment_values>
-        <assignment_value text="QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1550719859"/>
+        <assignment_value text="QSYS_NAME ALTCLKCTRL HAS_SOPCINFO 1 GENERATION_ID 1552524394"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="ALT_NCO:alt_nco" name="alt_nco">
       <assignment_values>
-        <assignment_value text="QSYS_NAME ALT_NCO HAS_SOPCINFO 1 GENERATION_ID 1550719870"/>
+        <assignment_value text="QSYS_NAME ALT_NCO HAS_SOPCINFO 1 GENERATION_ID 1552524429"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="bf_time_pcm:bf_time_pcm" name="bf_time_pcm">
       <assignment_values>
-        <assignment_value text="QSYS_NAME bf_time_pcm HAS_SOPCINFO 1 GENERATION_ID 1550719810"/>
+        <assignment_value text="QSYS_NAME bf_time_pcm HAS_SOPCINFO 1 GENERATION_ID 1552524245"/>
       </assignment_values>
       <parameters/>
     </sld_info>

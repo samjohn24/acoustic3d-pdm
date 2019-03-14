@@ -42,7 +42,7 @@ def get_data(i):
 
     start = time.time()
 
-    data_int = jtag_bytestream.GetSamples(NUM_SAMPLES, verbose=False)
+    data_int = jtag_bytestream.GetShortSamples(NUM_SAMPLES, verbose=False)
 
     proc_time = time.time() - start
 
@@ -59,15 +59,10 @@ def get_data(i):
 an1 = animation.FuncAnimation(fig, get_data, interval=1)
 plt.show()
 
-#for i in range(100000):
-#    start = time.time()
-#
-#    #data_int = jtag_bytestream.GetSamples(NUM_SAMPLES, verbose=False)
-#    data_int = jtag_bytestream.GetSamples(NUM_SAMPLES, verbose=True)
-#
-#    proc_time = time.time() - start
-#    if len(data_int)>2:
-#        print 'proc: %.2f ms, nro samples: %d' %(proc_time*1e3, len(data_int)) 
+#for i in range(10):
+#    #WriteMaster(conn, 0x0424+i, 0x3423412)
+#    jtag_master.WriteMaster(MIC_IF_BASE, i)
+#    print jtag_master.ReadMaster(MIC_IF_BASE)
 
 
 #data_int = jtag_bytestream.GetShortSamples(NUM_SAMPLES, verbose=True)
