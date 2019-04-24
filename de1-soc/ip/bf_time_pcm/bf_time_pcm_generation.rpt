@@ -1,3 +1,1085 @@
+Info: Starting: Create simulation model
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading qsys/bf_time_pcm.qsys
+Progress: Reading input file
+Warning: Invalid device family name in input file: Stratix III
+Progress: Adding audio_subsys [AUDIO_SUBSYS 1.0]
+Progress: Parameterizing module audio_subsys
+Progress: Adding avalon_st_jtag [avalon_st_jtag 1.0]
+Progress: Parameterizing module avalon_st_jtag
+Progress: Adding clk_100 [clock_source 13.0]
+Warning: clk_100: Used clock_source 16.0 (instead of 13.0)
+Progress: Parameterizing module clk_100
+Progress: Adding clk_50 [clock_source 13.0]
+Warning: clk_50: Used clock_source 16.0 (instead of 13.0)
+Progress: Parameterizing module clk_50
+Progress: Adding data_format_adapter_0 [data_format_adapter 13.0]
+Warning: data_format_adapter_0: Used data_format_adapter 16.0 (instead of 13.0)
+Progress: Parameterizing module data_format_adapter_0
+Progress: Adding key [altera_avalon_pio 13.0.1.99.2]
+Warning: key: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
+Progress: Parameterizing module key
+Progress: Adding led [altera_avalon_pio 13.0.1.99.2]
+Warning: led: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
+Progress: Parameterizing module led
+Progress: Adding master [altera_jtag_avalon_master 13.0]
+Warning: master: Used altera_jtag_avalon_master 16.0 (instead of 13.0)
+Progress: Parameterizing module master
+Progress: Adding mic_if [mic_if 1.0]
+Progress: Parameterizing module mic_if
+Progress: Adding pwm_ctrl [pwm_ctrl 1.0]
+Progress: Parameterizing module pwm_ctrl
+Progress: Adding seg7 [SEG7_IF 1.0]
+Progress: Parameterizing module seg7
+Progress: Adding sw [altera_avalon_pio 13.0.1.99.2]
+Warning: sw: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
+Progress: Parameterizing module sw
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: bf_time_pcm.audio_subsys.i2c_sda: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component clock_source version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component altera_avalon_mm_clock_crossing_bridge version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component altera_avalon_pio version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component altera_avalon_pio version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Info: bf_time_pcm.avalon_st_jtag.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: bf_time_pcm.avalon_st_jtag.jtag_uart: Read IRQ effectively disabled when threshold >= depth
+Warning: bf_time_pcm.avalon_st_jtag.jtag_uart: Interrupt sender jtag_uart.irq is not connected to an interrupt receiver
+Warning: bf_time_pcm.avalon_st_jtag: add_instance: Component clock_source version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.avalon_st_jtag: add_instance: Component altera_avalon_jtag_uart version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Info: bf_time_pcm.data_format_adapter_0.out/avalon_st_jtag.avalon_st_sink: The sink has a error signal of 2 bits, but the source does not. Avalon-ST Adapter will be inserted.
+Warning: bf_time_pcm.key: Interrupt sender key.irq is not connected to an interrupt receiver
+Warning: bf_time_pcm.sw: Interrupt sender sw.irq is not connected to an interrupt receiver
+Info: bf_time_pcm: Generating bf_time_pcm "bf_time_pcm" for SIM_VERILOG
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: audio_subsys: "bf_time_pcm" instantiated AUDIO_SUBSYS "audio_subsys"
+Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and slave jtag_uart.avalon_jtag_slave because the master has address signal 3 bit wide, but the slave is 1 bit wide.
+Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and slave jtag_uart.avalon_jtag_slave because the master has byteenable signal 4 bit wide, but the slave is 0 bit wide.
+Info: avalon_st_jtag: "bf_time_pcm" instantiated avalon_st_jtag "avalon_st_jtag"
+Info: data_format_adapter_0: "bf_time_pcm" instantiated data_format_adapter "data_format_adapter_0"
+Info: key: Starting RTL generation for module 'bf_time_pcm_key'
+Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8010_638490652131855306.dir/0003_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0003_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0003_key_gen/  ]
+Info: key: Done RTL generation for module 'bf_time_pcm_key'
+Info: key: "bf_time_pcm" instantiated altera_avalon_pio "key"
+Info: led: Starting RTL generation for module 'bf_time_pcm_led'
+Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8010_638490652131855306.dir/0004_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0004_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0004_led_gen/  ]
+Info: led: Done RTL generation for module 'bf_time_pcm_led'
+Info: led: "bf_time_pcm" instantiated altera_avalon_pio "led"
+Info: master: "bf_time_pcm" instantiated altera_jtag_avalon_master "master"
+Info: mic_if: "bf_time_pcm" instantiated mic_if "mic_if"
+Info: pwm_ctrl: "bf_time_pcm" instantiated pwm_ctrl "pwm_ctrl"
+Info: seg7: "bf_time_pcm" instantiated SEG7_IF "seg7"
+Info: sw: Starting RTL generation for module 'bf_time_pcm_sw'
+Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8010_638490652131855306.dir/0008_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0008_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0008_sw_gen/  ]
+Info: sw: Done RTL generation for module 'bf_time_pcm_sw'
+Info: sw: "bf_time_pcm" instantiated altera_avalon_pio "sw"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "bf_time_pcm" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: "bf_time_pcm" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: rst_controller: "bf_time_pcm" instantiated altera_reset_controller "rst_controller"
+Info: audio: "audio_subsys" instantiated AUDIO_IF "audio"
+Info: mm_bridge: "audio_subsys" instantiated altera_avalon_mm_clock_crossing_bridge "mm_bridge"
+Info: i2c_scl: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
+Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8010_638490652131855306.dir/0012_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0012_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0012_i2c_scl_gen/  ]
+Info: i2c_scl: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
+Info: i2c_scl: "audio_subsys" instantiated altera_avalon_pio "i2c_scl"
+Info: i2c_sda: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
+Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8010_638490652131855306.dir/0013_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0013_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0013_i2c_sda_gen/  ]
+Info: i2c_sda: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
+Info: i2c_sda: "audio_subsys" instantiated altera_avalon_pio "i2c_sda"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "audio_subsys" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: jtag_uart_sender: "avalon_st_jtag" instantiated jtag_uart_sender "jtag_uart_sender"
+Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
+Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8010_638490652131855306.dir/0014_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0014_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0014_jtag_uart_gen/  ]
+Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
+Info: jtag_uart: "avalon_st_jtag" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: mm_interconnect_0: "avalon_st_jtag" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: jtag_phy_embedded_in_jtag_master: "master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_std_synchronizer_nocut.v
+Info: timing_adt: "master" instantiated timing_adapter "timing_adt"
+Info: fifo: "master" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "master" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "master" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "master" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "master" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "master" instantiated channel_adapter "p2b_adapter"
+Info: master_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_master_translator"
+Info: mic_if_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "mic_if_avalon_slave_translator"
+Info: master_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "master_master_agent"
+Info: mic_if_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "mic_if_avalon_slave_agent"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_master_limiter"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: bf_time_pcm: Done "bf_time_pcm" with 50 modules, 84 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/bf_time_pcm.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/bf_time_pcm.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	39 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create testbench Qsys system
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --testbench=STANDARD --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading qsys/bf_time_pcm.qsys
+Progress: Reading input file
+Warning: Invalid device family name in input file: Stratix III
+Progress: Adding audio_subsys [AUDIO_SUBSYS 1.0]
+Progress: Parameterizing module audio_subsys
+Progress: Adding avalon_st_jtag [avalon_st_jtag 1.0]
+Progress: Parameterizing module avalon_st_jtag
+Progress: Adding clk_100 [clock_source 13.0]
+Warning: clk_100: Used clock_source 16.0 (instead of 13.0)
+Progress: Parameterizing module clk_100
+Progress: Adding clk_50 [clock_source 13.0]
+Warning: clk_50: Used clock_source 16.0 (instead of 13.0)
+Progress: Parameterizing module clk_50
+Progress: Adding data_format_adapter_0 [data_format_adapter 13.0]
+Warning: data_format_adapter_0: Used data_format_adapter 16.0 (instead of 13.0)
+Progress: Parameterizing module data_format_adapter_0
+Progress: Adding key [altera_avalon_pio 13.0.1.99.2]
+Warning: key: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
+Progress: Parameterizing module key
+Progress: Adding led [altera_avalon_pio 13.0.1.99.2]
+Warning: led: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
+Progress: Parameterizing module led
+Progress: Adding master [altera_jtag_avalon_master 13.0]
+Warning: master: Used altera_jtag_avalon_master 16.0 (instead of 13.0)
+Progress: Parameterizing module master
+Progress: Adding mic_if [mic_if 1.0]
+Progress: Parameterizing module mic_if
+Progress: Adding pwm_ctrl [pwm_ctrl 1.0]
+Progress: Parameterizing module pwm_ctrl
+Progress: Adding seg7 [SEG7_IF 1.0]
+Progress: Parameterizing module seg7
+Progress: Adding sw [altera_avalon_pio 13.0.1.99.2]
+Warning: sw: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
+Progress: Parameterizing module sw
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: bf_time_pcm.audio_subsys.i2c_sda: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component clock_source version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component altera_avalon_mm_clock_crossing_bridge version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component altera_avalon_pio version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.AUDIO_SUBSYS: add_instance: Component altera_avalon_pio version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Info: bf_time_pcm.avalon_st_jtag.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: bf_time_pcm.avalon_st_jtag.jtag_uart: Read IRQ effectively disabled when threshold >= depth
+Warning: bf_time_pcm.avalon_st_jtag.jtag_uart: Interrupt sender jtag_uart.irq is not connected to an interrupt receiver
+Warning: bf_time_pcm.avalon_st_jtag: add_instance: Component clock_source version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm.avalon_st_jtag: add_instance: Component altera_avalon_jtag_uart version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Info: bf_time_pcm.data_format_adapter_0.out/avalon_st_jtag.avalon_st_sink: The sink has a error signal of 2 bits, but the source does not. Avalon-ST Adapter will be inserted.
+Warning: bf_time_pcm.key: Interrupt sender key.irq is not connected to an interrupt receiver
+Warning: bf_time_pcm.sw: Interrupt sender sw.irq is not connected to an interrupt receiver
+Info: qsys-generate succeeded.
+Info: Loading IP catalog for testbench.
+Info: Reading index /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx: Loading now from components.ipx
+Info: Reading index /opt/altera_lite/16.0/quartus/sopc_builder/bin/ip_component_categories.ipx
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/ip_component_categories.ipx described 0 plugins, 0 paths, in 0.01 seconds
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.01 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx
+Info: Reading index /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/components.ipx
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/components.ipx: Loading now from components.ipx
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip*/*/qsys_comp/*_hw.tcl matched 14 files in 0.39 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/components.ipx described 0 plugins, 1 paths, in 0.41 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/* matched 8 files in 0.43 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/ip/**/* matched 0 files in 0.00 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/*/* matched 2 files in 0.00 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx described 0 plugins, 3 paths, in 0.44 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/* matched 7 files in 0.44 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/*/* matched 9 files in 0.00 seconds
+Info: Reading index /home/scarbajali/.altera.quartus/ip/16.0/ip_search_path/user_components.ipx
+Info: /home/scarbajali/Dropbox/Thesis_Master/work/ips/mic_if/qsys_comp/**/* matched 0 files in 0.00 seconds
+Info: /home/scarbajali/Dropbox/Thesis_Master/work/ips/avalon_st_mic_splitter/qsys_comp/**/* matched 0 files in 0.00 seconds
+Info: /home/scarbajali/Dropbox/Thesis_Master/work/ips/mux2fft/qsys_comp/**/* matched 0 files in 0.00 seconds
+Info: /home/scarbajali/Dropbox/Thesis_Master/work/ips/angle_detec/qsys_comp/**/* matched 0 files in 0.00 seconds
+Info: /home/scarbajali/Dropbox/Thesis_Master/work/ips/bf_pdm_fft_lite/qsys/**/* matched 0 files in 0.00 seconds
+Info: Reading index /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip/bf_time_pcm/generated/q13.0sp1_stratixiii/testbench/bf_time_pcm.ipx
+Info: Z:/OneDrive/Projects/Master/Thesis/hardware/ips/bf_time_pcm/qsys/* matched 0 files in 0.00 seconds
+Info: Z:/OneDrive/Projects/Master/Thesis/hardware/ips/bf_time_pcm/qsys/ip/**/* matched 0 files in 0.00 seconds
+Info: Z:/OneDrive/Projects/Master/Thesis/hardware/ips/bf_time_pcm/qsys/*/* matched 0 files in 0.00 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip/bf_time_pcm/generated/q13.0sp1_stratixiii/testbench/bf_time_pcm.ipx described 0 plugins, 3 paths, in 0.02 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip/**/* matched 2152 files in 0.36 seconds
+Info: /home/scarbajali/.altera.quartus/ip/16.0/ip_search_path/user_components.ipx described 0 plugins, 6 paths, in 0.37 seconds
+Info: /home/scarbajali/.altera.quartus/ip/16.0/**/* matched 2 files in 0.37 seconds
+Info: Reading index /opt/altera_lite/16.0/ip/altera/altera_components.ipx
+Info: /opt/altera_lite/16.0/ip/altera/altera_components.ipx described 1854 plugins, 0 paths, in 0.25 seconds
+Info: Reading index /opt/altera_lite/16.0/ip/altera/up.ipx
+Info: /opt/altera_lite/16.0/ip/altera/up.ipx described 2 plugins, 0 paths, in 0.02 seconds
+Info: /opt/altera_lite/16.0/ip/**/* matched 138 files in 0.27 seconds
+Info: /opt/altera_lite/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index /opt/altera_lite/16.0/quartus/sopc_builder/builtin.ipx
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/builtin.ipx described 82 plugins, 0 paths, in 0.01 seconds
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/**/* matched 9 files in 0.02 seconds
+Info: Reading index /opt/altera_lite/16.0/quartus/common/librarian/factories/index.ipx
+Info: /opt/altera_lite/16.0/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.02 seconds
+Info: /opt/altera_lite/16.0/quartus/common/librarian/factories/**/* matched 4 files in 0.02 seconds
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 10 paths, in 1.17 seconds
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 1.17 seconds
+Info: Running script /opt/altera_lite/16.0/quartus/sopc_builder/bin/tbgen.tcl
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: bf_time_pcm
+Info: TB_Gen: System design is: bf_time_pcm
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property audio_ext EXPORT_OF
+Info: get_instance_property audio_subsys CLASS_NAME
+Info: get_instance_assignment audio_subsys testbench.partner.map.external
+Info: get_interface_property audio_if EXPORT_OF
+Info: get_instance_property audio_subsys CLASS_NAME
+Info: get_instance_assignment audio_subsys testbench.partner.map.audio
+Info: get_interface_property clk_100 EXPORT_OF
+Info: get_instance_property clk_100 CLASS_NAME
+Info: get_instance_assignment clk_100 testbench.partner.map.clk_in
+Info: get_interface_property clk_50 EXPORT_OF
+Info: get_instance_property clk_50 CLASS_NAME
+Info: get_instance_assignment clk_50 testbench.partner.map.clk_in
+Info: get_interface_property i2c_scl EXPORT_OF
+Info: get_instance_property audio_subsys CLASS_NAME
+Info: get_instance_assignment audio_subsys testbench.partner.map.i2c_scl
+Info: get_interface_property i2c_sda EXPORT_OF
+Info: get_instance_property audio_subsys CLASS_NAME
+Info: get_instance_assignment audio_subsys testbench.partner.map.i2c_sda
+Info: get_interface_property key EXPORT_OF
+Info: get_instance_property key CLASS_NAME
+Info: get_instance_assignment key testbench.partner.map.external_connection
+Info: get_interface_property led EXPORT_OF
+Info: get_instance_property led CLASS_NAME
+Info: get_instance_assignment led testbench.partner.map.external_connection
+Info: get_interface_property mic_if_avalon_st_pdm EXPORT_OF
+Info: get_instance_property mic_if CLASS_NAME
+Info: get_instance_assignment mic_if testbench.partner.map.avalon_st_pdm
+Info: get_interface_property mic_if_pdm_if EXPORT_OF
+Info: get_instance_property mic_if CLASS_NAME
+Info: get_instance_assignment mic_if testbench.partner.map.pdm_if
+Info: get_interface_property mic_if_system EXPORT_OF
+Info: get_instance_property mic_if CLASS_NAME
+Info: get_instance_assignment mic_if testbench.partner.map.system
+Info: get_interface_property mic_if_test EXPORT_OF
+Info: get_instance_property mic_if CLASS_NAME
+Info: get_instance_assignment mic_if testbench.partner.map.test
+Info: get_interface_property pwm_out EXPORT_OF
+Info: get_instance_property pwm_ctrl CLASS_NAME
+Info: get_instance_assignment pwm_ctrl testbench.partner.map.conduit_end
+Info: get_interface_property reset_100 EXPORT_OF
+Info: get_instance_property clk_100 CLASS_NAME
+Info: get_instance_assignment clk_100 testbench.partner.map.clk_in_reset
+Info: get_interface_property reset_50 EXPORT_OF
+Info: get_instance_property clk_50 CLASS_NAME
+Info: get_instance_assignment clk_50 testbench.partner.map.clk_in_reset
+Info: get_interface_property seg7 EXPORT_OF
+Info: get_instance_property seg7 CLASS_NAME
+Info: get_instance_assignment seg7 testbench.partner.map.conduit_end
+Info: get_interface_property sw EXPORT_OF
+Info: get_instance_property sw CLASS_NAME
+Info: get_instance_assignment sw testbench.partner.map.external_connection
+Info: get_interface_property mic_if_avalon_st_fil EXPORT_OF
+Info: get_instance_property mic_if CLASS_NAME
+Info: get_instance_assignment mic_if testbench.partner.map.avalon_st_fil
+Info: send_message Info TB_Gen: Creating testbench system : bf_time_pcm_tb with all standard BFMs
+Info: TB_Gen: Creating testbench system : bf_time_pcm_tb with all standard BFMs
+Info: create_system bf_time_pcm_tb
+Info: add_instance bf_time_pcm_inst bf_time_pcm 
+Info: set_use_testbench_naming_pattern true bf_time_pcm
+Info: get_instance_interfaces bf_time_pcm_inst
+Info: get_instance_interface_property bf_time_pcm_inst audio_ext CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst audio_if CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst clk_100 CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst clk_50 CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst i2c_scl CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst i2c_sda CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst key CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst led CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_pdm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_pdm_if CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_system CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_test CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst pwm_out CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst reset_100 CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst reset_50 CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst seg7 CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst sw CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_fil CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst clk_100 CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk_100
+Info: TB_Gen: clock_sink found: clk_100
+Info: get_instance_interface_property bf_time_pcm_inst clk_100 CLASS_NAME
+Info: add_instance bf_time_pcm_inst_clk_100_bfm altera_avalon_clock_source 
+Info: get_instance_property bf_time_pcm_inst_clk_100_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst clk_100 clockRate
+Info: set_instance_parameter_value bf_time_pcm_inst_clk_100_bfm CLOCK_RATE 100000000.0
+Info: set_instance_parameter_value bf_time_pcm_inst_clk_100_bfm CLOCK_UNIT 1
+Info: get_instance_property bf_time_pcm_inst_clk_100_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst clk_100 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_clk_100_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_clk_100_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_clk_100_bfm.clk bf_time_pcm_inst.clk_100
+Info: get_instance_interface_property bf_time_pcm_inst clk_50 CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk_50
+Info: TB_Gen: clock_sink found: clk_50
+Info: get_instance_interface_property bf_time_pcm_inst clk_50 CLASS_NAME
+Info: add_instance bf_time_pcm_inst_clk_50_bfm altera_avalon_clock_source 
+Info: get_instance_property bf_time_pcm_inst_clk_50_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst clk_50 clockRate
+Info: set_instance_parameter_value bf_time_pcm_inst_clk_50_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value bf_time_pcm_inst_clk_50_bfm CLOCK_UNIT 1
+Info: get_instance_property bf_time_pcm_inst_clk_50_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst clk_50 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_clk_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_clk_50_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_clk_50_bfm.clk bf_time_pcm_inst.clk_50
+Info: get_instance_interface_property bf_time_pcm_inst reset_100 CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset_100
+Info: TB_Gen: reset_sink found: reset_100
+Info: get_instance_interface_property bf_time_pcm_inst reset_100 CLASS_NAME
+Info: add_instance bf_time_pcm_inst_reset_100_bfm altera_avalon_reset_source 
+Info: get_instance_property bf_time_pcm_inst_reset_100_bfm CLASS_NAME
+Info: get_instance_interface_ports bf_time_pcm_inst reset_100
+Info: get_instance_interface_port_property bf_time_pcm_inst reset_100 reset_100_reset_n ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst reset_100 reset_100_reset_n ROLE
+Info: set_instance_parameter_value bf_time_pcm_inst_reset_100_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_reset_100_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property bf_time_pcm_inst_reset_100_bfm CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_reset_100_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_reset_100_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_reset_100_bfm clk CLASS_NAME
+Info: get_instance_property bf_time_pcm_inst_reset_100_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst reset_100 associatedClock
+Info: get_instance_interfaces bf_time_pcm_inst_clk_100_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_clk_100_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: bf_time_pcm_inst_reset_100_bfm is not associated to any clock; connecting bf_time_pcm_inst_reset_100_bfm to 'bf_time_pcm_inst_clk_100_bfm.clk'
+Warning: TB_Gen: bf_time_pcm_inst_reset_100_bfm is not associated to any clock; connecting bf_time_pcm_inst_reset_100_bfm to 'bf_time_pcm_inst_clk_100_bfm.clk'
+Info: add_connection bf_time_pcm_inst_clk_100_bfm.clk bf_time_pcm_inst_reset_100_bfm.clk
+Info: get_instance_interface_property bf_time_pcm_inst reset_100 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_reset_100_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_reset_100_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_reset_100_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_reset_100_bfm.reset bf_time_pcm_inst.reset_100
+Info: get_instance_interface_property bf_time_pcm_inst reset_50 CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset_50
+Info: TB_Gen: reset_sink found: reset_50
+Info: get_instance_interface_property bf_time_pcm_inst reset_50 CLASS_NAME
+Info: add_instance bf_time_pcm_inst_reset_50_bfm altera_avalon_reset_source 
+Info: get_instance_property bf_time_pcm_inst_reset_50_bfm CLASS_NAME
+Info: get_instance_interface_ports bf_time_pcm_inst reset_50
+Info: get_instance_interface_port_property bf_time_pcm_inst reset_50 reset_50_reset_n ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst reset_50 reset_50_reset_n ROLE
+Info: set_instance_parameter_value bf_time_pcm_inst_reset_50_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_reset_50_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property bf_time_pcm_inst_reset_50_bfm CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_reset_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm clk CLASS_NAME
+Info: get_instance_property bf_time_pcm_inst_reset_50_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst reset_50 associatedClock
+Info: get_instance_interfaces bf_time_pcm_inst_clk_100_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_clk_100_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: bf_time_pcm_inst_reset_50_bfm is not associated to any clock; connecting bf_time_pcm_inst_reset_50_bfm to 'bf_time_pcm_inst_clk_100_bfm.clk'
+Warning: TB_Gen: bf_time_pcm_inst_reset_50_bfm is not associated to any clock; connecting bf_time_pcm_inst_reset_50_bfm to 'bf_time_pcm_inst_clk_100_bfm.clk'
+Info: add_connection bf_time_pcm_inst_clk_100_bfm.clk bf_time_pcm_inst_reset_50_bfm.clk
+Info: get_instance_interface_property bf_time_pcm_inst reset_50 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_reset_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_reset_50_bfm.reset bf_time_pcm_inst.reset_50
+Info: get_instance_interface_property bf_time_pcm_inst audio_ext CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: audio_ext
+Info: TB_Gen: conduit_end found: audio_ext
+Info: get_instance_interface_property bf_time_pcm_inst audio_ext CLASS_NAME
+Info: add_instance bf_time_pcm_inst_audio_ext_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_audio_ext_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst audio_ext associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst audio_ext associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst audio_ext
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_valid ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_valid WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_valid DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_clock_en ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_clock_en WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_clock_en DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_data ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_data WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_ext audio_ext_data DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_ext_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_ext_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_ext_bfm SIGNAL_ROLES valid clock_en data
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_ext_bfm SIGNAL_WIDTHS 1 1 16
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_ext_bfm SIGNAL_DIRECTIONS output input output
+Info: get_instance_property bf_time_pcm_inst_audio_ext_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst audio_ext CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_audio_ext_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_audio_ext_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_audio_ext_bfm.conduit bf_time_pcm_inst.audio_ext
+Info: get_instance_interface_property bf_time_pcm_inst audio_if CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: audio_if
+Info: TB_Gen: conduit_end found: audio_if
+Info: get_instance_interface_property bf_time_pcm_inst audio_if CLASS_NAME
+Info: add_instance bf_time_pcm_inst_audio_if_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_audio_if_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst audio_if associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst audio_if associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst audio_if
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_adcdat ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_adcdat WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_adcdat DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_adclrc ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_adclrc WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_adclrc DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_bclk ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_bclk WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_bclk DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_dacdat ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_dacdat WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_dacdat DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_daclrc ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_daclrc WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst audio_if audio_if_daclrc DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_if_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_if_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_if_bfm SIGNAL_ROLES adcdat adclrc bclk dacdat daclrc
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_if_bfm SIGNAL_WIDTHS 1 1 1 1 1
+Info: set_instance_parameter_value bf_time_pcm_inst_audio_if_bfm SIGNAL_DIRECTIONS output output output input output
+Info: get_instance_property bf_time_pcm_inst_audio_if_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst audio_if CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_audio_if_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_audio_if_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_audio_if_bfm.conduit bf_time_pcm_inst.audio_if
+Info: get_instance_interface_property bf_time_pcm_inst i2c_scl CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: i2c_scl
+Info: TB_Gen: conduit_end found: i2c_scl
+Info: get_instance_interface_property bf_time_pcm_inst i2c_scl CLASS_NAME
+Info: add_instance bf_time_pcm_inst_i2c_scl_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_i2c_scl_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst i2c_scl associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst i2c_scl associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst i2c_scl
+Info: get_instance_interface_port_property bf_time_pcm_inst i2c_scl i2c_scl_export ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst i2c_scl i2c_scl_export WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst i2c_scl i2c_scl_export DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_scl_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_scl_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_scl_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_scl_bfm SIGNAL_WIDTHS 1
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_scl_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_property bf_time_pcm_inst_i2c_scl_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst i2c_scl CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_i2c_scl_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_i2c_scl_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_i2c_scl_bfm.conduit bf_time_pcm_inst.i2c_scl
+Info: get_instance_interface_property bf_time_pcm_inst i2c_sda CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: i2c_sda
+Info: TB_Gen: conduit_end found: i2c_sda
+Info: get_instance_interface_property bf_time_pcm_inst i2c_sda CLASS_NAME
+Info: add_instance bf_time_pcm_inst_i2c_sda_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_i2c_sda_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst i2c_sda associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst i2c_sda associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst i2c_sda
+Info: get_instance_interface_port_property bf_time_pcm_inst i2c_sda i2c_sda_export ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst i2c_sda i2c_sda_export WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst i2c_sda i2c_sda_export DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_sda_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_sda_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_sda_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_sda_bfm SIGNAL_WIDTHS 1
+Info: set_instance_parameter_value bf_time_pcm_inst_i2c_sda_bfm SIGNAL_DIRECTIONS bidir
+Info: get_instance_property bf_time_pcm_inst_i2c_sda_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst i2c_sda CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_i2c_sda_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_i2c_sda_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_i2c_sda_bfm.conduit bf_time_pcm_inst.i2c_sda
+Info: get_instance_interface_property bf_time_pcm_inst key CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: key
+Info: TB_Gen: conduit_end found: key
+Info: get_instance_interface_property bf_time_pcm_inst key CLASS_NAME
+Info: add_instance bf_time_pcm_inst_key_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_key_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst key associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst key associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst key
+Info: get_instance_interface_port_property bf_time_pcm_inst key key_export ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst key key_export WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst key key_export DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_key_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_key_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_key_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value bf_time_pcm_inst_key_bfm SIGNAL_WIDTHS 4
+Info: set_instance_parameter_value bf_time_pcm_inst_key_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property bf_time_pcm_inst_key_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst key CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_key_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_key_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_key_bfm.conduit bf_time_pcm_inst.key
+Info: get_instance_interface_property bf_time_pcm_inst led CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: led
+Info: TB_Gen: conduit_end found: led
+Info: get_instance_interface_property bf_time_pcm_inst led CLASS_NAME
+Info: add_instance bf_time_pcm_inst_led_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_led_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst led associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst led associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst led
+Info: get_instance_interface_port_property bf_time_pcm_inst led led_export ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst led led_export WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst led led_export DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_led_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_led_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_led_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value bf_time_pcm_inst_led_bfm SIGNAL_WIDTHS 32
+Info: set_instance_parameter_value bf_time_pcm_inst_led_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_property bf_time_pcm_inst_led_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst led CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_led_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_led_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_led_bfm.conduit bf_time_pcm_inst.led
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_pdm CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: mic_if_avalon_st_pdm
+Info: TB_Gen: conduit_end found: mic_if_avalon_st_pdm
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_pdm CLASS_NAME
+Info: add_instance bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_pdm associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_pdm associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst mic_if_avalon_st_pdm
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_error ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_error WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_error DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_data ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_data WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_data DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_valid ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_valid WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_valid DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_endofpacket ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_endofpacket WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_endofpacket DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_startofpacket ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_startofpacket WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_startofpacket DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_ready ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_ready WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_pdm mic_if_avalon_st_pdm_ready DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm CLOCKED_SIGNAL 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm ENABLE_RESET 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm SIGNAL_ROLES error data valid endofpacket startofpacket ready
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm SIGNAL_WIDTHS 2 91 1 1 1 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm SIGNAL_DIRECTIONS input input input input input output
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm conduit CLASS_NAME
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_pdm associatedClock
+Info: get_instance_interface_property bf_time_pcm_inst clk_50 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_clk_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_clk_50_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_clk_50_bfm.clk bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm.clk
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm conduit CLASS_NAME
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_pdm associatedReset
+Info: get_instance_interface_property bf_time_pcm_inst reset_50 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_reset_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_reset_50_bfm.reset bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm.reset
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_pdm CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm.conduit bf_time_pcm_inst.mic_if_avalon_st_pdm
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_pdm_if CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: mic_if_pdm_if
+Info: TB_Gen: conduit_end found: mic_if_pdm_if
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_pdm_if CLASS_NAME
+Info: add_instance bf_time_pcm_inst_mic_if_pdm_if_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_mic_if_pdm_if_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_pdm_if associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_pdm_if associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst mic_if_pdm_if
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pdm_data ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pdm_data WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pdm_data DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pdm_clk_ff ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pdm_clk_ff WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pdm_clk_ff DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pulse_lr ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pulse_lr WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_pdm_if mic_if_pdm_if_pulse_lr DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_pdm_if_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_pdm_if_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_pdm_if_bfm SIGNAL_ROLES pdm_data pdm_clk_ff pulse_lr
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_pdm_if_bfm SIGNAL_WIDTHS 40 1 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_pdm_if_bfm SIGNAL_DIRECTIONS output input input
+Info: get_instance_property bf_time_pcm_inst_mic_if_pdm_if_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_pdm_if CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_pdm_if_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_pdm_if_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_mic_if_pdm_if_bfm.conduit bf_time_pcm_inst.mic_if_pdm_if
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_system CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: mic_if_system
+Info: TB_Gen: conduit_end found: mic_if_system
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_system CLASS_NAME
+Info: add_instance bf_time_pcm_inst_mic_if_system_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_mic_if_system_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_system associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_system associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst mic_if_system
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_clk_dec16 ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_clk_dec16 WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_clk_dec16 DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_enable_clk_dec ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_enable_clk_dec WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_enable_clk_dec DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_enable_clk_dec16 ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_enable_clk_dec16 WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_enable_clk_dec16 DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_clk_dec ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_clk_dec WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_system mic_if_system_clk_dec DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_system_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_system_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_system_bfm SIGNAL_ROLES clk_dec16 enable_clk_dec enable_clk_dec16 clk_dec
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_system_bfm SIGNAL_WIDTHS 1 1 1 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_system_bfm SIGNAL_DIRECTIONS output input input output
+Info: get_instance_property bf_time_pcm_inst_mic_if_system_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_system CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_system_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_system_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_mic_if_system_bfm.conduit bf_time_pcm_inst.mic_if_system
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_test CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: mic_if_test
+Info: TB_Gen: conduit_end found: mic_if_test
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_test CLASS_NAME
+Info: add_instance bf_time_pcm_inst_mic_if_test_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_mic_if_test_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_test associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_test associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst mic_if_test
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_test mic_if_test_pdm_data_inp ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_test mic_if_test_pdm_data_inp WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_test mic_if_test_pdm_data_inp DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_test mic_if_test_mic_enable ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_test mic_if_test_mic_enable WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_test mic_if_test_mic_enable DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_test_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_test_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_test_bfm SIGNAL_ROLES pdm_data_inp mic_enable
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_test_bfm SIGNAL_WIDTHS 2 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_test_bfm SIGNAL_DIRECTIONS input input
+Info: get_instance_property bf_time_pcm_inst_mic_if_test_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_test CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_test_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_test_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_mic_if_test_bfm.conduit bf_time_pcm_inst.mic_if_test
+Info: get_instance_interface_property bf_time_pcm_inst pwm_out CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: pwm_out
+Info: TB_Gen: conduit_end found: pwm_out
+Info: get_instance_interface_property bf_time_pcm_inst pwm_out CLASS_NAME
+Info: add_instance bf_time_pcm_inst_pwm_out_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_pwm_out_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst pwm_out associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst pwm_out associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst pwm_out
+Info: get_instance_interface_port_property bf_time_pcm_inst pwm_out pwm_out_export ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst pwm_out pwm_out_export WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst pwm_out pwm_out_export DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_pwm_out_bfm CLOCKED_SIGNAL 1
+Info: set_instance_parameter_value bf_time_pcm_inst_pwm_out_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_pwm_out_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value bf_time_pcm_inst_pwm_out_bfm SIGNAL_WIDTHS 2
+Info: set_instance_parameter_value bf_time_pcm_inst_pwm_out_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_property bf_time_pcm_inst_pwm_out_bfm CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_pwm_out_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_pwm_out_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_pwm_out_bfm conduit CLASS_NAME
+Info: get_instance_property bf_time_pcm_inst_pwm_out_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst pwm_out associatedClock
+Info: get_instance_interface_property bf_time_pcm_inst clk_50 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_clk_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_clk_50_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_clk_50_bfm.clk bf_time_pcm_inst_pwm_out_bfm.clk
+Info: get_instance_interface_property bf_time_pcm_inst pwm_out CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_pwm_out_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_pwm_out_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_pwm_out_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_pwm_out_bfm.conduit bf_time_pcm_inst.pwm_out
+Info: get_instance_interface_property bf_time_pcm_inst seg7 CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: seg7
+Info: TB_Gen: conduit_end found: seg7
+Info: get_instance_interface_property bf_time_pcm_inst seg7 CLASS_NAME
+Info: add_instance bf_time_pcm_inst_seg7_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_seg7_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst seg7 associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst seg7 associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst seg7
+Info: get_instance_interface_port_property bf_time_pcm_inst seg7 seg7_export ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst seg7 seg7_export WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst seg7 seg7_export DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_seg7_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_seg7_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_seg7_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value bf_time_pcm_inst_seg7_bfm SIGNAL_WIDTHS 48
+Info: set_instance_parameter_value bf_time_pcm_inst_seg7_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_property bf_time_pcm_inst_seg7_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst seg7 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_seg7_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_seg7_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_seg7_bfm.conduit bf_time_pcm_inst.seg7
+Info: get_instance_interface_property bf_time_pcm_inst sw CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: sw
+Info: TB_Gen: conduit_end found: sw
+Info: get_instance_interface_property bf_time_pcm_inst sw CLASS_NAME
+Info: add_instance bf_time_pcm_inst_sw_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_sw_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst sw associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst sw associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst sw
+Info: get_instance_interface_port_property bf_time_pcm_inst sw sw_export ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst sw sw_export WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst sw sw_export DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_sw_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value bf_time_pcm_inst_sw_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value bf_time_pcm_inst_sw_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value bf_time_pcm_inst_sw_bfm SIGNAL_WIDTHS 10
+Info: set_instance_parameter_value bf_time_pcm_inst_sw_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property bf_time_pcm_inst_sw_bfm CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst sw CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_sw_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_sw_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_sw_bfm.conduit bf_time_pcm_inst.sw
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_fil CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: mic_if_avalon_st_fil
+Info: TB_Gen: conduit_end found: mic_if_avalon_st_fil
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_fil CLASS_NAME
+Info: add_instance bf_time_pcm_inst_mic_if_avalon_st_fil_bfm altera_conduit_bfm 
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_fil associatedClock
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_fil associatedReset
+Info: get_instance_interface_ports bf_time_pcm_inst mic_if_avalon_st_fil
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_data ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_data WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_data DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_valid ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_valid WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_valid DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_startofpacket ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_startofpacket WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_startofpacket DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_endofpacket ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_endofpacket WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_endofpacket DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_ready ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_ready WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_ready DIRECTION
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_error ROLE
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_error WIDTH
+Info: get_instance_interface_port_property bf_time_pcm_inst mic_if_avalon_st_fil mic_if_avalon_st_fil_error DIRECTION
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_fil_bfm CLOCKED_SIGNAL 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_fil_bfm ENABLE_RESET 1
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_fil_bfm SIGNAL_ROLES data valid startofpacket endofpacket ready error
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_fil_bfm SIGNAL_WIDTHS 651 1 1 1 1 2
+Info: set_instance_parameter_value bf_time_pcm_inst_mic_if_avalon_st_fil_bfm SIGNAL_DIRECTIONS input input input input output input
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_avalon_st_fil_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm conduit CLASS_NAME
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_fil associatedClock
+Info: get_instance_interface_property bf_time_pcm_inst clk_50 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_clk_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_clk_50_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_clk_50_bfm.clk bf_time_pcm_inst_mic_if_avalon_st_fil_bfm.clk
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_avalon_st_fil_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm conduit CLASS_NAME
+Info: get_instance_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value bf_time_pcm_inst mic_if_avalon_st_fil associatedReset
+Info: get_instance_interface_property bf_time_pcm_inst reset_50 CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_reset_50_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_reset_50_bfm clk CLASS_NAME
+Info: add_connection bf_time_pcm_inst_reset_50_bfm.reset bf_time_pcm_inst_mic_if_avalon_st_fil_bfm.reset
+Info: get_instance_interface_property bf_time_pcm_inst mic_if_avalon_st_fil CLASS_NAME
+Info: get_instance_interfaces bf_time_pcm_inst_mic_if_avalon_st_fil_bfm
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm clk CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm reset CLASS_NAME
+Info: get_instance_interface_property bf_time_pcm_inst_mic_if_avalon_st_fil_bfm conduit CLASS_NAME
+Info: add_connection bf_time_pcm_inst_mic_if_avalon_st_fil_bfm.conduit bf_time_pcm_inst.mic_if_avalon_st_fil
+Info: send_message Info TB_Gen: Saving testbench system: bf_time_pcm_tb.qsys
+Info: TB_Gen: Saving testbench system: bf_time_pcm_tb.qsys
+Info: save_system bf_time_pcm_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb.qsys
+Info: Done
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading testbench/bf_time_pcm_tb.qsys
+Progress: Reading input file
+Progress: Adding bf_time_pcm_inst [bf_time_pcm 1.0]
+Progress: Parameterizing module bf_time_pcm_inst
+Progress: Adding bf_time_pcm_inst_audio_ext_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_audio_ext_bfm
+Progress: Adding bf_time_pcm_inst_audio_if_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_audio_if_bfm
+Progress: Adding bf_time_pcm_inst_clk_100_bfm [altera_avalon_clock_source 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_clk_100_bfm
+Progress: Adding bf_time_pcm_inst_clk_50_bfm [altera_avalon_clock_source 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_clk_50_bfm
+Progress: Adding bf_time_pcm_inst_i2c_scl_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_i2c_scl_bfm
+Progress: Adding bf_time_pcm_inst_i2c_sda_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_i2c_sda_bfm
+Progress: Adding bf_time_pcm_inst_key_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_key_bfm
+Progress: Adding bf_time_pcm_inst_led_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_led_bfm
+Progress: Adding bf_time_pcm_inst_mic_if_avalon_st_fil_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_mic_if_avalon_st_fil_bfm
+Progress: Adding bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm
+Progress: Adding bf_time_pcm_inst_mic_if_pdm_if_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_mic_if_pdm_if_bfm
+Progress: Adding bf_time_pcm_inst_mic_if_system_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_mic_if_system_bfm
+Progress: Adding bf_time_pcm_inst_mic_if_test_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_mic_if_test_bfm
+Progress: Adding bf_time_pcm_inst_pwm_out_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_pwm_out_bfm
+Progress: Adding bf_time_pcm_inst_reset_100_bfm [altera_avalon_reset_source 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_reset_100_bfm
+Progress: Adding bf_time_pcm_inst_reset_50_bfm [altera_avalon_reset_source 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_reset_50_bfm
+Progress: Adding bf_time_pcm_inst_seg7_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_seg7_bfm
+Progress: Adding bf_time_pcm_inst_sw_bfm [altera_conduit_bfm 16.0]
+Progress: Parameterizing module bf_time_pcm_inst_sw_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: bf_time_pcm_tb.bf_time_pcm_inst.audio_subsys.i2c_sda: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.AUDIO_SUBSYS: add_instance: Component clock_source version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.AUDIO_SUBSYS: add_instance: Component altera_avalon_mm_clock_crossing_bridge version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.AUDIO_SUBSYS: add_instance: Component altera_avalon_pio version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.AUDIO_SUBSYS: add_instance: Component altera_avalon_pio version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Info: bf_time_pcm_tb.bf_time_pcm_inst.avalon_st_jtag.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.avalon_st_jtag.jtag_uart: Read IRQ effectively disabled when threshold >= depth
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.avalon_st_jtag.jtag_uart: Interrupt sender jtag_uart.irq is not connected to an interrupt receiver
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.avalon_st_jtag: add_instance: Component clock_source version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.avalon_st_jtag: add_instance: Component altera_avalon_jtag_uart version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
+Info: bf_time_pcm_tb.bf_time_pcm_inst.data_format_adapter_0.out/avalon_st_jtag.avalon_st_sink: The sink has a error signal of 2 bits, but the source does not. Avalon-ST Adapter will be inserted.
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.key: Interrupt sender key.irq is not connected to an interrupt receiver
+Warning: bf_time_pcm_tb.bf_time_pcm_inst.sw: Interrupt sender sw.irq is not connected to an interrupt receiver
+Info: bf_time_pcm_tb.bf_time_pcm_inst_clk_100_bfm: Elaborate: altera_clock_source
+Info: bf_time_pcm_tb.bf_time_pcm_inst_clk_100_bfm:            $Revision: #2 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_clk_100_bfm:            $Date: 2016/02/19 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_clk_50_bfm: Elaborate: altera_clock_source
+Info: bf_time_pcm_tb.bf_time_pcm_inst_clk_50_bfm:            $Revision: #2 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_clk_50_bfm:            $Date: 2016/02/19 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_100_bfm: Elaborate: altera_reset_source
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_100_bfm:            $Revision: #2 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_100_bfm:            $Date: 2016/02/19 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_100_bfm: Reset is negatively asserted.
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_50_bfm: Elaborate: altera_reset_source
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_50_bfm:            $Revision: #2 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_50_bfm:            $Date: 2016/02/19 $
+Info: bf_time_pcm_tb.bf_time_pcm_inst_reset_50_bfm: Reset is negatively asserted.
+Info: bf_time_pcm_tb: Generating bf_time_pcm_tb "bf_time_pcm_tb" for SIM_VERILOG
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: bf_time_pcm_inst: "bf_time_pcm_tb" instantiated bf_time_pcm "bf_time_pcm_inst"
+Info: bf_time_pcm_inst_audio_ext_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_audio_ext_bfm"
+Info: bf_time_pcm_inst_audio_if_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_audio_if_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_clk_100_bfm: "bf_time_pcm_tb" instantiated altera_avalon_clock_source "bf_time_pcm_inst_clk_100_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_i2c_scl_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_i2c_scl_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_i2c_sda_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_i2c_sda_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_key_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_key_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_led_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_led_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_mic_if_avalon_st_fil_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_avalon_st_fil_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_mic_if_pdm_if_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_pdm_if_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_mic_if_system_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_system_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_mic_if_test_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_test_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_pwm_out_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_pwm_out_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_reset_100_bfm: "bf_time_pcm_tb" instantiated altera_avalon_reset_source "bf_time_pcm_inst_reset_100_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_seg7_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_seg7_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: bf_time_pcm_inst_sw_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_sw_bfm"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: rst_controller: "bf_time_pcm_tb" instantiated altera_reset_controller "rst_controller"
+Info: audio_subsys: "bf_time_pcm_inst" instantiated AUDIO_SUBSYS "audio_subsys"
+Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and slave jtag_uart.avalon_jtag_slave because the master has address signal 3 bit wide, but the slave is 1 bit wide.
+Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and slave jtag_uart.avalon_jtag_slave because the master has byteenable signal 4 bit wide, but the slave is 0 bit wide.
+Info: avalon_st_jtag: "bf_time_pcm_inst" instantiated avalon_st_jtag "avalon_st_jtag"
+Info: data_format_adapter_0: "bf_time_pcm_inst" instantiated data_format_adapter "data_format_adapter_0"
+Info: key: Starting RTL generation for module 'bf_time_pcm_key'
+Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8010_638490652131855306.dir/0062_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0062_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0062_key_gen/  ]
+Info: key: Done RTL generation for module 'bf_time_pcm_key'
+Info: key: "bf_time_pcm_inst" instantiated altera_avalon_pio "key"
+Info: led: Starting RTL generation for module 'bf_time_pcm_led'
+Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8010_638490652131855306.dir/0063_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0063_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0063_led_gen/  ]
+Info: led: Done RTL generation for module 'bf_time_pcm_led'
+Info: led: "bf_time_pcm_inst" instantiated altera_avalon_pio "led"
+Info: master: "bf_time_pcm_inst" instantiated altera_jtag_avalon_master "master"
+Info: mic_if: "bf_time_pcm_inst" instantiated mic_if "mic_if"
+Info: pwm_ctrl: "bf_time_pcm_inst" instantiated pwm_ctrl "pwm_ctrl"
+Info: seg7: "bf_time_pcm_inst" instantiated SEG7_IF "seg7"
+Info: sw: Starting RTL generation for module 'bf_time_pcm_sw'
+Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8010_638490652131855306.dir/0067_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0067_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0067_sw_gen/  ]
+Info: sw: Done RTL generation for module 'bf_time_pcm_sw'
+Info: sw: "bf_time_pcm_inst" instantiated altera_avalon_pio "sw"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "bf_time_pcm_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: "bf_time_pcm_inst" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: audio: "audio_subsys" instantiated AUDIO_IF "audio"
+Info: mm_bridge: "audio_subsys" instantiated altera_avalon_mm_clock_crossing_bridge "mm_bridge"
+Info: i2c_scl: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
+Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8010_638490652131855306.dir/0070_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0070_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0070_i2c_scl_gen/  ]
+Info: i2c_scl: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
+Info: i2c_scl: "audio_subsys" instantiated altera_avalon_pio "i2c_scl"
+Info: i2c_sda: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
+Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8010_638490652131855306.dir/0071_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0071_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0071_i2c_sda_gen/  ]
+Info: i2c_sda: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
+Info: i2c_sda: "audio_subsys" instantiated altera_avalon_pio "i2c_sda"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "audio_subsys" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: jtag_uart_sender: "avalon_st_jtag" instantiated jtag_uart_sender "jtag_uart_sender"
+Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
+Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8010_638490652131855306.dir/0072_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0072_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8010_638490652131855306.dir/0072_jtag_uart_gen/  ]
+Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
+Info: jtag_uart: "avalon_st_jtag" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: mm_interconnect_0: "avalon_st_jtag" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: jtag_phy_embedded_in_jtag_master: "master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_std_synchronizer_nocut.v
+Info: timing_adt: "master" instantiated timing_adapter "timing_adt"
+Info: fifo: "master" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "master" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "master" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "master" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "master" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "master" instantiated channel_adapter "p2b_adapter"
+Info: master_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_master_translator"
+Info: mic_if_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "mic_if_avalon_slave_translator"
+Info: master_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "master_master_agent"
+Info: mic_if_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "mic_if_avalon_slave_agent"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_master_limiter"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: bf_time_pcm_tb: Done "bf_time_pcm_tb" with 67 modules, 102 files
+Info: qsys-generate succeeded.
+Info: sim-script-gen --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm_tb.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm_tb.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	57 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/.
+Info: Finished: Create testbench Qsys system
+Info: 
 Info: Starting: Create HDL design files for synthesis
 Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --synthesis=VERILOG --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading qsys/bf_time_pcm.qsys
@@ -13,15 +1095,9 @@ Progress: Parameterizing module clk_100
 Progress: Adding clk_50 [clock_source 13.0]
 Warning: clk_50: Used clock_source 16.0 (instead of 13.0)
 Progress: Parameterizing module clk_50
-Progress: Adding cpu [altera_nios2_qsys 13.0]
-Warning: cpu: Used altera_nios2_qsys 16.0 (instead of 13.0)
-Progress: Parameterizing module cpu
 Progress: Adding data_format_adapter_0 [data_format_adapter 13.0]
 Warning: data_format_adapter_0: Used data_format_adapter 16.0 (instead of 13.0)
 Progress: Parameterizing module data_format_adapter_0
-Progress: Adding jtag_uart [altera_avalon_jtag_uart 13.0.1.99.2]
-Warning: jtag_uart: Used altera_avalon_jtag_uart 16.0 (instead of 13.0.1.99.2)
-Progress: Parameterizing module jtag_uart
 Progress: Adding key [altera_avalon_pio 13.0.1.99.2]
 Warning: key: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
 Progress: Parameterizing module key
@@ -33,25 +1109,13 @@ Warning: master: Used altera_jtag_avalon_master 16.0 (instead of 13.0)
 Progress: Parameterizing module master
 Progress: Adding mic_if [mic_if 1.0]
 Progress: Parameterizing module mic_if
-Progress: Adding onchip_memory [altera_avalon_onchip_memory2 13.0.1.99.2]
-Warning: onchip_memory: Used altera_avalon_onchip_memory2 16.0 (instead of 13.0.1.99.2)
-Progress: Parameterizing module onchip_memory
 Progress: Adding pwm_ctrl [pwm_ctrl 1.0]
 Progress: Parameterizing module pwm_ctrl
-Progress: Adding sdram [altera_avalon_new_sdram_controller 13.0.1.99.2]
-Warning: sdram: Used altera_avalon_new_sdram_controller 16.0 (instead of 13.0.1.99.2)
-Progress: Parameterizing module sdram
 Progress: Adding seg7 [SEG7_IF 1.0]
 Progress: Parameterizing module seg7
 Progress: Adding sw [altera_avalon_pio 13.0.1.99.2]
 Warning: sw: Used altera_avalon_pio 16.0 (instead of 13.0.1.99.2)
 Progress: Parameterizing module sw
-Progress: Adding sysid [altera_avalon_sysid_qsys 13.0]
-Warning: sysid: Used altera_avalon_sysid_qsys 16.0 (instead of 13.0)
-Progress: Parameterizing module sysid
-Progress: Adding timer [altera_avalon_timer 13.0.1.99.2]
-Warning: timer: Used altera_avalon_timer 16.0 (instead of 13.0.1.99.2)
-Progress: Parameterizing module timer
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -66,93 +1130,32 @@ Warning: bf_time_pcm.avalon_st_jtag.jtag_uart: Read IRQ effectively disabled whe
 Warning: bf_time_pcm.avalon_st_jtag.jtag_uart: Interrupt sender jtag_uart.irq is not connected to an interrupt receiver
 Warning: bf_time_pcm.avalon_st_jtag: add_instance: Component clock_source version 13.0 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
 Warning: bf_time_pcm.avalon_st_jtag: add_instance: Component altera_avalon_jtag_uart version 13.0.1.99.2 is not installed - loaded latest installed version 16.0 instead.  Please check for parameter mismatches 
-Warning: bf_time_pcm.cpu: Nios II Classic cores are no longer recommended for new projects
-Info: bf_time_pcm.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
-Info: bf_time_pcm.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
-Info: bf_time_pcm.sysid: Time stamp will be automatically updated when this component is generated.
 Info: bf_time_pcm.data_format_adapter_0.out/avalon_st_jtag.avalon_st_sink: The sink has a error signal of 2 bits, but the source does not. Avalon-ST Adapter will be inserted.
+Warning: bf_time_pcm.key: Interrupt sender key.irq is not connected to an interrupt receiver
+Warning: bf_time_pcm.sw: Interrupt sender sw.irq is not connected to an interrupt receiver
 Info: bf_time_pcm: Generating bf_time_pcm "bf_time_pcm" for QUARTUS_SYNTH
-Info: Inserting clock-crossing logic between cmd_demux.src1 and cmd_mux_001.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src2 and cmd_mux_002.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src3 and cmd_mux_003.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src6 and cmd_mux_006.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src9 and cmd_mux_009.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src10 and cmd_mux_010.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src12 and cmd_mux_012.sink0
-Info: Inserting clock-crossing logic between rsp_demux_001.src0 and rsp_mux.sink1
-Info: Inserting clock-crossing logic between rsp_demux_002.src0 and rsp_mux.sink2
-Info: Inserting clock-crossing logic between rsp_demux_003.src0 and rsp_mux.sink3
-Info: Inserting clock-crossing logic between rsp_demux_006.src0 and rsp_mux.sink6
-Info: Inserting clock-crossing logic between rsp_demux_009.src0 and rsp_mux.sink9
-Info: Inserting clock-crossing logic between rsp_demux_010.src0 and rsp_mux.sink10
-Info: Inserting clock-crossing logic between rsp_demux_012.src0 and rsp_mux.sink12
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: audio_subsys: "bf_time_pcm" instantiated AUDIO_SUBSYS "audio_subsys"
 Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and slave jtag_uart.avalon_jtag_slave because the master has address signal 3 bit wide, but the slave is 1 bit wide.
 Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and slave jtag_uart.avalon_jtag_slave because the master has byteenable signal 4 bit wide, but the slave is 0 bit wide.
 Info: avalon_st_jtag: "bf_time_pcm" instantiated avalon_st_jtag "avalon_st_jtag"
-Info: cpu: Starting RTL generation for module 'bf_time_pcm_cpu'
-Info: cpu:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/eperlcmd -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /opt/altera_lite/16.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /opt/altera_lite/16.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /opt/altera_lite/16.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /opt/altera_lite/16.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=bf_time_pcm_cpu --dir=/tmp/alt7969_7734782459667634141.dir/0002_cpu_gen/ --quartus_bindir=/opt/altera_lite/16.0/quartus/linux64 --verilog --config=/tmp/alt7969_7734782459667634141.dir/0002_cpu_gen//bf_time_pcm_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2019.03.13 21:44:43 (*) Starting Nios II generation
-Info: cpu: # 2019.03.13 21:44:43 (*)   Checking for plaintext license.
-Info: cpu: # 2019.03.13 21:45:00 (*)   Couldn't query license setup in Quartus directory /opt/altera_lite/16.0/quartus/linux64
-Info: cpu: # 2019.03.13 21:45:00 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2019.03.13 21:45:00 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2019.03.13 21:45:00 (*)   Plaintext license not found.
-Info: cpu: # 2019.03.13 21:45:00 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2019.03.13 21:45:05 (*)   Couldn't query license setup in Quartus directory /opt/altera_lite/16.0/quartus/linux64
-Info: cpu: # 2019.03.13 21:45:05 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2019.03.13 21:45:05 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2019.03.13 21:45:05 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: cpu: # 2019.03.13 21:45:05 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2019.03.13 21:45:05 (*)   Creating all objects for CPU
-Info: cpu: # 2019.03.13 21:45:05 (*)     Testbench
-Info: cpu: # 2019.03.13 21:45:05 (*)     Instruction decoding
-Info: cpu: # 2019.03.13 21:45:05 (*)       Instruction fields
-Info: cpu: # 2019.03.13 21:45:06 (*)       Instruction decodes
-Info: cpu: # 2019.03.13 21:45:07 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2019.03.13 21:45:07 (*)       Instruction controls
-Info: cpu: # 2019.03.13 21:45:07 (*)     Pipeline frontend
-Info: cpu: # 2019.03.13 21:45:07 (*)     Pipeline backend
-Info: cpu: # 2019.03.13 21:45:13 (*)   Generating RTL from CPU objects
-Info: cpu: # 2019.03.13 21:45:19 (*)   Creating encrypted RTL
-Info: cpu: # 2019.03.13 21:45:22 (*) Done Nios II generation
-Info: cpu: Done RTL generation for module 'bf_time_pcm_cpu'
-Info: cpu: "bf_time_pcm" instantiated altera_nios2_qsys "cpu"
 Info: data_format_adapter_0: "bf_time_pcm" instantiated data_format_adapter "data_format_adapter_0"
-Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_jtag_uart --dir=/tmp/alt7969_7734782459667634141.dir/0004_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0004_jtag_uart_gen//bf_time_pcm_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
-Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_jtag_uart'
-Info: jtag_uart: "bf_time_pcm" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: key: Starting RTL generation for module 'bf_time_pcm_key'
-Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt7969_7734782459667634141.dir/0005_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0005_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=0  ]
+Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8010_638490652131855306.dir/0102_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0102_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=0  ]
 Info: key: Done RTL generation for module 'bf_time_pcm_key'
 Info: key: "bf_time_pcm" instantiated altera_avalon_pio "key"
 Info: led: Starting RTL generation for module 'bf_time_pcm_led'
-Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt7969_7734782459667634141.dir/0006_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0006_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=0  ]
+Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8010_638490652131855306.dir/0103_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0103_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=0  ]
 Info: led: Done RTL generation for module 'bf_time_pcm_led'
 Info: led: "bf_time_pcm" instantiated altera_avalon_pio "led"
 Info: master: "bf_time_pcm" instantiated altera_jtag_avalon_master "master"
 Info: mic_if: "bf_time_pcm" instantiated mic_if "mic_if"
-Info: onchip_memory: Starting RTL generation for module 'bf_time_pcm_onchip_memory'
-Info: onchip_memory:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=bf_time_pcm_onchip_memory --dir=/tmp/alt7969_7734782459667634141.dir/0008_onchip_memory_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0008_onchip_memory_gen//bf_time_pcm_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
-Info: onchip_memory: Done RTL generation for module 'bf_time_pcm_onchip_memory'
-Info: onchip_memory: "bf_time_pcm" instantiated altera_avalon_onchip_memory2 "onchip_memory"
 Info: pwm_ctrl: "bf_time_pcm" instantiated pwm_ctrl "pwm_ctrl"
-Info: sdram: Starting RTL generation for module 'bf_time_pcm_sdram'
-Info: sdram:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=bf_time_pcm_sdram --dir=/tmp/alt7969_7734782459667634141.dir/0010_sdram_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0010_sdram_gen//bf_time_pcm_sdram_component_configuration.pl  --do_build_sim=0  ]
-Info: sdram: Done RTL generation for module 'bf_time_pcm_sdram'
-Info: sdram: "bf_time_pcm" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: seg7: "bf_time_pcm" instantiated SEG7_IF "seg7"
 Info: sw: Starting RTL generation for module 'bf_time_pcm_sw'
-Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt7969_7734782459667634141.dir/0012_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0012_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=0  ]
+Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8010_638490652131855306.dir/0107_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0107_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=0  ]
 Info: sw: Done RTL generation for module 'bf_time_pcm_sw'
 Info: sw: "bf_time_pcm" instantiated altera_avalon_pio "sw"
-Info: sysid: "bf_time_pcm" instantiated altera_avalon_sysid_qsys "sysid"
-Info: timer: Starting RTL generation for module 'bf_time_pcm_timer'
-Info: timer:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64//perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64//perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=bf_time_pcm_timer --dir=/tmp/alt7969_7734782459667634141.dir/0014_timer_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0014_timer_gen//bf_time_pcm_timer_component_configuration.pl  --do_build_sim=0  ]
-Info: timer: Done RTL generation for module 'bf_time_pcm_timer'
-Info: timer: "bf_time_pcm" instantiated altera_avalon_timer "timer"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
@@ -160,25 +1163,17 @@ Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "bf_time_pcm" instantiated altera_mm_interconnect "mm_interconnect_0"
-Info: irq_mapper: "bf_time_pcm" instantiated altera_irq_mapper "irq_mapper"
-Info: irq_synchronizer: "bf_time_pcm" instantiated altera_irq_clock_crosser "irq_synchronizer"
 Info: avalon_st_adapter: "bf_time_pcm" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: rst_controller: "bf_time_pcm" instantiated altera_reset_controller "rst_controller"
 Info: audio: "audio_subsys" instantiated AUDIO_IF "audio"
 Info: mm_bridge: "audio_subsys" instantiated altera_avalon_mm_clock_crossing_bridge "mm_bridge"
 Info: i2c_scl: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
-Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt7969_7734782459667634141.dir/0020_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0020_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=0  ]
+Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8010_638490652131855306.dir/0111_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0111_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=0  ]
 Info: i2c_scl: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
 Info: i2c_scl: "audio_subsys" instantiated altera_avalon_pio "i2c_scl"
 Info: i2c_sda: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
-Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt7969_7734782459667634141.dir/0021_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0021_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=0  ]
+Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8010_638490652131855306.dir/0112_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0112_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=0  ]
 Info: i2c_sda: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
 Info: i2c_sda: "audio_subsys" instantiated altera_avalon_pio "i2c_sda"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -187,7 +1182,7 @@ Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "audio_subsys" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: jtag_uart_sender: "avalon_st_jtag" instantiated jtag_uart_sender "jtag_uart_sender"
 Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt7969_7734782459667634141.dir/0022_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt7969_7734782459667634141.dir/0022_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8010_638490652131855306.dir/0113_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8010_638490652131855306.dir/0113_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
 Info: jtag_uart: "avalon_st_jtag" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: mm_interconnect_0: "avalon_st_jtag" instantiated altera_mm_interconnect "mm_interconnect_0"
@@ -200,48 +1195,21 @@ Info: p2b: "master" instantiated altera_avalon_st_packets_to_bytes "p2b"
 Info: transacto: "master" instantiated altera_avalon_packets_to_master "transacto"
 Info: b2p_adapter: "master" instantiated channel_adapter "b2p_adapter"
 Info: p2b_adapter: "master" instantiated channel_adapter "p2b_adapter"
-Info: cpu_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "cpu_data_master_translator"
-Info: jtag_uart_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_avalon_jtag_slave_translator"
-Info: cpu_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "cpu_data_master_agent"
-Info: jtag_uart_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_avalon_jtag_slave_agent"
+Info: master_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_master_translator"
+Info: mic_if_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "mic_if_avalon_slave_translator"
+Info: master_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "master_master_agent"
+Info: mic_if_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "mic_if_avalon_slave_agent"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
-Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
-Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
-Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
-Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
-Info: router_014: "mm_interconnect_0" instantiated altera_merlin_router "router_014"
-Info: cpu_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "cpu_data_master_limiter"
+Info: master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_master_limiter"
 Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_st_pipeline_base.v
-Info: sdram_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_s1_burst_adapter"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
-Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
-Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
-Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
-Info: rsp_demux_005: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_005"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: sdram_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_s1_rsp_width_adapter"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_burst_uncompressor.sv
-Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_st_clock_crosser.v
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_st_pipeline_base.v
-Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_std_synchronizer_nocut.v
-Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_std_synchronizer_nocut.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: avalon_st_adapter_011: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_011"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
@@ -252,7 +1220,6 @@ Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "r
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter_011" instantiated error_adapter "error_adapter_0"
-Info: bf_time_pcm: Done "bf_time_pcm" with 75 modules, 134 files
+Info: bf_time_pcm: Done "bf_time_pcm" with 50 modules, 85 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

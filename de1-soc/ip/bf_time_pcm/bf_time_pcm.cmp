@@ -1,54 +1,45 @@
 	component bf_time_pcm is
 		port (
-			audio_ext_valid                    : in    std_logic                     := 'X';             -- valid
-			audio_ext_clock_en                 : out   std_logic;                                        -- clock_en
-			audio_ext_data                     : in    std_logic_vector(15 downto 0) := (others => 'X'); -- data
-			audio_if_adcdat                    : in    std_logic                     := 'X';             -- adcdat
-			audio_if_adclrc                    : in    std_logic                     := 'X';             -- adclrc
-			audio_if_bclk                      : in    std_logic                     := 'X';             -- bclk
-			audio_if_dacdat                    : out   std_logic;                                        -- dacdat
-			audio_if_daclrc                    : in    std_logic                     := 'X';             -- daclrc
-			clk_100_clk                        : in    std_logic                     := 'X';             -- clk
-			clk_50_clk                         : in    std_logic                     := 'X';             -- clk
-			i2c_scl_export                     : out   std_logic;                                        -- export
-			i2c_sda_export                     : inout std_logic                     := 'X';             -- export
-			key_export                         : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
-			led_export                         : out   std_logic_vector(31 downto 0);                    -- export
-			mic_if_avalon_st_pdm_error         : out   std_logic_vector(1 downto 0);                     -- error
-			mic_if_avalon_st_pdm_data          : out   std_logic_vector(18 downto 0);                    -- data
-			mic_if_avalon_st_pdm_valid         : out   std_logic;                                        -- valid
-			mic_if_avalon_st_pdm_endofpacket   : out   std_logic;                                        -- endofpacket
-			mic_if_avalon_st_pdm_startofpacket : out   std_logic;                                        -- startofpacket
-			mic_if_avalon_st_pdm_ready         : in    std_logic                     := 'X';             -- ready
-			mic_if_pdm_if_pdm_data             : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- pdm_data
-			mic_if_pdm_if_pdm_clk_ff           : out   std_logic;                                        -- pdm_clk_ff
-			mic_if_pdm_if_pulse_lr             : out   std_logic;                                        -- pulse_lr
-			mic_if_system_clk_dec16            : in    std_logic                     := 'X';             -- clk_dec16
-			mic_if_system_enable_clk_dec       : out   std_logic;                                        -- enable_clk_dec
-			mic_if_system_enable_clk_dec16     : out   std_logic;                                        -- enable_clk_dec16
-			mic_if_system_clk_dec              : in    std_logic                     := 'X';             -- clk_dec
-			mic_if_test_pdm_data_inp           : out   std_logic_vector(1 downto 0);                     -- pdm_data_inp
-			mic_if_test_mic_enable             : out   std_logic;                                        -- mic_enable
-			pwm_out_export                     : out   std_logic_vector(1 downto 0);                     -- export
-			reset_100_reset_n                  : in    std_logic                     := 'X';             -- reset_n
-			reset_50_reset_n                   : in    std_logic                     := 'X';             -- reset_n
-			sdram_wire_addr                    : out   std_logic_vector(12 downto 0);                    -- addr
-			sdram_wire_ba                      : out   std_logic_vector(1 downto 0);                     -- ba
-			sdram_wire_cas_n                   : out   std_logic;                                        -- cas_n
-			sdram_wire_cke                     : out   std_logic;                                        -- cke
-			sdram_wire_cs_n                    : out   std_logic;                                        -- cs_n
-			sdram_wire_dq                      : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
-			sdram_wire_dqm                     : out   std_logic_vector(1 downto 0);                     -- dqm
-			sdram_wire_ras_n                   : out   std_logic;                                        -- ras_n
-			sdram_wire_we_n                    : out   std_logic;                                        -- we_n
-			seg7_export                        : out   std_logic_vector(47 downto 0);                    -- export
-			sw_export                          : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
-			mic_if_avalon_st_fil_data          : out   std_logic_vector(74 downto 0);                    -- data
-			mic_if_avalon_st_fil_valid         : out   std_logic;                                        -- valid
-			mic_if_avalon_st_fil_startofpacket : out   std_logic;                                        -- startofpacket
-			mic_if_avalon_st_fil_endofpacket   : out   std_logic;                                        -- endofpacket
-			mic_if_avalon_st_fil_ready         : in    std_logic                     := 'X';             -- ready
-			mic_if_avalon_st_fil_error         : out   std_logic_vector(1 downto 0)                      -- error
+			audio_ext_valid                    : in    std_logic                      := 'X';             -- valid
+			audio_ext_clock_en                 : out   std_logic;                                         -- clock_en
+			audio_ext_data                     : in    std_logic_vector(15 downto 0)  := (others => 'X'); -- data
+			audio_if_adcdat                    : in    std_logic                      := 'X';             -- adcdat
+			audio_if_adclrc                    : in    std_logic                      := 'X';             -- adclrc
+			audio_if_bclk                      : in    std_logic                      := 'X';             -- bclk
+			audio_if_dacdat                    : out   std_logic;                                         -- dacdat
+			audio_if_daclrc                    : in    std_logic                      := 'X';             -- daclrc
+			clk_100_clk                        : in    std_logic                      := 'X';             -- clk
+			clk_50_clk                         : in    std_logic                      := 'X';             -- clk
+			i2c_scl_export                     : out   std_logic;                                         -- export
+			i2c_sda_export                     : inout std_logic                      := 'X';             -- export
+			key_export                         : in    std_logic_vector(3 downto 0)   := (others => 'X'); -- export
+			led_export                         : out   std_logic_vector(31 downto 0);                     -- export
+			mic_if_avalon_st_pdm_error         : out   std_logic_vector(1 downto 0);                      -- error
+			mic_if_avalon_st_pdm_data          : out   std_logic_vector(90 downto 0);                     -- data
+			mic_if_avalon_st_pdm_valid         : out   std_logic;                                         -- valid
+			mic_if_avalon_st_pdm_endofpacket   : out   std_logic;                                         -- endofpacket
+			mic_if_avalon_st_pdm_startofpacket : out   std_logic;                                         -- startofpacket
+			mic_if_avalon_st_pdm_ready         : in    std_logic                      := 'X';             -- ready
+			mic_if_pdm_if_pdm_data             : in    std_logic_vector(39 downto 0)  := (others => 'X'); -- pdm_data
+			mic_if_pdm_if_pdm_clk_ff           : out   std_logic;                                         -- pdm_clk_ff
+			mic_if_pdm_if_pulse_lr             : out   std_logic;                                         -- pulse_lr
+			mic_if_system_clk_dec16            : in    std_logic                      := 'X';             -- clk_dec16
+			mic_if_system_enable_clk_dec       : out   std_logic;                                         -- enable_clk_dec
+			mic_if_system_enable_clk_dec16     : out   std_logic;                                         -- enable_clk_dec16
+			mic_if_system_clk_dec              : in    std_logic                      := 'X';             -- clk_dec
+			mic_if_test_pdm_data_inp           : out   std_logic_vector(1 downto 0);                      -- pdm_data_inp
+			mic_if_test_mic_enable             : out   std_logic;                                         -- mic_enable
+			pwm_out_export                     : out   std_logic_vector(1 downto 0);                      -- export
+			reset_100_reset_n                  : in    std_logic                      := 'X';             -- reset_n
+			reset_50_reset_n                   : in    std_logic                      := 'X';             -- reset_n
+			seg7_export                        : out   std_logic_vector(47 downto 0);                     -- export
+			sw_export                          : in    std_logic_vector(9 downto 0)   := (others => 'X'); -- export
+			mic_if_avalon_st_fil_data          : out   std_logic_vector(650 downto 0);                    -- data
+			mic_if_avalon_st_fil_valid         : out   std_logic;                                         -- valid
+			mic_if_avalon_st_fil_startofpacket : out   std_logic;                                         -- startofpacket
+			mic_if_avalon_st_fil_endofpacket   : out   std_logic;                                         -- endofpacket
+			mic_if_avalon_st_fil_ready         : in    std_logic                      := 'X';             -- ready
+			mic_if_avalon_st_fil_error         : out   std_logic_vector(1 downto 0)                       -- error
 		);
 	end component bf_time_pcm;
 

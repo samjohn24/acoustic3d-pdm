@@ -1,8 +1,10 @@
--  To execute on command line:
 
-   system-console --cli --script=<script_name.tcl>
+1. Execute the JTAG server: 
 
--  To execute on GUI:
+   ./run_server
 
-   1. Execute: system-console &
-   2. On console: source <script_name.tcl>
+2. Execute any test in jtag_client folder jtag_client/python/tests/
+
+
+
+

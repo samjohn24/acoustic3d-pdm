@@ -52,6 +52,7 @@
 `define ENABLE_VGA
 
 `define BBB_BOARD
+//`define CPU
 
 module bf_time_pcm_de1_soc(
 
@@ -302,18 +303,22 @@ bbb_array_adapter #(
  .NUM_ROWS (5),
  .NUM_COLS (8)
 ) bbb_array_adapter (
-  .clk                    (clk_200),
+  .clk                    (clk_fast),
   .reset_n                (reset_n),
 
   .lr_sel                 (1'b1),
   
   .pulse_lr               (pulse_lr),
+  .cnt_step               (SW[2:0]),
   .pdm_clk                (pdm_clock),
   .pdm_inp                (GPIO_0[4:0]),
   
   .adapter_sel_ff         (GPIO_0[7:5]),
   .adapter_out_ff         (pdm_data)
 );
+
+//assign GPIO_0[7:5] = SW[2:0];
+//assign LEDR[2:0] = SW[2:0];
 
 `else
 
@@ -470,6 +475,7 @@ assign pdm_data = SW[0] ? pdm_data_B:  pdm_data_A;
 // =============
 //   SYSTEM 
 // =============
+`ifdef CPU
 bf_time_pcm bf_time_pcm (
   .clk_50_clk                         (clk_main),
   .clk_100_clk                        (clk_fast),
@@ -523,6 +529,52 @@ bf_time_pcm bf_time_pcm (
   .sdram_wire_we_n                    (DRAM_WE_N),
   .pwm_out_export                     (pwm_out_export)
 );
+`else
+bf_time_pcm bf_time_pcm (
+  .clk_50_clk                         (clk_main),
+  .clk_100_clk                        (clk_fast),
+  .reset_50_reset_n                   (reset_n),
+  .reset_100_reset_n                  (reset_n),
+  .mic_if_pdm_if_pdm_data             (pdm_data), 
+  .mic_if_pdm_if_pdm_clk_ff           (pdm_clock),
+  .mic_if_pdm_if_pulse_lr             (pulse_lr),
+  .mic_if_avalon_st_fil_error         (),
+  .mic_if_avalon_st_fil_data          (),
+  .mic_if_avalon_st_fil_valid         (),
+  .mic_if_avalon_st_fil_startofpacket (),
+  .mic_if_avalon_st_fil_endofpacket   (),
+  .mic_if_avalon_st_fil_ready         (1'b1),
+  .mic_if_avalon_st_pdm_error         (),
+  .mic_if_avalon_st_pdm_data          (),
+  .mic_if_avalon_st_pdm_valid         (),
+  .mic_if_avalon_st_pdm_endofpacket   (),
+  .mic_if_avalon_st_pdm_startofpacket (),
+  .mic_if_avalon_st_pdm_ready         (1'b1),
+  .mic_if_test_pdm_data_inp           (ipt_pdm_data_inp),
+  .mic_if_test_mic_enable             (ipt_mic_enable),
+  .mic_if_system_clk_dec              (clk_dec),
+  .mic_if_system_clk_dec16            (clk_dec16),
+  .mic_if_system_enable_clk_dec       (enable_clk_dec),
+  .mic_if_system_enable_clk_dec16     (enable_clk_dec16),
+  .audio_if_adcdat                    (AUD_ADCDAT),
+  .audio_if_adclrc                    (AUD_ADCLRCK),
+  .audio_if_bclk                      (AUD_BCLK),
+  .audio_if_dacdat                    (AUD_DACDAT),
+  .audio_if_daclrc                    (AUD_DACLRCK),
+  .audio_ext_valid                    (audio_ext_valid),
+  .audio_ext_clock_en                 (audio_ext_clock_en),
+  .audio_ext_data                     (audio_ext_data),
+  .led_export                         (led_export),
+  .key_export                         (KEY),
+  .sw_export                          (SW),
+  .seg7_export                        ({HEX5P, HEX5, HEX4P, HEX4, 
+                                        HEX3P, HEX3, HEX2P, HEX2,
+                                        HEX1P, HEX1, HEX0P, HEX0}),
+  .i2c_scl_export                     (FPGA_I2C_SCLK),
+  .i2c_sda_export                     (FPGA_I2C_SDAT),
+  .pwm_out_export                     (pwm_out_export)
+);
+`endif
 
 // ================
 //   CLOCK GATING
@@ -589,6 +641,7 @@ assign GPIO_1[25:24] = pwm_out_export[1:0];
 //       LED 
 // ================
 
-assign LEDR[9:0] = led_export[9:0];
+//assign LEDR[9:0] = led_export[9:0];
+assign LEDR[9:3] = led_export[9:3];
 
 endmodule

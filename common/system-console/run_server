@@ -1,0 +1,3 @@
+#! /bin/bash
+
+system-console --cli --script=jtag_server/jtag_server.tcl

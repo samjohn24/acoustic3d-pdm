@@ -19,8 +19,7 @@ export OUTPUT_DIR=../ip/$QSYS_FILENAME
 # Device part
 export DEVICE_PART=5CSEMA5F31C6
 
-#$QUARTUS_INSTALL_DIR/sopc_builder/bin/qsys-generate $QSYS_FILEPATH.qsys --synthesis=VERILOG --simulation=VERILOG --testbench --testbench-simulation --output-directory=$OUTPUT_DIR --part=$DEVICE_PART --clear-output-directory
-$QUARTUS_INSTALL_DIR/sopc_builder/bin/qsys-generate $QSYS_FILEPATH.qsys --synthesis=VERILOG --output-directory=$OUTPUT_DIR --part=$DEVICE_PART --clear-output-directory
+$QUARTUS_INSTALL_DIR/sopc_builder/bin/qsys-generate $QSYS_FILEPATH.qsys --synthesis=VERILOG --simulation=VERILOG --testbench --testbench-simulation --output-directory=$OUTPUT_DIR --part=$DEVICE_PART --clear-output-directory
 
 mv $QSYS_PATH/*.sopcinfo $OUTPUT_DIR
 mv $QSYS_PATH/*.csv $OUTPUT_DIR
