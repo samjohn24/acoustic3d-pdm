@@ -186,6 +186,7 @@ module bf_time_pcm_tb_mod (
 
 	altera_conduit_bfm_0009 bf_time_pcm_inst_mic_if_pdm_if_bfm (
 		//.sig_pdm_data   (bf_time_pcm_inst_mic_if_pdm_if_bfm_conduit_pdm_data), // conduit.pdm_data
+		.sig_pdm_data   (pdm_data),                                            // conduit.pdm_data
 		.sig_pdm_clk_ff (bf_time_pcm_inst_mic_if_pdm_if_pdm_clk_ff),           //        .pdm_clk_ff
 		.sig_pulse_lr   (bf_time_pcm_inst_mic_if_pdm_if_pulse_lr)              //        .pulse_lr
 	);

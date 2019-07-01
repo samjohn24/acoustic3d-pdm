@@ -14,6 +14,7 @@
 `define CSR_MASTER $root.top.tb.csr_master
 `define PATTERN_MASTER $root.top.tb.pattern_master
 `define PATTERN_SINK $root.top.tb.pattern_sink
+`define JTAG_UART     $root.top.tb.bf_time_pcm_inst.avalon_st_jtag.jtag_uart
 
 //User-defined test program parameters: Change these definitions to change the test pattern
 `define PATTERN_POSITION 		8		//the start position of pattern to be generated

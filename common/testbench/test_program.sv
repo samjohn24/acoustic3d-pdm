@@ -50,7 +50,10 @@ module test_program();
   begin    		
     wait(`MIC_IF_INST.ipg_hard_async_reset_b == 1); //wait for reset inactive
     mic_if_init;
-    repeat (1000)  @(posedge `CLOCK_BFM.clk);
+    repeat (10000)  @(posedge `CLOCK_BFM.clk);
+    force `JTAG_UART.fifo_FF = 1'b1; 
+    repeat (5000)  @(posedge `CLOCK_BFM.clk);
+    release `JTAG_UART.fifo_FF; 
 
 //    wait(`CSR_MASTER.reset == 0); //wait for reset inactive
 //	
@@ -167,6 +170,11 @@ module test_program();
 					      11,12,13,14,15,16,17,18,19,20,
 					      21,22,23,24,25,26,27,28,29,30,
 					      31,32,33,34,35,36,37,38,39,40};
+	
+  // Frame config
+  force `MIC_IF_INST.mic_hiu.frame_en_ff = 1'b1;
+  force `MIC_IF_INST.mic_hiu.frame_len_ff = 4'd5;//  (2**8 = 256)
+  force `MIC_IF_INST.mic_hiu.frame_tag_ff = 8'd3; 
   @(posedge `CLOCK_BFM.clk);
   force `MIC_IF_INST.mic_enable_ff = 1'b1;
   end

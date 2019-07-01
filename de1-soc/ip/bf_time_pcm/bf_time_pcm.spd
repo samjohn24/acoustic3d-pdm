@@ -318,6 +318,10 @@
    type="SYSTEM_VERILOG"
    library="mic_if" />
  <file
+   path="simulation/submodules/mic_frame_cnt.sv"
+   type="SYSTEM_VERILOG"
+   library="mic_if" />
+ <file
    path="simulation/submodules/bf_time_pcm_master.v"
    type="VERILOG"
    library="master" />

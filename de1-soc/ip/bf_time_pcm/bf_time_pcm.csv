@@ -1,12 +1,12 @@
-# system info bf_time_pcm on 2019.04.23.23:27:43
+# system info bf_time_pcm on 2019.05.11.03:27:45
 system_info:
 name,value
 DEVICE,5CSEMA5F31C6
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1556072840
+GENERATION_ID,1557556053
 #
 #
-# Files generated for bf_time_pcm on 2019.04.23.23:27:43
+# Files generated for bf_time_pcm on 2019.05.11.03:27:45
 files:
 filepath,kind,attributes,module,is_top
 simulation/bf_time_pcm.v,VERILOG,,bf_time_pcm,true
@@ -28,6 +28,7 @@ simulation/submodules/mic_inp_if.sv,SYSTEM_VERILOG,,mic_if,false
 simulation/submodules/mic_sum.sv,SYSTEM_VERILOG,,mic_if,false
 simulation/submodules/mic_pcm_to_av_st.sv,SYSTEM_VERILOG,,mic_if,false
 simulation/submodules/mic_round_sat.sv,SYSTEM_VERILOG,,mic_if,false
+simulation/submodules/mic_frame_cnt.sv,SYSTEM_VERILOG,,mic_if,false
 simulation/submodules/pwm_ctrl.sv,SYSTEM_VERILOG,,pwm_ctrl,false
 simulation/submodules/SEG7_IF.v,VERILOG,,SEG7_IF,false
 simulation/submodules/bf_time_pcm_sw.v,VERILOG,,bf_time_pcm_sw,false

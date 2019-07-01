@@ -55,7 +55,7 @@ add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/data_del_in
 add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/data_del_out
 add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/data_delay
 add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/data_mux
-add wave -noupdate -expand /top/tb/bf_time_pcm_inst/mic_if/inp_data
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/inp_data
 add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/data_pdm_mux
 add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/sum_data
 add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/sum_pdm_data
@@ -170,8 +170,33 @@ add wave -noupdate {/top/tb/bf_time_pcm_inst/mic_if/mic_ch[0]/mic_channel/mic_ro
 add wave -noupdate {/top/tb/bf_time_pcm_inst/mic_if/mic_ch[0]/mic_channel/mic_round_sat/data_inp_shiftr}
 add wave -noupdate {/top/tb/bf_time_pcm_inst/mic_if/mic_ch[0]/mic_channel/mic_round_sat/data_inp_shiftr_rd}
 add wave -noupdate {/top/tb/bf_time_pcm_inst/mic_if/mic_ch[0]/mic_channel/mic_round_sat/data_out_sat}
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/clock
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/resetn
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_en
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/new_sample
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_len
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_tag
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_data_in
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_data
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_pulse
+add wave -noupdate -radix decimal /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_cnt_ff
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_cnt_first
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/frame_cnt_zro
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_frame_cnt/new_sample_ff
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/clock
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/resetn
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/av_st_data
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/av_st_valid
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/av_st_ready
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/enable
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/new_sample
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/data_in
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/data_ff
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/capture_data
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/state_ff
+add wave -noupdate /top/tb/bf_time_pcm_inst/mic_if/mic_aud_av_st/state_ns
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {116033418 ps} 0}
+WaveRestoreCursors {{Cursor 1} {208376136 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 520
 configure wave -valuecolwidth 114
@@ -187,4 +212,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits us
 update
-WaveRestoreZoom {10035 ns} {163447764 ps}
+WaveRestoreZoom {419381391 ps} {421958875 ps}

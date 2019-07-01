@@ -314,6 +314,10 @@
    type="SYSTEM_VERILOG"
    library="mic_if" />
  <file
+   path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/mic_frame_cnt.sv"
+   type="SYSTEM_VERILOG"
+   library="mic_if" />
+ <file
    path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/bf_time_pcm_master.v"
    type="VERILOG"
    library="master" />
