@@ -1,6 +1,6 @@
-# Time-domain Delay-and-Sum Beamformer (bf_time_pcm)
+# Time-domain Delay-and-Sum Beamformer (bf_time_pdm)
 
-FPGA implementation of a conventional time-domain Delay-and-Sum (DAS) beamformer for Terasic DE1-SoC using Beaglebone Black Microphone Array board.
+FPGA implementation of a time-domain Delay-and-Sum (DAS) beamformer in PDM domain for Terasic DE1-SoC using Beaglebone Black Microphone Array board.
 
 ## Dependencies
 
