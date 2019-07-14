@@ -1,4 +1,4 @@
-# bf_time_pcm - Time-domain Delay-and-Sum Beamformer
+# Time-domain Delay-and-Sum Beamformer (bf_time_pcm)
 
 FPGA implementation of a conventional time-domain Delay-and-Sum (DAS) beamformer for Terasic DE1-SoC using Beaglebone Black Microphone Array board.
 
@@ -26,7 +26,7 @@ In addition to testing dependencies:
 2. Start the server executing ./run_server in ../ip/avalon_st_jtag/system-console folder.
 3. Start the 3D viewer executing ./mic_plot_3d.py In ../../software/bf_tester/tests folder.
 
-## For FPGA compilation
+### For FPGA compilation
 
 In de1-soc/ folder execute ./compile.sh
 
