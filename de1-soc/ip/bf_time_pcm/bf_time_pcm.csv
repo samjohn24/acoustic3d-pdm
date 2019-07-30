@@ -1,12 +1,12 @@
-# system info bf_time_pcm on 2019.05.11.03:27:45
+# system info bf_time_pcm on 2019.07.17.22:25:56
 system_info:
 name,value
 DEVICE,5CSEMA5F31C6
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1557556053
+GENERATION_ID,1563413133
 #
 #
-# Files generated for bf_time_pcm on 2019.05.11.03:27:45
+# Files generated for bf_time_pcm on 2019.07.17.22:25:56
 files:
 filepath,kind,attributes,module,is_top
 simulation/bf_time_pcm.v,VERILOG,,bf_time_pcm,true

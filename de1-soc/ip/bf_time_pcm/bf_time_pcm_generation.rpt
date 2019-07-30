@@ -1,5 +1,5 @@
 Info: Starting: Create simulation model
-Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/bf_time_pcm.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading qsys/bf_time_pcm.qsys
 Progress: Reading input file
 Warning: Invalid device family name in input file: Stratix III
@@ -59,11 +59,11 @@ Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and
 Info: avalon_st_jtag: "bf_time_pcm" instantiated avalon_st_jtag "avalon_st_jtag"
 Info: data_format_adapter_0: "bf_time_pcm" instantiated data_format_adapter "data_format_adapter_0"
 Info: key: Starting RTL generation for module 'bf_time_pcm_key'
-Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8027_7396970909988759847.dir/0003_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0003_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0003_key_gen/  ]
+Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8095_3782899850225426987.dir/0003_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0003_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0003_key_gen/  ]
 Info: key: Done RTL generation for module 'bf_time_pcm_key'
 Info: key: "bf_time_pcm" instantiated altera_avalon_pio "key"
 Info: led: Starting RTL generation for module 'bf_time_pcm_led'
-Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8027_7396970909988759847.dir/0004_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0004_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0004_led_gen/  ]
+Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8095_3782899850225426987.dir/0004_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0004_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0004_led_gen/  ]
 Info: led: Done RTL generation for module 'bf_time_pcm_led'
 Info: led: "bf_time_pcm" instantiated altera_avalon_pio "led"
 Info: master: "bf_time_pcm" instantiated altera_jtag_avalon_master "master"
@@ -71,7 +71,7 @@ Info: mic_if: "bf_time_pcm" instantiated mic_if "mic_if"
 Info: pwm_ctrl: "bf_time_pcm" instantiated pwm_ctrl "pwm_ctrl"
 Info: seg7: "bf_time_pcm" instantiated SEG7_IF "seg7"
 Info: sw: Starting RTL generation for module 'bf_time_pcm_sw'
-Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8027_7396970909988759847.dir/0008_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0008_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0008_sw_gen/  ]
+Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8095_3782899850225426987.dir/0008_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0008_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0008_sw_gen/  ]
 Info: sw: Done RTL generation for module 'bf_time_pcm_sw'
 Info: sw: "bf_time_pcm" instantiated altera_avalon_pio "sw"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -87,11 +87,11 @@ Info: rst_controller: "bf_time_pcm" instantiated altera_reset_controller "rst_co
 Info: audio: "audio_subsys" instantiated AUDIO_IF "audio"
 Info: mm_bridge: "audio_subsys" instantiated altera_avalon_mm_clock_crossing_bridge "mm_bridge"
 Info: i2c_scl: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
-Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8027_7396970909988759847.dir/0012_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0012_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0012_i2c_scl_gen/  ]
+Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8095_3782899850225426987.dir/0012_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0012_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0012_i2c_scl_gen/  ]
 Info: i2c_scl: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
 Info: i2c_scl: "audio_subsys" instantiated altera_avalon_pio "i2c_scl"
 Info: i2c_sda: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
-Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8027_7396970909988759847.dir/0013_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0013_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0013_i2c_sda_gen/  ]
+Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8095_3782899850225426987.dir/0013_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0013_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0013_i2c_sda_gen/  ]
 Info: i2c_sda: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
 Info: i2c_sda: "audio_subsys" instantiated altera_avalon_pio "i2c_sda"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -100,12 +100,12 @@ Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "audio_subsys" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: jtag_uart_sender: "avalon_st_jtag" instantiated jtag_uart_sender "jtag_uart_sender"
 Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8027_7396970909988759847.dir/0014_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0014_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0014_jtag_uart_gen/  ]
+Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8095_3782899850225426987.dir/0014_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0014_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0014_jtag_uart_gen/  ]
 Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
 Info: jtag_uart: "avalon_st_jtag" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: mm_interconnect_0: "avalon_st_jtag" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: jtag_phy_embedded_in_jtag_master: "master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
-Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_std_synchronizer_nocut.v
+Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_std_synchronizer_nocut.v
 Info: timing_adt: "master" instantiated timing_adapter "timing_adt"
 Info: fifo: "master" instantiated altera_avalon_sc_fifo "fifo"
 Info: b2p: "master" instantiated altera_avalon_st_bytes_to_packets "b2p"
@@ -120,50 +120,50 @@ Info: mic_if_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_master_limiter"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: bf_time_pcm: Done "bf_time_pcm" with 50 modules, 85 files
 Info: qsys-generate succeeded.
 Info: Finished: Create simulation model
 Info: Starting: Create Modelsim Project.
-Info: sim-script-gen --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/bf_time_pcm.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ --use-relative-paths=true
-Info: Doing: ip-make-simscript --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/bf_time_pcm.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ --use-relative-paths=true
-Info: Generating the following file(s) for MODELSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: sim-script-gen --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/bf_time_pcm.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/bf_time_pcm.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/ directory:
 Info: 	mentor/msim_setup.tcl
-Info: Generating the following file(s) for VCS simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: Generating the following file(s) for VCS simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/ directory:
 Info: 	synopsys/vcs/vcs_setup.sh
-Info: Generating the following file(s) for VCSMX simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: Generating the following file(s) for VCSMX simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for NCSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: Generating the following file(s) for NCSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/ directory:
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
 Info: 	39 .cds.lib files in cadence/cds_libs/ directory
-Info: Generating the following file(s) for RIVIERA simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/ directory:
+Info: Generating the following file(s) for RIVIERA simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/simulation/.
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/simulation/.
 Info: Finished: Create Modelsim Project.
 Info: 
 Info: Starting: Create testbench Qsys system
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx
-Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --testbench=STANDARD --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys --family="Cyclone V" --part=5CSEMA5F31C6
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/bf_time_pcm.qsys --testbench=STANDARD --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading qsys/bf_time_pcm.qsys
 Progress: Reading input file
 Warning: Invalid device family name in input file: Stratix III
@@ -222,18 +222,18 @@ Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx: Loadin
 Info: Reading index /opt/altera_lite/16.0/quartus/sopc_builder/bin/ip_component_categories.ipx
 Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/ip_component_categories.ipx described 0 plugins, 0 paths, in 0.01 seconds
 Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.01 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ip/**/* matched 0 files in 0.00 seconds
-Info: Reading index /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx
-Info: Reading index /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/components.ipx
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/components.ipx: Loading now from components.ipx
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip*/*/qsys_comp/*_hw.tcl matched 14 files in 0.39 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/components.ipx described 0 plugins, 1 paths, in 0.39 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/* matched 8 files in 0.40 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/ip/**/* matched 0 files in 0.00 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/*/* matched 2 files in 0.00 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx described 0 plugins, 3 paths, in 0.40 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/* matched 7 files in 0.41 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/*/* matched 9 files in 0.00 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx
+Info: Reading index /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/components.ipx
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/components.ipx: Loading now from components.ipx
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip*/*/qsys_comp/*_hw.tcl matched 14 files in 0.41 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/components.ipx described 0 plugins, 1 paths, in 0.41 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/* matched 8 files in 0.43 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/ip/**/* matched 0 files in 0.00 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/*/* matched 2 files in 0.00 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm.ipx described 0 plugins, 3 paths, in 0.43 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/* matched 7 files in 0.49 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/*/* matched 9 files in 0.00 seconds
 Info: Reading index /home/scarbajali/.altera.quartus/ip/16.0/ip_search_path/user_components.ipx
 Info: /home/scarbajali/Dropbox/Thesis_Master/work/ips/mic_if/qsys_comp/**/* matched 0 files in 0.00 seconds
 Info: /home/scarbajali/Dropbox/Thesis_Master/work/ips/avalon_st_mic_splitter/qsys_comp/**/* matched 0 files in 0.00 seconds
@@ -245,24 +245,24 @@ Info: Z:/OneDrive/Projects/Master/Thesis/hardware/ips/bf_time_pcm/qsys/* matched
 Info: Z:/OneDrive/Projects/Master/Thesis/hardware/ips/bf_time_pcm/qsys/ip/**/* matched 0 files in 0.00 seconds
 Info: Z:/OneDrive/Projects/Master/Thesis/hardware/ips/bf_time_pcm/qsys/*/* matched 0 files in 0.00 seconds
 Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip/bf_time_pcm/generated/q13.0sp1_stratixiii/testbench/bf_time_pcm.ipx described 0 plugins, 3 paths, in 0.00 seconds
-Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip/**/* matched 2337 files in 0.32 seconds
-Info: /home/scarbajali/.altera.quartus/ip/16.0/ip_search_path/user_components.ipx described 0 plugins, 6 paths, in 0.32 seconds
-Info: /home/scarbajali/.altera.quartus/ip/16.0/**/* matched 2 files in 0.32 seconds
+Info: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/ip/**/* matched 2413 files in 0.36 seconds
+Info: /home/scarbajali/.altera.quartus/ip/16.0/ip_search_path/user_components.ipx described 0 plugins, 6 paths, in 0.36 seconds
+Info: /home/scarbajali/.altera.quartus/ip/16.0/**/* matched 2 files in 0.36 seconds
 Info: Reading index /opt/altera_lite/16.0/ip/altera/altera_components.ipx
-Info: /opt/altera_lite/16.0/ip/altera/altera_components.ipx described 1854 plugins, 0 paths, in 0.18 seconds
+Info: /opt/altera_lite/16.0/ip/altera/altera_components.ipx described 1854 plugins, 0 paths, in 0.24 seconds
 Info: Reading index /opt/altera_lite/16.0/ip/altera/up.ipx
 Info: /opt/altera_lite/16.0/ip/altera/up.ipx described 2 plugins, 0 paths, in 0.00 seconds
-Info: /opt/altera_lite/16.0/ip/**/* matched 138 files in 0.18 seconds
+Info: /opt/altera_lite/16.0/ip/**/* matched 138 files in 0.25 seconds
 Info: /opt/altera_lite/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index /opt/altera_lite/16.0/quartus/sopc_builder/builtin.ipx
 Info: /opt/altera_lite/16.0/quartus/sopc_builder/builtin.ipx described 82 plugins, 0 paths, in 0.01 seconds
 Info: /opt/altera_lite/16.0/quartus/sopc_builder/**/* matched 9 files in 0.01 seconds
 Info: Reading index /opt/altera_lite/16.0/quartus/common/librarian/factories/index.ipx
-Info: /opt/altera_lite/16.0/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.01 seconds
-Info: /opt/altera_lite/16.0/quartus/common/librarian/factories/**/* matched 4 files in 0.01 seconds
+Info: /opt/altera_lite/16.0/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.02 seconds
+Info: /opt/altera_lite/16.0/quartus/common/librarian/factories/**/* matched 4 files in 0.02 seconds
 Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
-Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 10 paths, in 0.94 seconds
-Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.94 seconds
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 10 paths, in 1.14 seconds
+Info: /opt/altera_lite/16.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 1.14 seconds
 Info: Running script /opt/altera_lite/16.0/quartus/sopc_builder/bin/tbgen.tcl
 Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
 Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
@@ -866,9 +866,9 @@ Info: TB_Gen: Saving testbench system: bf_time_pcm_tb.qsys
 Info: save_system bf_time_pcm_tb.qsys
 Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
 Info: TB_Gen: TBGEN SUCCESSFUL
-Info: Testbench system: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb.qsys
+Info: Testbench system: /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb.qsys
 Info: Done
-Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/bf_time_pcm.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading testbench/bf_time_pcm_tb.qsys
 Progress: Reading input file
 Progress: Adding bf_time_pcm_inst [bf_time_pcm 1.0]
@@ -945,35 +945,35 @@ Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: bf_time_pcm_inst: "bf_time_pcm_tb" instantiated bf_time_pcm "bf_time_pcm_inst"
 Info: bf_time_pcm_inst_audio_ext_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_audio_ext_bfm"
 Info: bf_time_pcm_inst_audio_if_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_audio_if_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_clk_100_bfm: "bf_time_pcm_tb" instantiated altera_avalon_clock_source "bf_time_pcm_inst_clk_100_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_i2c_scl_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_i2c_scl_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_i2c_sda_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_i2c_sda_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_key_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_key_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_led_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_led_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_mic_if_avalon_st_fil_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_avalon_st_fil_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_avalon_st_pdm_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_mic_if_pdm_if_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_pdm_if_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_mic_if_system_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_system_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_mic_if_test_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_mic_if_test_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_pwm_out_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_pwm_out_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_reset_100_bfm: "bf_time_pcm_tb" instantiated altera_avalon_reset_source "bf_time_pcm_inst_reset_100_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_seg7_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_seg7_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: bf_time_pcm_inst_sw_bfm: "bf_time_pcm_tb" instantiated altera_conduit_bfm "bf_time_pcm_inst_sw_bfm"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/verbosity_pkg.sv
 Info: rst_controller: "bf_time_pcm_tb" instantiated altera_reset_controller "rst_controller"
 Info: audio_subsys: "bf_time_pcm_inst" instantiated AUDIO_SUBSYS "audio_subsys"
 Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and slave jtag_uart.avalon_jtag_slave because the master has address signal 3 bit wide, but the slave is 1 bit wide.
@@ -981,11 +981,11 @@ Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and
 Info: avalon_st_jtag: "bf_time_pcm_inst" instantiated avalon_st_jtag "avalon_st_jtag"
 Info: data_format_adapter_0: "bf_time_pcm_inst" instantiated data_format_adapter "data_format_adapter_0"
 Info: key: Starting RTL generation for module 'bf_time_pcm_key'
-Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8027_7396970909988759847.dir/0062_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0062_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0062_key_gen/  ]
+Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8095_3782899850225426987.dir/0062_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0062_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0062_key_gen/  ]
 Info: key: Done RTL generation for module 'bf_time_pcm_key'
 Info: key: "bf_time_pcm_inst" instantiated altera_avalon_pio "key"
 Info: led: Starting RTL generation for module 'bf_time_pcm_led'
-Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8027_7396970909988759847.dir/0063_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0063_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0063_led_gen/  ]
+Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8095_3782899850225426987.dir/0063_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0063_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0063_led_gen/  ]
 Info: led: Done RTL generation for module 'bf_time_pcm_led'
 Info: led: "bf_time_pcm_inst" instantiated altera_avalon_pio "led"
 Info: master: "bf_time_pcm_inst" instantiated altera_jtag_avalon_master "master"
@@ -993,7 +993,7 @@ Info: mic_if: "bf_time_pcm_inst" instantiated mic_if "mic_if"
 Info: pwm_ctrl: "bf_time_pcm_inst" instantiated pwm_ctrl "pwm_ctrl"
 Info: seg7: "bf_time_pcm_inst" instantiated SEG7_IF "seg7"
 Info: sw: Starting RTL generation for module 'bf_time_pcm_sw'
-Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8027_7396970909988759847.dir/0067_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0067_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0067_sw_gen/  ]
+Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8095_3782899850225426987.dir/0067_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0067_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0067_sw_gen/  ]
 Info: sw: Done RTL generation for module 'bf_time_pcm_sw'
 Info: sw: "bf_time_pcm_inst" instantiated altera_avalon_pio "sw"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -1008,11 +1008,11 @@ Info: avalon_st_adapter: "bf_time_pcm_inst" instantiated altera_avalon_st_adapte
 Info: audio: "audio_subsys" instantiated AUDIO_IF "audio"
 Info: mm_bridge: "audio_subsys" instantiated altera_avalon_mm_clock_crossing_bridge "mm_bridge"
 Info: i2c_scl: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
-Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8027_7396970909988759847.dir/0070_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0070_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0070_i2c_scl_gen/  ]
+Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8095_3782899850225426987.dir/0070_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0070_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0070_i2c_scl_gen/  ]
 Info: i2c_scl: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
 Info: i2c_scl: "audio_subsys" instantiated altera_avalon_pio "i2c_scl"
 Info: i2c_sda: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
-Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8027_7396970909988759847.dir/0071_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0071_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0071_i2c_sda_gen/  ]
+Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8095_3782899850225426987.dir/0071_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0071_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0071_i2c_sda_gen/  ]
 Info: i2c_sda: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
 Info: i2c_sda: "audio_subsys" instantiated altera_avalon_pio "i2c_sda"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -1021,12 +1021,12 @@ Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "audio_subsys" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: jtag_uart_sender: "avalon_st_jtag" instantiated jtag_uart_sender "jtag_uart_sender"
 Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8027_7396970909988759847.dir/0072_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0072_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8027_7396970909988759847.dir/0072_jtag_uart_gen/  ]
+Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8095_3782899850225426987.dir/0072_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0072_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8095_3782899850225426987.dir/0072_jtag_uart_gen/  ]
 Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
 Info: jtag_uart: "avalon_st_jtag" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: mm_interconnect_0: "avalon_st_jtag" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: jtag_phy_embedded_in_jtag_master: "master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
-Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_std_synchronizer_nocut.v
+Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_std_synchronizer_nocut.v
 Info: timing_adt: "master" instantiated timing_adapter "timing_adt"
 Info: fifo: "master" instantiated altera_avalon_sc_fifo "fifo"
 Info: b2p: "master" instantiated altera_avalon_st_bytes_to_packets "b2p"
@@ -1041,47 +1041,47 @@ Info: mic_if_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_master_limiter"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/bf_time_pcm_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: bf_time_pcm_tb: Done "bf_time_pcm_tb" with 67 modules, 103 files
 Info: qsys-generate succeeded.
-Info: sim-script-gen --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm_tb.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ --use-relative-paths=true
-Info: Doing: ip-make-simscript --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm_tb.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ --use-relative-paths=true
-Info: Generating the following file(s) for MODELSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: sim-script-gen --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/bf_time_pcm_tb.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/bf_time_pcm_tb.spd --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ directory:
 Info: 	mentor/msim_setup.tcl
-Info: Generating the following file(s) for VCS simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: Generating the following file(s) for VCS simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ directory:
 Info: 	synopsys/vcs/vcs_setup.sh
-Info: Generating the following file(s) for VCSMX simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: Generating the following file(s) for VCSMX simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for NCSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: Generating the following file(s) for NCSIM simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ directory:
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
 Info: 	57 .cds.lib files in cadence/cds_libs/ directory
-Info: Generating the following file(s) for RIVIERA simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/ directory:
+Info: Generating the following file(s) for RIVIERA simulator in /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/testbench/.
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/testbench/.
 Info: Finished: Create testbench Qsys system
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.qsys --synthesis=VERILOG --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/bf_time_pcm.qsys --synthesis=VERILOG --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading qsys/bf_time_pcm.qsys
 Progress: Reading input file
 Warning: Invalid device family name in input file: Stratix III
@@ -1141,11 +1141,11 @@ Info: Interconnect is inserted between master jtag_uart_sender.avalon_master and
 Info: avalon_st_jtag: "bf_time_pcm" instantiated avalon_st_jtag "avalon_st_jtag"
 Info: data_format_adapter_0: "bf_time_pcm" instantiated data_format_adapter "data_format_adapter_0"
 Info: key: Starting RTL generation for module 'bf_time_pcm_key'
-Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8027_7396970909988759847.dir/0102_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0102_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=0  ]
+Info: key:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_key --dir=/tmp/alt8095_3782899850225426987.dir/0102_key_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0102_key_gen//bf_time_pcm_key_component_configuration.pl  --do_build_sim=0  ]
 Info: key: Done RTL generation for module 'bf_time_pcm_key'
 Info: key: "bf_time_pcm" instantiated altera_avalon_pio "key"
 Info: led: Starting RTL generation for module 'bf_time_pcm_led'
-Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8027_7396970909988759847.dir/0103_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0103_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=0  ]
+Info: led:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_led --dir=/tmp/alt8095_3782899850225426987.dir/0103_led_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0103_led_gen//bf_time_pcm_led_component_configuration.pl  --do_build_sim=0  ]
 Info: led: Done RTL generation for module 'bf_time_pcm_led'
 Info: led: "bf_time_pcm" instantiated altera_avalon_pio "led"
 Info: master: "bf_time_pcm" instantiated altera_jtag_avalon_master "master"
@@ -1153,7 +1153,7 @@ Info: mic_if: "bf_time_pcm" instantiated mic_if "mic_if"
 Info: pwm_ctrl: "bf_time_pcm" instantiated pwm_ctrl "pwm_ctrl"
 Info: seg7: "bf_time_pcm" instantiated SEG7_IF "seg7"
 Info: sw: Starting RTL generation for module 'bf_time_pcm_sw'
-Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8027_7396970909988759847.dir/0107_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0107_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=0  ]
+Info: sw:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_sw --dir=/tmp/alt8095_3782899850225426987.dir/0107_sw_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0107_sw_gen//bf_time_pcm_sw_component_configuration.pl  --do_build_sim=0  ]
 Info: sw: Done RTL generation for module 'bf_time_pcm_sw'
 Info: sw: "bf_time_pcm" instantiated altera_avalon_pio "sw"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -1169,11 +1169,11 @@ Info: rst_controller: "bf_time_pcm" instantiated altera_reset_controller "rst_co
 Info: audio: "audio_subsys" instantiated AUDIO_IF "audio"
 Info: mm_bridge: "audio_subsys" instantiated altera_avalon_mm_clock_crossing_bridge "mm_bridge"
 Info: i2c_scl: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
-Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8027_7396970909988759847.dir/0111_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0111_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=0  ]
+Info: i2c_scl:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_scl --dir=/tmp/alt8095_3782899850225426987.dir/0111_i2c_scl_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0111_i2c_scl_gen//bf_time_pcm_audio_subsys_i2c_scl_component_configuration.pl  --do_build_sim=0  ]
 Info: i2c_scl: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_scl'
 Info: i2c_scl: "audio_subsys" instantiated altera_avalon_pio "i2c_scl"
 Info: i2c_sda: Starting RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
-Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8027_7396970909988759847.dir/0112_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0112_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=0  ]
+Info: i2c_sda:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=bf_time_pcm_audio_subsys_i2c_sda --dir=/tmp/alt8095_3782899850225426987.dir/0112_i2c_sda_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0112_i2c_sda_gen//bf_time_pcm_audio_subsys_i2c_sda_component_configuration.pl  --do_build_sim=0  ]
 Info: i2c_sda: Done RTL generation for module 'bf_time_pcm_audio_subsys_i2c_sda'
 Info: i2c_sda: "audio_subsys" instantiated altera_avalon_pio "i2c_sda"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -1182,12 +1182,12 @@ Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "audio_subsys" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: jtag_uart_sender: "avalon_st_jtag" instantiated jtag_uart_sender "jtag_uart_sender"
 Info: jtag_uart: Starting RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8027_7396970909988759847.dir/0113_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8027_7396970909988759847.dir/0113_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec /opt/altera_lite/16.0/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.0/quartus/linux64/perl/lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.0/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.0/quartus/sopc_builder/bin -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera_lite/16.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=bf_time_pcm_avalon_st_jtag_jtag_uart --dir=/tmp/alt8095_3782899850225426987.dir/0113_jtag_uart_gen/ --quartus_dir=/opt/altera_lite/16.0/quartus --verilog --config=/tmp/alt8095_3782899850225426987.dir/0113_jtag_uart_gen//bf_time_pcm_avalon_st_jtag_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'bf_time_pcm_avalon_st_jtag_jtag_uart'
 Info: jtag_uart: "avalon_st_jtag" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: mm_interconnect_0: "avalon_st_jtag" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: jtag_phy_embedded_in_jtag_master: "master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
-Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_std_synchronizer_nocut.v
+Warning: Overwriting different file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_std_synchronizer_nocut.v
 Info: timing_adt: "master" instantiated timing_adapter "timing_adt"
 Info: fifo: "master" instantiated altera_avalon_sc_fifo "fifo"
 Info: b2p: "master" instantiated altera_avalon_st_bytes_to_packets "b2p"
@@ -1202,23 +1202,23 @@ Info: mic_if_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_master_limiter"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/bf_time_pcm/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: bf_time_pcm: Done "bf_time_pcm" with 50 modules, 86 files
 Info: qsys-generate succeeded.

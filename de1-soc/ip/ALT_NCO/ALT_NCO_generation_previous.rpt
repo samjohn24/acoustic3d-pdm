@@ -1,5 +1,5 @@
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/ALT_NCO.qsys --synthesis=VERILOG --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/ALT_NCO/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/ALT_NCO.qsys --synthesis=VERILOG --output-directory=/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/ALT_NCO/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading qsys/ALT_NCO.qsys
 Progress: Reading input file
 Progress: Adding nco_ii_0 [altera_nco_ii 16.0]

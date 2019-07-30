@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2019.05.11.03:28:29"
- outputDirectory="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/ALTCLKCTRL/">
+ date="2019.07.17.22:26:59"
+ outputDirectory="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/ALTCLKCTRL/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -47,30 +47,30 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="ALTCLKCTRL:1.0:AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1557556108,AUTO_UNIQUE_ID=(altclkctrl:16.0:CLOCK_TYPE=0,DEVICE_FAMILY=Cyclone V,ENA_REGISTER_MODE=1,GUI_USE_ENA=true,NUMBER_OF_CLOCKS=1,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
+   parameterizationKey="ALTCLKCTRL:1.0:AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1563413218,AUTO_UNIQUE_ID=(altclkctrl:16.0:CLOCK_TYPE=0,DEVICE_FAMILY=Cyclone V,ENA_REGISTER_MODE=1,GUI_USE_ENA=true,NUMBER_OF_CLOCKS=1,USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION=false)"
    instancePathKey="ALTCLKCTRL"
    kind="ALTCLKCTRL"
    version="1.0"
    name="ALTCLKCTRL">
-  <parameter name="AUTO_GENERATION_ID" value="1557556108" />
+  <parameter name="AUTO_GENERATION_ID" value="1563413218" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <generatedFiles>
    <file
-       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/ALTCLKCTRL/synthesis/ALTCLKCTRL.v"
+       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/ALTCLKCTRL/synthesis/ALTCLKCTRL.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/ALTCLKCTRL/synthesis/submodules/ALTCLKCTRL_altclkctrl_0.v"
+       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/ALTCLKCTRL/synthesis/submodules/ALTCLKCTRL_altclkctrl_0.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/ALTCLKCTRL.qsys" />
+       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/ALTCLKCTRL.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
@@ -112,7 +112,7 @@
   <parameter name="CLOCK_TYPE" value="0" />
   <generatedFiles>
    <file
-       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/de1-soc/ip/ALTCLKCTRL/synthesis/submodules/ALTCLKCTRL_altclkctrl_0.v"
+       path="/home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/de1-soc/ip/ALTCLKCTRL/synthesis/submodules/ALTCLKCTRL_altclkctrl_0.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>

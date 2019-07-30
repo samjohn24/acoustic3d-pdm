@@ -1,5 +1,5 @@
 Assembler report for bf_time_pcm_de1_soc
-Sat May 11 04:04:15 2019
+Thu Jul 18 00:39:30 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat May 11 04:04:15 2019 ;
+; Assembler Status      ; Successful - Thu Jul 18 00:39:30 2019 ;
 ; Revision Name         ; bf_time_pcm_de1_soc                   ;
 ; Top-level Entity Name ; bf_time_pcm_de1_soc                   ;
 ; Family                ; Cyclone V                             ;
@@ -80,8 +80,8 @@ agreement for further details.
 ; Option         ; Setting                                       ;
 +----------------+-----------------------------------------------+
 ; Device         ; 5CSEMA5F31C6                                  ;
-; JTAG usercode  ; 0x071EEADC                                    ;
-; Checksum       ; 0x071EEADC                                    ;
+; JTAG usercode  ; 0x03DF0A42                                    ;
+; Checksum       ; 0x03DF0A42                                    ;
 +----------------+-----------------------------------------------+
 
 
@@ -91,17 +91,17 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sat May 11 04:03:39 2019
+    Info: Processing started: Thu Jul 18 00:39:02 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off bf_time_pcm_de1_soc -c bf_time_pcm_de1_soc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info (115017): Design contains a time-limited core -- only a single, time-limited programming file can be generated
-Warning (12914): The file, /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pcm/common/qsys/bf_time_pcm.sopcinfo, is not embedded into sof file as expected.  Some tools, such as System Console, may not function fully.
+Warning (12914): The file, /home/scarbajali/OneDrive/Projects/Master/Thesis/hardware/bf_time_pdm/common/qsys/bf_time_pcm.sopcinfo, is not embedded into sof file as expected.  Some tools, such as System Console, may not function fully.
 Warning (210042): Can't convert time-limited SOF into POF, HEX File, TTF, or RBF
 Info: Quartus Prime Assembler was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 1811 megabytes
-    Info: Processing ended: Sat May 11 04:04:16 2019
-    Info: Elapsed time: 00:00:37
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 1466 megabytes
+    Info: Processing ended: Thu Jul 18 00:39:30 2019
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:24
 
 

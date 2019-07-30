@@ -342,11 +342,11 @@
  </module>
  <module kind="mic_if" version="1.0" enabled="1" name="mic_if">
   <parameter name="NUM_CH" value="40" />
-  <parameter name="NUM_TAPS" value="60" />
+  <parameter name="NUM_TAPS" value="3840" />
   <parameter name="MAX_CICOSR" value="63" />
   <parameter name="DATA_OUT_WIDTH" value="16" />
   <parameter name="FFTPTS_WIDTH" value="11" />
-  <parameter name="BF_INP_PDM" value="false" />
+  <parameter name="BF_INP_PDM" value="true" />
   <parameter name="BF_TIME" value="true" />
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="50000000" />
  </module>
