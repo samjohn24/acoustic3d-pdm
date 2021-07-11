@@ -6,9 +6,9 @@ Implemented in a [Terasic DE1-SoC](https://www.terasic.com.tw/cgi-bin/page/archi
 
 Following is the list of dependencies and the expected location paths:
 
-- Avalon-ST JTAG (1.2.0): ../ip/avalon_st_jtag 
-- MIC-IF (1.4.1): ../ip/mic_if
-- bf_tester (1.2.0): ../bf_tester
+- [Avalon-ST JTAG](https://github.com/samjohn24/avalon_st_jtag) (1.2.0): ../ip/avalon_st_jtag 
+- [MIC-IF](https://github.com/samjohn24/mic_if) (1.4.1): ../ip/mic_if
+- [bf_tester](https://github.com/samjohn24/bf_tester) (1.2.0): ../bf_tester
 
 ### Additional dependencies for a full compilation
 
