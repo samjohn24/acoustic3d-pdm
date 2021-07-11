@@ -14,7 +14,7 @@ Following is the list of dependencies and the expected location paths:
 
 In addition to testing dependencies:
 
-- Terasic IPs (1.1.0): ../ip_terasic 
+- [Terasic IPs](https://github.com/samjohn24/ip_terasic) (1.1.0): ../ip_terasic 
 - [PWM CTRL](https://github.com/samjohn24/pwm_ctrl) (1.0.0): ../ip/pwm_ctrl
 
 ## Connection
